@@ -16,7 +16,10 @@ import datetime
 import numpy as np
 from typing import Dict, List, Any, Optional
 
-from .numeric_normalizer_plugin import NumericNormalizerPlugin
+if __package__:
+    from .numeric_normalizer_plugin import NumericNormalizerPlugin
+else:
+    from numeric_normalizer_plugin import NumericNormalizerPlugin
 
 # --------------------------------------------------------------
 PRFX_LEVELS = ("ATO_", "SEM_", "CLU_", "MEMA_")
@@ -367,12 +370,23 @@ class MarkerEngine:
 
         # Add activated markers to hits
         for activated in activated_markers:
+            evidence_ids: List[str] = []
+            for ev in activated["evidence"]:
+                if isinstance(ev, dict) and "msg_ids" in ev:
+                    evidence_ids.extend(ev["msg_ids"])
+            if not evidence_ids:
+                # Fallback: use ids from composed components if available
+                for ev in activated["evidence"]:
+                    candidate = ev.get("message_id") if isinstance(ev, dict) else None
+                    if candidate:
+                        evidence_ids.append(candidate)
             all_hits.append({
                 "marker": activated["marker_id"],
                 "source": activated["source"],
                 "evidence": activated["evidence"],
                 "rule": activated["rule"],
-                "params": activated["params"]
+                "params": activated["params"],
+                "msg_ids": list(dict.fromkeys(evidence_ids)) if evidence_ids else []
             })
 
         # Final Aggregation and Scoring
@@ -422,11 +436,19 @@ class MarkerEngine:
         final_hits = []
         for hit in all_hits:
             if "marker" in hit and "msg_ids" in hit and hit["msg_ids"]:
-                final_hits.append({
+                final_hit = {
+                    "marker": hit["marker"],
                     "marker_id": hit["marker"],
                     "message_id": hit["msg_ids"][0], # Link to the first message in the chunk
-                    "score": 1.0 # Placeholder score
-                })
+                    "score": 1.0, # Placeholder score
+                    "source": hit.get("source"),
+                    "rule": hit.get("rule"),
+                    "params": hit.get("params")
+                }
+                evidence = hit.get("evidence")
+                if isinstance(evidence, list):
+                    final_hit["evidence"] = evidence
+                final_hits.append(final_hit)
 
         return {
             "hits": final_hits,
