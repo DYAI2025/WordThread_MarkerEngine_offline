@@ -1,0 +1,28 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: ATO_SIGH
+lang: de
+category: ATOMIC
+description: "Deutlicher Seufzer/Exhalation, oft als Affektventil."
+frame:
+  signal: ["lautes Ausatmen"]
+  concept: "Seufzer/Exhalation"
+  pragmatics: "Spannungsabbau, Resignation, Überforderung"
+  narrative: "ASR-Event/Atmung"
+pattern:
+  - detect_class: asr_event
+    rule: "sigh_detected==true"
+activation_logic: "ANY 1"
+examples:
+  - "(seufzt) Okay…"
+  - "(lautes Ausatmen) Hm."
+  - "(seufzt) Ja, schon."
+  - "(Ausatmen) Puh, schwierig."
+  - "(seufzt) Alles klar."
+  - "(seufzt) Lass uns weitermachen."
+  - "(Ausatmen) Oh Mann."
+  - "(seufzt) Verstanden."
+tags: [atomic, audio, respiration]
+metadata:
+  modality: audio

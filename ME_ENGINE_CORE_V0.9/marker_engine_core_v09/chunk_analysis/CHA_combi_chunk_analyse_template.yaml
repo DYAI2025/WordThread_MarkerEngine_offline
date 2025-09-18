@@ -1,0 +1,75 @@
+marker_name: combi_chunk_analyse_template
+chunk_id: 567
+zeit: 2022-05-07 14:40
+zeitspanne: 7.5.2022–8.5.2022
+beteiligte: [Ben, Zoe]
+titel: Driftphase nach Mini-Konflikt, Repair und Ritual-Reaktivierung
+beschreibung: >
+  Kombinierte Analyse von Archetypen, Driftachsen, Repair- und Ritualmarker im Übergang von Distanz zu erneuter Nähe.
+
+marker_auswertung:
+  - marker_id: WITHDRAWAL_MARKER
+    cluster: Distance/Conflict
+    hits: 3
+    beispiele:
+      - "Ich brauch grad mal Zeit für mich."
+      - "Melde mich später."
+      - "Muss nachdenken, sorry."
+    bewertung: Kurzfristiger Rückzug beider, parallel, aber nicht destruktiv.
+
+  - marker_id: REBOUND_MARKER
+    cluster: Repair
+    hits: 2
+    beispiele:
+      - "Sorry für eben, war nicht fair von mir."
+      - "Lass uns nochmal von vorn anfangen."
+    bewertung: Schnelle Rückkehr zu Repair nach kurzem Drift.
+
+  - marker_id: KUSSFORMEL_MARKER
+    cluster: Ritual/Bindung
+    hits: 2
+    beispiele:
+      - "Bis später xx"
+      - "Nacht xxx"
+    bewertung: Ritualisierung wird bewusst eingesetzt, Marker bleiben stabil.
+
+  - marker_id: STYLE_SYNC_MARKER
+    cluster: Synchronisation
+    hits: 1
+    beispiele:
+      - "Deine Nachrichten klingen jetzt wie meine."
+    bewertung: Sprachstil nähert sich, Co-Drift setzt ein.
+
+driftachsen:
+  - name: "Stabilitätsdrift"
+    veränderung: "Kurzzeitiger Abfall, dann schnelle Rückkehr zur Basislinie"
+    trend: "Hohe Resilienz"
+    beispielturns: [5, 8]
+
+archetypen:
+  - person: Ben
+    aktive_archetypen: [Caregiver, Explorer, Mediator]
+    beispielmarker: [REBOUND_MARKER, STYLE_SYNC_MARKER]
+  - person: Zoe
+    aktive_archetypen: [Seeker, Protector, Creator]
+    beispielmarker: [WITHDRAWAL_MARKER, KUSSFORMEL_MARKER]
+
+kombianalyse:
+  methoden: [Archetypen, Driftachse, Repair, Ritual-Heatmap]
+  zentrale_narrative: >
+    Der Mini-Konflikt (Rückzug beider) wird durch Repairmarker, erneute Nähe und aktivierte Rituale sofort ausgeglichen. Sprachstil und Formeln gleichen sich an, der Systemzustand stabilisiert sich rasch. Die Archetypenkonstellation (Ben vermittelt, Zoe hält Distanz, beide kreieren Nähe) fördert diesen Drift ins Positive.
+
+change_points:
+  - zeitpunkt: "2022-05-07 15:05"
+    ereignis: "Rückzug nach Mikro-Konflikt"
+    marker: [WITHDRAWAL_MARKER]
+  - zeitpunkt: "2022-05-07 15:40"
+    ereignis: "Repair-Impuls, Nähe-Ritual"
+    marker: [REBOUND_MARKER, KUSSFORMEL_MARKER]
+
+meta_reflexion:
+  beobachtung: >
+    Das System zeigt eine hohe Fähigkeit zur Selbstregulation. Co-emergenter Drift ist positiv: Nach kurzen Brüchen finden Repair und Synchronisation rasch statt, das System ist robust und flexibel.
+
+kategorie: UNCATEGORIZED
+tags: [needs_review]

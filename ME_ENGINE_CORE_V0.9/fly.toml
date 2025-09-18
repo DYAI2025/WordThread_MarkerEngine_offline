@@ -1,0 +1,73 @@
+app = "marker-engine-core"
+primary_region = "fra"
+
+[build]
+  dockerfile = "CORE_MarkerEngine_V0.9/Dockerfile"
+
+[env]
+  # Comma-separated list; keep in sync with your frontend origin(s)
+  ALLOWED_ORIGINS = "http://localhost:3000,http://localhost:8080"
+  PYTHONUNBUFFERED = "1"
+  PYTHONDONTWRITEBYTECODE = "1"
+  PORT = "8000"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_start_machines = true
+  auto_stop_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 100
+    soft_limit = 80
+
+[[services]]
+  internal_port = 8000
+  protocol = "tcp"
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+
+  [services.concurrency]
+    type = "requests"
+    hard_limit = 120
+    soft_limit = 100
+
+  [[services.tcp_checks]]
+    interval = "15s"
+    timeout = "2s"
+    grace_period = "20s"
+
+  [[services.http_checks]]
+    interval = "20s"
+    timeout = "5s"
+    grace_period = "30s"
+    method = "GET"
+    path = "/health"
+
+[checks]
+  [checks.health]
+    port = 8000
+    type = "http"
+    interval = "20s"
+    timeout = "5s"
+    grace_period = "30s"
+    method = "GET"
+    path = "/health"
+
+[metrics]
+  port = 8000
+  path = "/metrics"
+
+[vm]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1

@@ -1,0 +1,42 @@
+id: SEM_MINIMIZATION
+lang: en
+category: SEMANTIC
+description: Downplaying/relativizing issues.
+frame:
+  signal:
+  - no big deal
+  - not a drama
+  - only minor
+  concept: Minimization
+  pragmatics: Conflict devaluation
+  narrative: Damage shrinking language
+composed_of:
+- ATO_MINIMIZATION
+- ATO_PARTIAL_TRUTH
+scoring:
+  base: 1.2
+  weight: 0.95
+window:
+  messages: 8
+examples:
+- It was just a minor thing.
+- No big deal, really.
+- "Don't make a fuss\u2014it's not worth it."
+- Some of it's true, but it's not that bad.
+- "It's no drama\u2014relax."
+- A tiny mistake, absolutely nothing serious.
+- "You're exaggerating\u2014it was almost nothing."
+- You're blowing this up.
+- Let's not make it huge.
+- It was just a slip.
+tags:
+- semantic
+- minimization
+- defense
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 4
+      unit: messages

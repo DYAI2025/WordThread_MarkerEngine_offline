@@ -1,0 +1,35 @@
+id: MEMA_DISSOCIATIVE_COMPARTMENTALIZATION
+version: "3.3"
+frame:
+  signal: ["Abrupte emotionale Zustandswechsel ohne Übergang"]
+  concept: "Dissoziative Emotionale Kompartmentalisierung"
+  pragmatics: "Vermeidung durch emotionale Trennung"
+  narrative: "dissociative_switching"
+state_transitions:
+  from_state: "high_emotional_intensity"
+  to_state: "mundane_detachment"
+  intensity_markers: ["liebe", "brauche", "wichtig", "schmerz", "verzweifelt", "alles"]
+  detachment_markers: ["übrigens", "egal", "ok", "hmm", "whatever", "sicher"]
+  timeframe: "<24h"
+activation:
+  rule: "STATE TRANSITION DETECTED"
+window:
+  messages: 40
+  temporal_window: "24h"
+scoring:
+  base: 3.0
+  weight: 0.87
+  decay: 0.008
+  formula: "logistic"
+psychological_indicators:
+  - dissociative_defense
+  - attachment_trauma
+  - emotional_unavailability
+  - compartmentalization
+examples:
+  - "Ich liebe dich so sehr, du bedeutest mir alles → [nächster Tag] hey"
+  - "Das ist so wichtig für mich, ich brauche dich → [später] ok, egal"
+  - "Du verletzt mich so sehr → [kurz danach] Übrigens, hast du das Video gesehen?"
+  - "Ich kann ohne dich nicht leben → [nächste Nachricht] hmm"
+tags: [meta, dissociation, compartmentalization, attachment_trauma]
+schema_version: "3.3"

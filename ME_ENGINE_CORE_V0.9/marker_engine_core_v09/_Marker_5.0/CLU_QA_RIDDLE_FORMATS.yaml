@@ -1,0 +1,30 @@
+id: CLU_QA_RIDDLE_FORMATS
+frame:
+  signal:
+  - "Q&A/R\xE4tsel-Formate wiederholt"
+  concept: "Narrative Strategie geb\xFCndelt"
+  pragmatics: Erwartungsmanagement
+  narrative: qa_loop
+composed_of:
+- SEM_PUN_RIDDLE_QA
+activation:
+  rule: AT_LEAST
+  params:
+    count: 2
+    window:
+      size: 20
+      unit: messages
+scoring:
+  base: 1.8
+  weight: 1.3
+examples:
+- Mehrere Wie-viele-X-Witze nacheinander.
+- "R\xE4tsel-Turn wiederholt."
+- "Frage\u2192Antwort als Running-Gag."
+- Q&A-Struktur mit Twist.
+- "Format als Gag-Tr\xE4ger."
+tags:
+- humor
+- narrative
+- cluster
+- v33

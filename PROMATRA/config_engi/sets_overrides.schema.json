@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://leandeep.ai/schemas/sets_overrides.json",
+  "title": "Sets Overrides",
+  "description": "Schema for concrete set/assignment rules and window rules",
+  "type": "object",
+  "required": ["version", "groups"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Version of the sets configuration"
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "includes"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of this marker group"
+          },
+          "includes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^(ATO|SEM|CLU|MEMA)_[A-Z0-9_]+$"
+            },
+            "description": "List of markers included in this group"
+          },
+          "window": {
+            "type": "object",
+            "properties": {
+              "messages": {"type": "integer", "minimum": 1},
+              "seconds": {"type": "integer", "minimum": 1}
+            },
+            "description": "Window configuration for this group"
+          },
+          "activation": {
+            "type": "object",
+            "properties": {
+              "rule": {"type": "string"},
+              "threshold": {"type": "number", "minimum": 0}
+            },
+            "description": "Activation rules for this group"
+          }
+        }
+      }
+    }
+  }
+}

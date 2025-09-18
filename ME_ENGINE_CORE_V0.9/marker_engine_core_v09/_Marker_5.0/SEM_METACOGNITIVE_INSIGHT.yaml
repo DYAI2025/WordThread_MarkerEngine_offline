@@ -1,0 +1,30 @@
+id: SEM_METACOGNITIVE_INSIGHT
+version: '3.3'
+frame:
+  signal:
+  - Bewusste Selbstbeobachtung mit Mustererkennung
+  concept: Metakognitive Einsicht
+  pragmatics: Therapeutische Selbsterkenntnis
+  narrative: breakthrough
+composed_of:
+- ATO_SELF_OBSERVATION
+- ATO_PATTERN_RECOGNITION
+activation:
+  rule: ALL
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+examples:
+- "Mir f\xE4llt auf, dass ich immer wieder in dieses Muster verfalle"
+- Ich beobachte an mir, wie ich schon wieder das Gleiche mache
+- Mir wird klar, das kenne ich von mir aus alten Situationen
+- "Ich merke, typisch f\xFCr mich, diese Reaktion"
+- Ich erkenne mein altes Muster in dieser Situation
+tags:
+- semantic
+- metakognition
+- insight
+- selbsterkenntnis
+schema_version: '3.3'

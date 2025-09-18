@@ -1,0 +1,26 @@
+id: ATO_SEDUCTIVE_EMOJI
+frame:
+  signal:
+  - "\U0001F60F"
+  - "\U0001F975"
+  - "\U0001F346"
+  - "\U0001F4A6"
+  concept: "Verf\xFChrerische Symbolik"
+  pragmatics: Erotische Konnotation
+  narrative: subtile Provokation
+pattern:
+- "\U0001F60F"
+- "\U0001F975"
+- "\U0001F346"
+- "\U0001F4A6"
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- "Na, wie findest du das? \U0001F60F"
+- "Ich k\xF6nnte vor Lust fast platzen \U0001F975"
+- "Denke gerade an dich \U0001F346\U0001F4A6"
+- "So sieht's aus \U0001F60F"
+- "Ganz sch\xF6n hei\xDF hier \U0001F975"
+tags: []

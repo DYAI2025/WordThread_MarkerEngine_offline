@@ -1,0 +1,40 @@
+id: SEM_POSITIVE_FUTURE
+frame:
+  signal:
+  - "Wertsch\xE4tzung + Wiederholungswunsch"
+  concept: Verbindungsaufbau
+  pragmatics: Relationship building
+  narrative: connection_desire
+composed_of:
+- ATO_WAS_NICE
+- ATO_SHOULD_MORE_OFTEN
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.3
+examples:
+  positive:
+  - "Das war wirklich sch\xF6n. Das sollten wir \xF6fter machen."
+  - Ich habe den Abend sehr genossen. Lass uns das bald wiederholen.
+  - "Es war so inspirierend, mit dir zu reden. Das m\xFCssen wir unbedingt fortsetzen."
+  - "Ich f\xFChle mich nach unserem Gespr\xE4ch so viel besser. K\xF6nnen wir das\
+    \ beibehalten?"
+  - "Das hat mir richtig gut getan. Ich freue mich schon auf das n\xE4chste Mal."
+  - Die Zeit mit dir war so wertvoll. Lass uns das nicht wieder so lange schleifen
+    lassen.
+  - "Ich finde es toll, wie wir uns austauschen. Das sollten wir regelm\xE4\xDFig\
+    \ tun."
+  - "Das war ein wunderbares Erlebnis. Ich hoffe, wir k\xF6nnen das wiederholen."
+  - "Ich habe unsere Zusammenarbeit sehr gesch\xE4tzt. Hoffentlich arbeiten wir bald\
+    \ wieder zusammen."
+  - "Das war ein perfekter Tag. Ich w\xFCrde das gerne \xF6fter mit dir erleben."
+  negative: []
+tags:
+- connection_signal
+- positive_reinforcement

@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://leandeep.ai/schemas/detect_registry.json",
+  "title": "Detect Registry",
+  "description": "Index of all detector modules (Regex/Heuristic/Embedding) including fires_marker",
+  "type": "object",
+  "required": ["detectors"],
+  "properties": {
+    "detectors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "module", "file_path", "fires_marker", "schema_version"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this detector"
+          },
+          "description": {
+            "type": "string",
+            "description": "Human-readable description of this detector"
+          },
+          "module": {
+            "type": "string",
+            "description": "Type/module of detector (e.g., regex, prosody.tempo, etc.)"
+          },
+          "file_path": {
+            "type": "string",
+            "description": "Path to the detector implementation file or 'builtin'"
+          },
+          "fires_marker": {
+            "type": "string",
+            "pattern": "^(ATO|SEM|CLU|MEMA)_[A-Z0-9_]+$",
+            "description": "Marker ID that this detector fires"
+          },
+          "last_updated": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last update timestamp"
+          },
+          "auto_generated": {
+            "type": "boolean",
+            "description": "Whether this detector was auto-generated"
+          },
+          "schema_version": {
+            "type": "string",
+            "description": "Schema version this detector supports"
+          }
+        }
+      }
+    }
+  }
+}

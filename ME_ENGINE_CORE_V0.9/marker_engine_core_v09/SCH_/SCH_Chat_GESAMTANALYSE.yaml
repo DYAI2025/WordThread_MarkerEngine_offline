@@ -1,0 +1,71 @@
+# SCHEMA: MARKER-ENGINE GESAMTANALYSE
+
+type: marker_engine_chat_analysis
+version: 1.0.0
+description: >
+  Markerbasierte Gesamtanalyse eines Chatverlaufs mit Cluster-Drift, Intimitäts-/Distanzkurve,
+  Spiegelungsmetriken, Flirt-/Beziehungs-Tendenz, Marker-Cloud, Timeline-Phasen und Kurzfazit.
+structure:
+  - id: cluster_drift_diagram
+    type: timeseries
+    description: >
+      Zeitverlauf der wichtigsten Marker-Cluster (Flirt, Ironie, Meta, Offenheit, Boundary, etc.),
+      visualisiert als Liniendiagramm oder Heatmap.
+    input: marker_timeseries
+    output: diagram
+
+  - id: intimacy_distance_matrix
+    type: heatmap
+    description: >
+      Verhältnis von Annäherung (Intimitätsmarker) und Distanz (Boundary/Meta/Ironie) über Zeit.
+    input: marker_type_ratio
+    output: heatmap
+
+  - id: semantic_drift_score
+    type: driftline
+    description: >
+      Semantische Verschiebung/Themenwechsel im Verlauf (Driftpunkte, Kohärenzlinien).
+    input: semantic_marker_sequence
+    output: linegraph
+
+  - id: mirroring_index
+    type: metric_curve
+    description: >
+      Spiegelung von Kommunikationsmustern (Emoji, Sprache, Timing) zwischen den Personen.
+    input: mirroring_score
+    output: curve
+
+  - id: flirt_love_score
+    type: gauge
+    description: >
+      Prozentuale Bewertung des Flirt- und Liebes-Clusters (z. B. 0–100%) im Verlauf.
+    input: flirt_marker_density
+    output: gauge
+
+  - id: conflict_harmony_balance
+    type: dualbar
+    description: >
+      Relation von Harmonie- und Konfliktmarkern (Doppelbalken oder relationaler Score).
+    input: conflict_vs_harmony_ratio
+    output: bars
+
+  - id: marker_cloud
+    type: wordcloud
+    description: >
+      Wortwolke/Cloud der häufigsten Marker und Muster.
+    input: marker_frequency
+    output: wordcloud
+
+  - id: timeline_phases
+    type: phased_timeline
+    description: >
+      Zeitliche Phasen (Annäherung, Challenge, Boundary-Test, Offenheit, etc.) entlang der Chatstruktur.
+    input: marker_phase_map
+    output: timeline
+
+  - id: summary
+    type: auto_text
+    description: >
+      Kurzfazit/Resümee, automatisch generiert aus den Marker-Clustern und ihrer Dynamik
+    input: marker_cluster_state
+    output: summary_text

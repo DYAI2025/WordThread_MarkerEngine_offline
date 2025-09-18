@@ -1,0 +1,39 @@
+activation:
+  params:
+    count: 1
+  rule: ANY
+category: ATOMIC
+description: Marker für Selbstunterbrechung und abgebrochene Sätze
+examples:
+  negative: []
+  positive:
+  - Ich wollte sagen... (bricht ab)
+  - Das ist aber... (Satzende)
+  - Ich fühle mich gerade... (bricht ab)
+  - Ich habe da ein Problem... (Satzende)
+  - Ich wollte dich fragen... (bricht ab)
+  - Das ist aber... (Satzende)
+  - Ich habe da etwas beobachtet... (bricht ab)
+  - Ich habe da eine Sorge... (Satzende)
+  - Ich wollte dir etwas erzählen... (bricht ab)
+  - Ich habe da einen Gedanken... (Satzende)
+frame:
+  concept: self-interruption
+  narrative: halt
+  pragmatics: inhibition / shame cue
+  signal:
+  - incomplete sentence
+  - sudden cut-off
+id: ATO_VOICE_MICRO_BREAK
+pattern:
+- (…$)
+- (—$)
+- \b(aber|but)\s*…$
+scoring:
+  weight: 1.0
+tags:
+- atomic
+- voice
+- interruption
+- inhibition
+version: '3.4'

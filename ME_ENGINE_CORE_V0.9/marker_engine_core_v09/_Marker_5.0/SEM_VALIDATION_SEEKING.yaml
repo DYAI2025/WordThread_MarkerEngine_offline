@@ -1,0 +1,38 @@
+id: SEM_VALIDATION_SEEKING
+schema_version: LD-3.3
+lang: en
+category: SEMANTIC
+description: Semantic pattern for validation seeking behavior
+frame:
+  signal:
+  - approval seeking
+  concept: Validation Seeking
+  pragmatics: micro pattern recognition
+  narrative: intent
+composed_of:
+- ATO_VALIDATION_SEEKING
+- ATO_UNCERTAINTY
+- ATO_EMOTIONAL_REGULATION
+window:
+  messages: 2
+examples:
+  positive:
+  - Findest du auch, dass das gut ist?
+  - Bin ich da zu empfindlich?
+  - "Ist das normal, was ich f\xFChle?"
+  - Siehst du das auch so?
+  - Liege ich da richtig?
+  - "Was denkst du dar\xFCber?"
+  - "Brauche ich deine Best\xE4tigung?"
+  - Ist das okay so?
+  - Glaubst du mir?
+  - Verstehst du mich?
+  negative: []
+tags:
+- semantic
+- v3.3
+- validation
+activation:
+  rule: ANY
+  params:
+    count: 2

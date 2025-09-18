@@ -1,0 +1,39 @@
+id: SEM_SEXUAL_TENSION_SIGNALS
+frame:
+  signal:
+  - zweideutige Formulierungen
+  - "verz\xF6gerte Reaktionen"
+  - "verf\xFChrerische Emojis"
+  - "imaginiertes K\xF6rpergef\xFChl"
+  concept: sexuelle Spannung
+  pragmatics: Andeutung erotischer Intention
+  narrative: subtiles Vorspiel
+composed_of:
+- ATO_DOUBLE_ENTENDRE
+- ATO_LINGERING_REACTION
+- ATO_SEDUCTIVE_EMOJI
+- ATO_IMAGINED_PHYSICALITY
+activation:
+  rule: ANY
+  params:
+    count: 1
+scoring:
+  base: 1.5
+  weight: 1.0
+examples:
+  positive:
+  - "Ich frage mich, wie sich das anf\xFChlen w\xFCrde."
+  - Du siehst heute wieder besonders... gut aus.
+  - "Ich kann mich kaum auf das Gespr\xE4ch konzentrieren, wenn du mich so ansiehst."
+  - Mir wird ganz warm, wenn ich an dich denke.
+  - "Ich habe getr\xE4umt, wir w\xE4ren uns n\xE4her gekommen."
+  - Diese Stille zwischen uns ist so aufgeladen.
+  - "Ich w\xFCnschte, du w\xE4rst jetzt hier."
+  - "Deine Stimme am Telefon macht mich ganz nerv\xF6s."
+  - "Ich stelle mir vor, wie es w\xE4re, wenn..."
+  - "Ich sp\xFCre ein Knistern zwischen uns."
+  negative: []
+tags:
+- sexual_hint
+- tension
+- "ambiguit\xE4t"

@@ -1,0 +1,42 @@
+id: SEM_BREAK_UP
+frame:
+  signal:
+  - Trennung
+  - Schluss machen
+  - Abbruch
+  concept: Ende einer Beziehung oder Zusammenarbeit
+  pragmatics: Abgrenzung, Beendigung
+  narrative: "Schlussstrich, Aufl\xF6sung"
+composed_of:
+- ATO_UNILATERAL_DECISION
+- ATO_UNCERTAINTY_PHRASE
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 2
+      unit: messages
+examples:
+- Ich denke, es ist besser, wenn wir getrennte Wege gehen.
+- Es macht keinen Sinn mehr, wir sollten Schluss machen.
+- "Ich habe beschlossen, dass ich das nicht mehr m\xF6chte."
+- "Vielleicht ist es das Beste, wenn wir aufh\xF6ren."
+- "Ich glaube, das war\u2019s f\xFCr uns."
+- So kann es nichtmehr weitergehen, ich kann auch einfach nicht mehr.
+- Es ist Zeit, einen Schlussstrich zu ziehen.
+- Ich denke, wir sollten uns trennen.
+- "Sich zu lieben hei\xDFt nicht, dass man auch zusammen leben kann, ich m\xF6chte\
+  \ nicht mehr so weitermachen."
+- Ich glaube, es ist besser, wenn wir uns auf unsere eigenen Wege konzentrieren.
+- "Ich habe das Gef\xFChl, dass wir uns auseinandergelebt haben."
+- "Es tut mir leid, aber ich denke, es ist das Beste f\xFCr uns beide."
+- "Ich m\xF6chte nicht l\xE4nger in dieser Beziehung bleiben."
+- Es ist schwer, das zu sagen, aber ich glaube, wir sollten uns trennen.
+- "Ich habe das Gef\xFChl, dass wir nicht mehr gl\xFCcklich sind."
+- Es ist Zeit, unsere Beziehung zu beenden.
+- "Ich bin mir nicht sicher, ob ich noch was f\xFChle."
+- Ich glaube, wir sollten uns eine Auszeit nehmen.
+tags:
+- breakup
+- boundary

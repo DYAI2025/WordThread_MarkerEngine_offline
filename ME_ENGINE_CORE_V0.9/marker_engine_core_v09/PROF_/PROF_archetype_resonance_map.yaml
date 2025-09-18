@@ -1,0 +1,27 @@
+# =====================================================================
+# archetype_resonance_map.yaml   –   Lean-Deep 3.2-kompatibel
+# =====================================================================
+#
+#   Resonanz-Matrix: Archetyp × Marker-Axis  →  Resonanz-Score (0-1)
+# ---------------------------------------------------------------------
+
+resonance:
+
+  CAREGIVER:
+    SEM_EMPATHIC_VALIDATION:   0.9
+    ATO_WARM_TONE:             0.8
+    CLU_SUPPORT_LOOP:          0.75
+
+  TRICKSTER:
+    SEM_SARCASM_SUBTLE:        0.85
+    ATO_IRONIC_EMOJI:          0.8
+    CLU_RELATIONAL_DESTABILIZATION_LOOP: 0.7
+
+  HERO:
+    SEM_CONFIDENT_PROJECTION:  0.9
+    ATO_POWER_PHRASE:          0.8
+    MEMA_SOLUTION_DRIVEN_PHASE: 0.85
+
+metadata:
+  schema_version: 3.2
+  last_sync: "2025-08-03T22:45:00Z"

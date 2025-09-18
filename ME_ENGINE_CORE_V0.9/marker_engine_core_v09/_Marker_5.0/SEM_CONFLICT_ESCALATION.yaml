@@ -1,0 +1,36 @@
+id: SEM_CONFLICT_ESCALATION
+schema_version: LD-3.3
+lang: en
+category: SEMANTIC
+description: Semantic pattern for conflict escalation dynamics
+frame:
+  signal:
+  - escalation triggers
+  concept: Conflict Escalation
+  pragmatics: micro pattern recognition
+  narrative: intent
+composed_of:
+- ATO_DEFENSIVENESS
+- ATO_BLAME_SHIFT
+- ATO_SARCASM
+window:
+  messages: 3
+examples:
+- I'm not the problem here. You made me react this way with your attitude.
+- That's not what I said. Oh really? Sure, blame me for everything as usual.
+- You're wrong about my intentions. Great, another accusation from you.
+- I didn't mean it that way. You forced me to defend myself constantly.
+- You're being unfair. How wonderful that you always make me the villain.
+- I'm not being difficult here. You made me respond defensively with your tone.
+- That's completely wrong. Oh perfect, another way to make this my fault.
+- You're misunderstanding me. Really? Because apparently I'm always the problem.
+- I'm just defending myself. You forced this reaction with your behavior.
+- You're putting words in my mouth. Sure, let's pretend I'm the unreasonable one.
+tags:
+- semantic
+- v3.3
+- conflict-escalation
+activation:
+  rule: ANY
+  params:
+    count: 2

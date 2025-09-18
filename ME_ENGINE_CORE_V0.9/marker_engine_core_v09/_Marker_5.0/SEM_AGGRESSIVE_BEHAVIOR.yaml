@@ -1,0 +1,36 @@
+id: SEM_AGGRESSIVE_BEHAVIOR
+frame:
+  signal: "Kombination aus Wut-Vokabular, Schimpfw\xF6rtern und/oder eskalierenden\
+    \ Drohungen."
+  concept: Aggressives Verhalten / Wutausbruch
+  pragmatics: "Konfrontation, Einsch\xFCchterung, emotionaler Kontrollverlust."
+  narrative: escalation
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+tags:
+- emotion
+- anger
+- aggression
+- escalation
+- negative
+examples:
+- "Ey, Alter, was soll der Schei\xDF? Ich bin richtig pissig gerade."
+- "Ich bin so w\xFCtend, dass mir die Worte fehlen."
+- "Wei\xDFt du eigentlich, wie sehr mich das ankotzt?"
+- Ich raste komplett aus, wenn du das nochmal machst.
+- Ich koche gleich vor Wut, verdammt!
+- "Du gehst mir so derma\xDFen auf den Keks!"
+- Verpiss dich, ich will dich nicht mehr sehen!
+- Mir platzt echt der Kragen wegen dieser Sache.
+composed_of:
+- ATO_ANGER_EXPRESSION
+- ATO_SWEAR_WORD
+- ATO_THREAT_ESCALATION

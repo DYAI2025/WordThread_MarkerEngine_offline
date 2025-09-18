@@ -1,0 +1,30 @@
+id: ATO_COMPROMISE_OFFER
+frame:
+  signal:
+  - Kompromissangebot
+  - Mittelweg
+  - Einigungsvorschlag
+  concept: Kompromissfindung
+  pragmatics: Reduktion von Konflikten
+  narrative: "L\xF6sungsorientierung"
+pattern:
+- (?i)nachgeben
+- (?i)Termin.*verschieben
+- (?i)bin bereit.*entgegenkommst
+- (?i)Mittelweg
+- (?i)Vorschlag.*teilen
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- "Wie w\xE4re es, wenn wir beide nachgeben?"
+- "K\xF6nnen wir vielleicht einen Termin verschieben?"
+- Ok, du hast ja auch etwas recht. Wir sollten einen Mittelweg finden.
+- "Also in der Mitte k\xF6nnen wir uns treffen, damit w\xE4re ich einverstanden."
+- Ich schlage vor, dass wir uns die Kosten teilen.
+- Ich bin bereit, wenn du mir entgegenkommst.
+- Vielleicht finden wir einen Mittelweg.
+- 'Ein Vorschlag meinerseits: Wir teilen uns die Kosten.'
+tags:
+- compromise

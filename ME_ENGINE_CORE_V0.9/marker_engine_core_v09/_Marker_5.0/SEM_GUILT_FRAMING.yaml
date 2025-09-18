@@ -1,0 +1,39 @@
+id: SEM_GUILT_FRAMING
+frame:
+  signal:
+  - wegen dir ist alles kaputt
+  - du bist schuld
+  - "h\xE4ttest du nicht"
+  - du hast mich dazu gebracht
+  - "ich kann nichts daf\xFCr"
+  concept: Schuldumkehr
+  pragmatics: Verantwortungsverlagerung
+  narrative: emotionale Kontrolle
+composed_of:
+- ATO_GUILT_FRAMING
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive:
+  - Wegen dir ist alles kaputt.
+  - "Du bist schuld daran, dass ich mich so f\xFChle."
+  - "H\xE4ttest du nicht so gehandelt, w\xE4re das nie passiert."
+  - Du hast mich dazu gebracht, das zu tun.
+  - "Ich kann nichts daf\xFCr, du hast mich provoziert."
+  - "Wenn du mich nicht so entt\xE4uscht h\xE4ttest, w\xE4re ich nicht so w\xFCtend."
+  - "Du bist verantwortlich f\xFCr mein Ungl\xFCck."
+  - "Ich habe das nur getan, weil du mich dazu gedr\xE4ngt hast."
+  - Es ist deine Schuld, dass unsere Beziehung gescheitert ist.
+  - Du hast mich in diese Situation gebracht.
+  negative: []
+tags:
+- guilt_framing
+- blame

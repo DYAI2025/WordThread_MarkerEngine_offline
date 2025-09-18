@@ -1,0 +1,45 @@
+id: SEM_CONFLICT_LVL6_9
+frame:
+  signal:
+  - mutual threats
+  - vow of harm
+  - curse under breath
+  - doxxing hint
+  - complete breakdown
+  concept: conflict escalation level 6-9
+  pragmatics: mutual destruction
+  narrative: irreparable breach
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Wenn ich schon verliere, rei\xDFe ich dich mit in den Abgrund!"
+- "Ich hoffe, du zahlst f\xFCr all das \u2013 wir gehen beide kaputt."
+- "Du glaubst, du kannst mich fertig machen? Versuch\u2019s doch!"
+- "Am Ende liegen wir beide am Boden, aber ich werd st\xE4rker aufstehen."
+- "Ich werde jeden Fehler von dir ver\xF6ffentlichen \u2013 du bezahlst daf\xFCr."
+- Lass uns beide bodigen und sehen, wer zuerst aufgibt.
+- "Dein Leben wird nie mehr dasselbe sein \u2013 und meins auch nicht."
+- "Ich zerst\xF6re dich, und danach bin ich dran \u2013 so sind die Regeln."
+- "Niemand wird jemals wieder auf einen von uns h\xF6ren."
+- "Wir sind beide erledigt, aber du hast den gr\xF6\xDFeren Schaden."
+- "Ich werde dich umbringen, es ist mir alles schei\xDFegal, ob ich daf\xFCr in den\
+  \ Knast gehe!"
+- "Ich werde dir dein Leben ruinieren, so dass du dir w\xFCnschten wirst, tot zu sein"
+- "Du hast es so gewollt, jetzt wirst du daf\xFCr bezahlen - ich nehme alles in kauf"
+- Ich werde dich so fertig machen, dass du nie wieder auf die Beine kommst.
+- "Ich schw\xF6re dir totale Rache!"
+- "Daf\xFCr wirst du bezahlen, und ich werde nicht ruhen, bis du es tust."
+tags:
+- conflict
+- escalation
+- lvl6-9

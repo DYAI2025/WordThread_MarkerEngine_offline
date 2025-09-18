@@ -1,0 +1,51 @@
+id: SEM_INTERACTIVE_STONEWALLING_MARKER
+frame:
+  signal:
+  - sag mal
+  - "h\xF6r zu"
+  - verstehst du
+  concept: Kommunikationsmuster
+  pragmatics: "Dialog f\xFChren"
+  narrative: exchange
+composed_of:
+- ATO_UNKNOWN
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Sprecher A: \"Mir f\xE4llt auf, dass wir kaum noch Zeit zu zweit haben."
+- "W\xE4re super, wenn du sagst, ob du dabei bist, damit ich final buchen kann."
+- "Sprecher A: \"Ich habe \xFCber Pfingsten einen Roadtrip geplant: Route, Unterk\xFC\
+  nfte,"
+- "damit sie sich nicht so allein f\xFChlt. Das w\xFCrde mir enorm viel bedeuten."
+- "Ich dachte, vielleicht k\xF6nntest du mich begleiten oder zumindest danach bei\
+  \ ihr vorbeischauen,"
+- "Sprecher A: \"Meine Mutter hat n\xE4chste Woche diese Operation, und ich bin ziemlich\
+  \ nerv\xF6s."
+- Kannst du dir das bitte ansehen und Feedback geben, bevor ich es einreiche?
+- "Sprecher A: \"Ich habe den Quartalsbericht komplett \xFCberarbeitet, alle KPIs\
+  \ neu aufbereitet"
+- 'Sprecher A: "Ich habe letzte Nacht kaum geschlafen, weil mich unsere Situation
+  echt belastet.'
+- "Sprecher A: \"Ich habe mir wirklich viele Gedanken gemacht und f\xFChle mich in\
+  \ letzter Zeit einfach ignoriert. Es verletzt mich, dass du nie darauf eingehst,\
+  \ wenn ich \xFCber meine Gef\xFChle spreche."
+- "Sprecher A: \"Ich habe dein Konzept angesehen. Die Grundidee ist gut, aber die\
+  \ Budgetplanung ist unrealistisch und die Timeline f\xFCr Phase 2 m\xFCssen wir\
+  \ komplett \xFCberarbeiten."
+- "Sprecher A: \"Es tut mir wirklich unendlich leid, wie ich gestern reagiert habe.\
+  \ Das war nicht fair dir gegen\xFCber und ich war einfach total gestresst."
+- "Sprecher A: \"Ich habe die Zusage f\xFCr den Job in M\xFCnchen bekommen! Das ist\
+  \ die Chance, auf die ich so lange gewartet habe!"
+- "Sprecher A: \"Ich wei\xDF im Moment einfach nicht weiter mit dem Projekt, die Daten\
+  \ sind inkonsistent und der Kunde macht Druck. Ich k\xF6nnte wirklich deine Hilfe\
+  \ gebrauchen."
+tags:
+- communication

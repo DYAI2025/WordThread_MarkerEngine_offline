@@ -1,0 +1,28 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: ATO_LONG_RESPONSE_GAP
+lang: de
+category: ATOMIC
+description: "Lange Antwortlatenz nach Prompt (≥1200 ms)."
+frame:
+  signal: [">= 1200 ms Gap nach Prompt"]
+  concept: "Lange Antwortlatenz"
+  pragmatics: "Überforderung, Unsicherheit oder Nebenaufgabe"
+  narrative: "Timing/Turn-Taking"
+pattern:
+  - detect_class: timing
+    rule: "turn_gap_ms >= 1200"
+activation_logic: "ANY 1"
+examples:
+  - "A: Passt das? [1.3s Gap] B: Ja."
+  - "A: Und morgen? [1.5s Gap] B: Geht."
+  - "A: Kannst du? [1.2s Gap] B: Hm."
+  - "A: Bist du da? [2.0s Gap] B: Äh, ja."
+  - "A: Später? [1.4s Gap] B: Vielleicht."
+  - "A: Alles klar? [1.6s Gap] B: Denke schon."
+  - "A: Okay? [1.3s Gap] B: Joa."
+  - "A: Safe? [1.8s Gap] B: Mhm."
+tags: [atomic, audio, timing]
+metadata:
+  modality: audio

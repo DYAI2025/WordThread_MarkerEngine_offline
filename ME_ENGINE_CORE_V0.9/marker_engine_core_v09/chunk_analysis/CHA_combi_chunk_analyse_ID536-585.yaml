@@ -1,0 +1,93 @@
+marker_name: combi_chunk_analyse_ID536-585
+chunk_id: 536-585
+zeit: 2022-04-01 – 2022-05-09
+beteiligte: [Ben, Zoe]
+titel: "Emotionale Verletzungen, Vergangenheit und Repair im längeren Verlauf"
+beschreibung: >
+  Längsschnittanalyse der Marker für alte Verletzungen, Glaubenssätze, Trust Issues, Reflexion und Reparaturprozesse über 50 Chunks im Kontext von Alltag, Konflikten, Nähephasen und Außenpersonen.
+
+marker_auswertung:
+  - marker_id: PAST_WOUND_MARKER
+    cluster: Vergangenheit/Verletzung
+    hits: 11
+    beispiele:
+      - "Ich hab das Gefühl, das läuft bei mir immer gleich schlecht."
+      - "Erinnert mich an früher, als ich nie gehört wurde."
+      - "Ich traue mich nicht, das zu sagen – das endet sonst wie früher."
+    bewertung: Vergangenheitsthemen tauchen regelmäßig auf, besonders bei Unsicherheiten und Rückzug.
+
+  - marker_id: TRUST_ISSUE_MARKER
+    cluster: Vertrauen
+    hits: 8
+    beispiele:
+      - "Wirst du da sein, wenn’s schwierig wird?"
+      - "Ich hab Angst, dass ich wieder enttäuscht werde."
+      - "Kann ich dir das wirklich glauben?"
+    bewertung: Vertrauensfragen werden nicht immer direkt, aber häufig implizit thematisiert.
+
+  - marker_id: SELF_REFLECTION_MARKER
+    cluster: Selbstreflexion/Meta-Kommunikation
+    hits: 13
+    beispiele:
+      - "Mir fällt gerade auf, dass ich das von früher kenne."
+      - "Ich weiß nicht, ob das überhaupt mit dir zu tun hat oder mit mir."
+      - "Vielleicht projiziere ich da auch was aus alten Sachen."
+    bewertung: Reflexion ist stark präsent, beide Partner analysieren die Muster häufig selbst.
+
+  - marker_id: REPAIR_MARKER
+    cluster: Repair/Heilung
+    hits: 10
+    beispiele:
+      - "Danke, dass du mir das erklärst. Ich hab das gebraucht."
+      - "Lass uns das nochmal gemeinsam anschauen, ich will das verstehen."
+      - "Sorry, ich wollte dich nicht verletzen."
+    bewertung: Nach Phasen von Verletzungen oder Rückzug werden aktiv Repair-Impulse gesetzt.
+
+  - marker_id: RITUAL_PROXIMITY_MARKER
+    cluster: Ritual/Bindung
+    hits: 16
+    beispiele:
+      - "xx"
+      - "Gute Nacht, mein Herz xx"
+      - "Bis morgen xx"
+    bewertung: Rituale bleiben als Gegenpol zu Verletzungs- und Driftphasen beständig.
+
+driftachsen:
+  - name: "Verletzungs-/Vertrauensachse"
+    veränderung: "Zyklus aus Aktivierung alter Muster, gefolgt von Repair, dann Wiederannäherung"
+    trend: "Wachstumsorientiert, dynamisch"
+    beispielturns: [chunk_541, chunk_550, chunk_572, chunk_583]
+
+archetypen:
+  - person: Ben
+    aktive_archetypen: [Caregiver, Der Verwundete, Mediator]
+    beispielmarker: [REPAIR_MARKER, PAST_WOUND_MARKER, TRUST_ISSUE_MARKER]
+  - person: Zoe
+    aktive_archetypen: [Suchende, Wächterin, Creator]
+    beispielmarker: [SELF_REFLECTION_MARKER, RITUAL_PROXIMITY_MARKER, TRUST_ISSUE_MARKER]
+
+kombianalyse:
+  methoden: [Vergangenheitsintegration, Trust Issue & Repair-Tracking, Ritualanalyse, Archetypen]
+  zentrale_narrative: >
+    Die letzten 50 Chunks zeigen deutlich, dass Zoe und Ben immer wieder in alte Muster geraten – sowohl im Rückzug als auch im Vertrauensbereich. Es folgt jedoch keine chronische Eskalation, sondern beide nutzen regelmäßig Repair-Impulse und Rituale, um den Drift zu regulieren. Reflexion und Selbstbeobachtung sind integraler Bestandteil des Systems. Die Meta-Markercluster (Verletzung, Repair, Ritual) bestimmen gemeinsam die Dynamik: Verletzung wird sichtbar, aber auch aktiv bearbeitet.
+
+change_points:
+  - zeitpunkt: "2022-04-10"
+    ereignis: "Vergangenheitsmuster (Verlassenheitsangst) aktiviert"
+    marker: [PAST_WOUND_MARKER]
+  - zeitpunkt: "2022-04-22"
+    ereignis: "Explizite Vertrauensfrage"
+    marker: [TRUST_ISSUE_MARKER]
+  - zeitpunkt: "2022-04-28"
+    ereignis: "Starke Repair-Phase nach Konflikt"
+    marker: [REPAIR_MARKER]
+  - zeitpunkt: "2022-05-04"
+    ereignis: "Intensivierte Rituale als Stabilisator"
+    marker: [RITUAL_PROXIMITY_MARKER]
+
+meta_reflexion:
+  beobachtung: >
+    Zoe und Ben haben in diesem Zeitraum ein hohes Maß an Entwicklungskompetenz bewiesen: Alte Wunden werden nicht verdrängt, sondern gemeinsam reflektiert und repariert. Die fortlaufende Pflege von Ritualen dient als emotionale Ressource, um Drift und Verletzung auszubalancieren. Das System ist dynamisch, aber widerstandsfähig – ein Zeichen für hohe Resilienz und Lernfähigkeit.
+
+kategorie: UNCATEGORIZED
+tags: [needs_review]

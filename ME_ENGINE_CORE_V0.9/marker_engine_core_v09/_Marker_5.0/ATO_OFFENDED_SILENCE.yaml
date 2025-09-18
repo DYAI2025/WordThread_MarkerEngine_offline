@@ -1,0 +1,41 @@
+activation:
+  params:
+    count: 1
+  rule: ANY
+category: ATOMIC
+description: Marker für beleidigte Stille und Rückzug
+examples:
+  negative: []
+  positive:
+  - '"..." (als Antwort auf eine Frage)'
+  - '"Mhm." (mit abweisendem Ton)'
+  - '"Aha." (mit abweisendem Ton)'
+  - '"Hm." (mit abweisendem Ton)'
+  - '"K." (kurz und abweisend)'
+  - '"Ja." (kurz und abweisend)'
+  - '"(wendet sich ab)"'
+  - '"(schweigt und blickt weg)"'
+  - '"(verschließt die Arme)"'
+  - '"(gibt keine Reaktion)"'
+frame:
+  concept: withdrawal instead of engagement
+  narrative: retreat
+  pragmatics: conflict avoidance / tension cue
+  signal:
+  - one-word or silent reply
+  - nonverbal withdrawal
+id: ATO_OFFENDED_SILENCE
+pattern:
+- ^\.{3}$
+- ^(mhm|aha|hm)\.?$
+- ^k\.?$
+- ^ja\.?$
+- \*wendet sich ab\*|\*turns away\*
+scoring:
+  weight: 1.0
+tags:
+- atomic
+- silence
+- withdrawal
+- rapport_signal
+version: '3.4'

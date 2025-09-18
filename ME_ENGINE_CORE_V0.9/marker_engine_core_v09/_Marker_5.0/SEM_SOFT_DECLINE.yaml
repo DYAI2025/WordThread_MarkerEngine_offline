@@ -1,0 +1,34 @@
+id: SEM_SOFT_DECLINE
+lang: de
+category: SEMANTIC
+description: "Indirekte, h\xF6fliche Absage durch Ausdruck von Unsicherheit."
+frame:
+  signal:
+  - "H\xF6fliche Absage mit Unsicherheitsphrase"
+  concept: Soft Decline
+  pragmatics: "H\xF6fliche Abwehr"
+  narrative: "R\xFCckzug"
+composed_of:
+- ATO_UNCERTAINTY_PHRASE
+scoring:
+  base: 1.2
+  weight: 1.0
+examples:
+  positive:
+  - Ich bin mir nicht sicher, ob das eine gute Idee ist.
+  - "Ich wei\xDF nicht, ob ich das schaffe."
+  - Mal schauen, ob sich das ausgeht.
+  - Ich muss mal sehen, ob das passt.
+  - Ich bin da eher skeptisch.
+  - "Ich glaube, das ist nichts f\xFCr mich."
+  - "Ich bin nicht \xFCberzeugt, dass das funktioniert."
+  - Ich habe da so meine Zweifel.
+  - Ich bin mir unsicher, ob ich da mitmachen will.
+  - "Ich wei\xDF nicht so recht."
+  negative: []
+tags:
+- semantic
+activation:
+  rule: ANY
+  params:
+    count: 1

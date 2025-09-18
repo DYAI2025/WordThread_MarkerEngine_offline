@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/schemas/marker/fraud/v3.2",
+  "title": "Fraud Markers Schema v3.2",
+  "description": "Specialized schema for fraud detection markers",
+  "allOf": [
+    {
+      "$ref": "https://example.org/schemas/marker/v3.2"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "tags": {
+          "type": "array",
+          "contains": {
+            "enum": ["fraud", "manipulation", "deception", "risk", "warning"]
+          },
+          "minItems": 1,
+          "description": "Must contain at least one fraud-related tag"
+        },
+        "risk_score": {
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 5,
+          "description": "Fraud markers require higher risk scores (3–5)"
+        },
+        "fraud_indicators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "severity"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["behavioral", "linguistic", "pattern", "contextual"]
+              },
+              "severity": {
+                "type": "string",
+                "enum": ["low", "medium", "high", "critical"]
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "description": "Specific fraud indicators"
+        }
+      },
+      "required": ["fraud_indicators"],
+      "additionalProperties": true
+    }
+  ]
+}

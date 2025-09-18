@@ -1,0 +1,43 @@
+id: SEM_MAINTENANCE_RITUAL
+version: '3.3'
+lang: de
+frame:
+  signal:
+  - Kurz-Pflegekontakt kombiniert mit Status/Plan
+  concept: Maintenance Ritual
+  pragmatics: Leichtes Beziehungsritual
+  narrative: low_pressure_care
+composed_of:
+- ATO_CARE_PING
+- ATO_STATUS_PING
+activation:
+  rule: ANY
+  params:
+    count: 1
+    window:
+      size: 30
+      unit: messages
+window:
+  messages: 30
+scoring:
+  base: 2.2
+  weight: 0.55
+  decay: 0.01
+  formula: logistic
+examples:
+- Wie war dein Tag? Ich melde mich um 18:30.
+- "Hab an dich gedacht. Bin sp\xE4ter wieder online."
+- 'Kurzer Ping! Plan: Heute Abend telefonieren?'
+- 'Alles gut bei dir? Update: komme gegen neun.'
+- "Wollte h\xF6ren, wie es dir geht. Ich schreibe dir um acht."
+- "Kurzes Update: Bin unterwegs. Wie l\xE4uft deine Woche?"
+- 'Denk an dich! Zeitplan: Meeting bis 16 Uhr.'
+- 'Schneller Check-in: Alles gut? Bin gleich da.'
+- 'Kleines Lebenszeichen. Plan: Erst einkaufen, dann melde ich mich.'
+- "Hab gerade an dich gedacht. Update: R\xFCckweg in 20 Minuten."
+tags:
+- sem
+- positiv
+- friendship
+- ritual
+- deeskalation

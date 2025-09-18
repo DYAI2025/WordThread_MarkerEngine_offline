@@ -1,0 +1,44 @@
+id: SEM_PROJECTIVE_DISPLACEMENT
+version: '3.3'
+frame:
+  signal:
+  - Du bist immer so
+  - Sie werden wieder
+  - Du machst alles
+  concept: Projektive Verschiebung
+  pragmatics: Unbewusste Abwehrprojektion
+  narrative: displacement
+composed_of:
+- ATO_BLAME_ATTRIBUTION
+- ATO_VICTIM_POSITIONING
+activation:
+  rule: ALL
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+pattern:
+- "(?i)\\b(du|Sie)\\s+(bist|sind|wirst|werden)\\s+(immer|wieder|schon wieder|st\xE4\
+  ndig)"
+- (?i)\bmachst\s+alles\s+zu\s+(dein|ihr)
+- (?i)\b(du|Sie)\s+.+\s+(wenn|aber)\s+ich
+examples:
+  positive:
+  - "Du bist immer so kritisch. Kein Wunder, dass ich mich nicht \xF6ffne."
+  - "Sie werden wieder versuchen, mich in die Ecke zu dr\xE4ngen."
+  - Du machst alles zu einem Drama.
+  - "Du bist immer so unzuverl\xE4ssig. Wegen dir kommen wir zu sp\xE4t."
+  - Sie sind immer so negativ. Das zieht mich runter.
+  - Du bist immer so laut. Ich komme gar nicht zu Wort.
+  - "Sie sind immer so fordernd. Ich f\xFChle mich unter Druck gesetzt."
+  - Du bist immer so egoistisch. Du denkst nur an dich.
+  - Sie sind immer so misstrauisch. Man kann Ihnen nichts recht machen.
+  - "Du bist immer so unordentlich. Ich muss immer alles hinter dir herr\xE4umen."
+  negative: []
+tags:
+- semantic
+- projektion
+- abwehr
+- manipulation
+schema_version: '3.3'

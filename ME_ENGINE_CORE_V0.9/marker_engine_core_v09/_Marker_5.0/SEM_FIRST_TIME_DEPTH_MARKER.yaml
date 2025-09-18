@@ -1,0 +1,41 @@
+id: SEM_FIRST_TIME_DEPTH_MARKER
+frame:
+  signal:
+  - sag mal
+  - "h\xF6r zu"
+  - verstehst du
+  concept: Kommunikationsmuster
+  pragmatics: "Dialog f\xFChren"
+  narrative: exchange
+composed_of:
+- ATO_UNKNOWN
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Ich sag dir das zum ersten Mal: Ich habe Angst vor N\xE4he."
+- "Das hab ich noch nie jemandem erz\xE4hlt, aber ich habe schreckliche Angst, nicht\
+  \ gut genug zu sein."
+- "Ich k\xE4mpfe wirklich damit, mich wertvoll zu f\xFChlen."
+- "Bisher hab ich das f\xFCr mich behalten, aber ich sch\xE4me mich f\xFCr meine Panikattacken."
+- "Dir als Einzigem vertraue ich das an: Ich f\xFChle mich so zerbrechlich und allein,\
+  \ seit ich mein Verm\xF6gen verlor."
+- Das hab ich noch nie zugegeben, aber ich habe Angst, so zu werden wie mein Vater.
+- "Dir als Erstem sag ich das: Ich f\xFChle mich oft wie ein Betr\xFCger in meinem\
+  \ eigenen Leben."
+- "Ich habe Angst vor echter N\xE4he."
+- "Noch niemandem erz\xE4hlt: Ich sch\xE4me mich daf\xFCr, wie wenig ich bisher erreicht\
+  \ habe."
+- Ich habe Angst, wieder so tief verletzt zu werden.
+- "Ich sch\xE4me mich, wie arm wir fr\xFCher waren."
+- "Ich habe Angst, dass du mich verl\xE4sst, wenn du mein wahres Ich siehst."
+- Ich habe Angst, keine gute Mutter zu sein.
+tags:
+- communication

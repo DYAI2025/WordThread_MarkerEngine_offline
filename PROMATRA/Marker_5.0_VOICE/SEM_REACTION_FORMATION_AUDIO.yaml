@@ -1,0 +1,30 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: SEM_REACTION_FORMATION_AUDIO
+lang: de
+category: SEMANTIC
+description: "Reaktionsbildung (Audio): Lachen nahe negativem Inhalt."
+frame:
+  signal: ["Lachen bei negativem Inhalt (Nahfenster)"]
+  concept: "Reaktionsbildung (Audio)"
+  pragmatics: "Abwehr durch Gegenteil, Ironisierung"
+  narrative: "Inkongruenz"
+composed_of:
+  - ATO_LAUGHTER
+pattern:
+  - detect_class: incongruence
+    rule: "laughter near negative_content_token"
+scoring: { base: 0.64 }
+examples:
+  - "[lachen] Das war echt schlimm."
+  - "(lacht) Total daneben, haha."
+  - "Haha, eine Katastrophe."
+  - "[lachen] Voll blöd gelaufen."
+  - "(lacht) Richtig mies, oder?"
+  - "Haha … das tat weh."
+  - "[lachen] Schrecklich, ehrlich."
+  - "(lacht) So ein Mist."
+tags: [semantic, audio, reaction_formation]
+metadata:
+  type: SEM

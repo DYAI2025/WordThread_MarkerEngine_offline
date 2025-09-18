@@ -1,0 +1,27 @@
+id: ATO_EMOTIONAL_EXCLAMATION
+frame:
+  signal:
+  - starke Emotion
+  - "Gef\xFChlsausbruch"
+  - emotionale Reaktion
+  concept: Emotionale Eskalation
+  pragmatics: "Verst\xE4rkung des Konflikts"
+  narrative: "Gef\xFChlsausbruch"
+pattern:
+- (?i)unfair
+- (?i)hasse das
+- (?i)kannst du nicht
+- "(?i)unm\xF6glich"
+- "(?i)h\xF6r auf"
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- Das ist unfair, wie du mich behandelst!
+- Ich hasse das, ehrlich!
+- Das kannst du nicht einfach so machen!
+- "Unm\xF6glich! So redest du nicht mit mir."
+- "H\xF6r auf!"
+tags:
+- emotional

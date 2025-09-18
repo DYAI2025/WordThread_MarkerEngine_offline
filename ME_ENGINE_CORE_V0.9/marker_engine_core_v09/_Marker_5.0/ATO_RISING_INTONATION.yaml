@@ -1,0 +1,33 @@
+id: ATO_RISING_INTONATION
+schema_version: LD-3.3
+lang: de
+category: ATOMIC
+description: Atomic pattern for rising intonation at phrase end
+frame:
+  signal:
+  - F0 Rise > Threshold
+  concept: fragend
+  pragmatics: Intonation
+  narrative: audio
+detect_class:
+  module: prosody.intonation
+  params:
+    rise_semitones_min: 3
+    phrase_end_window_ms: 500
+examples:
+  positive:
+    - '"Wir gehen jetzt, oder?" (steigende Intonation)'
+    - '"Du kommst mit, ja?" (steigende Intonation)'
+    - '"Ist das dein Ernst?" (steigende Intonation)'
+    - '"Kannst du mir helfen?" (steigende Intonation)'
+    - '"Das ist doch nicht wahr?" (steigende Intonation)'
+    - '"Du bist sicher?" (steigende Intonation)'
+    - '"Soll ich das machen?" (steigende Intonation)'
+    - '"Ist alles in Ordnung?" (steigende Intonation)'
+    - '"Du verstehst mich?" (steigende Intonation)'
+    - '"Wir sehen uns morgen?" (steigende Intonation)'
+  negative: []
+tags:
+- intonation
+- audio
+- atomic

@@ -1,0 +1,54 @@
+id: CLU_SELF_PROTECTION_TACTICS
+lang: en
+category: CLUSTER
+description: Sustained self-protection/deception tactics (blame shifting + minimization)
+  within the window.
+frame:
+  signal:
+  - '''because of you'' + ''no big deal'' repeatedly'
+  concept: Defensive pattern
+  pragmatics: Evasion of responsibility, trust loss
+  narrative: Recurring protection script
+composed_of:
+- SEM_BLAME_SHIFTING
+- SEM_MINIMIZATION
+activation:
+  rule: AT_LEAST
+  params:
+    count: 3
+    window:
+      size: 7
+      unit: days
+scoring:
+  base: 1.7
+  weight: 1.25
+  decay: 0.02
+window:
+  days: 7
+examples:
+  positive:
+  - "Ich h\xE4tte das ja gemacht, aber du hast mich so gestresst. Au\xDFerdem war\
+    \ es doch gar nicht so wichtig."
+  - Das ist nur passiert, weil du mich provoziert hast. Jetzt reg dich nicht so auf,
+    es ist doch nichts Schlimmes passiert.
+  - "Wenn du nicht so kritisch w\xE4rst, h\xE4tte ich anders reagiert. Aber im Grunde\
+    \ ist es doch eine Lappalie."
+  - Deine Reaktion hat das Ganze erst zum Problem gemacht. Eigentlich war es eine
+    harmlose Bemerkung.
+  - "Ich konnte nicht anders, weil du mich unter Druck gesetzt hast. Aber lass uns\
+    \ das nicht gr\xF6\xDFer machen, als es ist."
+  - "Das Problem ist deine \xDCberempfindlichkeit. Normalerweise w\xE4re das gar kein\
+    \ Thema."
+  - Wegen dir habe ich die Geduld verloren. Aber es war ja nur eine Kleinigkeit.
+  - "Du hast mich dazu getrieben. Und jetzt \xFCbertreibst du die Konsequenzen ma\xDF\
+    los."
+  - "Das w\xE4re nicht passiert, wenn du mir mehr zugeh\xF6rt h\xE4ttest. Aber es\
+    \ ist wirklich keine gro\xDFe Sache."
+  - "Deine st\xE4ndigen Forderungen haben mich dazu gebracht. Aber am Ende ist doch\
+    \ kaum Schaden entstanden."
+  negative: []
+tags:
+- needs_review
+- cluster
+- tactics
+- gaslighting

@@ -1,0 +1,53 @@
+id: CLU_PREEMPTIVE_VICTIMIZATION
+version: '3.3'
+frame:
+  signal:
+  - "Vorwegnahme und Einschr\xE4nkung m\xF6glicher Reaktionen"
+  concept: "Pr\xE4ventive Opferpositionierung"
+  pragmatics: Kontrolle durch antizipierte Viktimisierung
+  narrative: preemptive_defense
+pattern: "(ich wei\xDF|sicher|wahrscheinlich) (du wirst|wirst du) .+ aber ich"
+anticipatory_markers:
+  prediction:
+  - du wirst denken
+  - wie immer
+  - bestimmt wieder
+  self_protection:
+  - "ich wei\xDF schon"
+  - sicher wirst du
+  - wahrscheinlich denkst du
+  qualifier:
+  - aber ich
+  - obwohl ich
+  - trotzdem muss ich
+activation:
+  rule: ANY
+  params:
+    count: 1
+    window:
+      size: 20
+      unit: messages
+window:
+  messages: 20
+scoring:
+  base: 2.8
+  weight: 0.84
+  decay: 0.015
+  formula: logistic
+psychological_indicators:
+- learned_helplessness
+- shame_avoidance
+- manipulation_through_vulnerability
+- preemptive_defense
+examples:
+- "Ich wei\xDF, du wirst sauer auf mich sein, aber ich muss dir etwas sagen"
+- "Du wirst wahrscheinlich denken, ich bin l\xE4cherlich, aber ich bin wirklich verletzt"
+- "Ich will dich nicht mit meinen Problemen bel\xE4stigen, aber ich k\xE4mpfe wirklich"
+- "Sicher wirst du wieder sagen, ich \xFCbertreibe, aber mir geht es schlecht"
+- Du denkst bestimmt, ich bin zu sensibel, aber das hat mich getroffen
+tags:
+- cognitive
+- victimization
+- preemptive
+- manipulation
+schema_version: '3.3'

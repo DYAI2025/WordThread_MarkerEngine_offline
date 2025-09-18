@@ -1,0 +1,36 @@
+id: SEM_MIRRORING_REQUEST
+frame:
+  signal:
+  - Spiegelung anfordern
+  concept: Spiegelung
+  pragmatics: Selbstreflexion
+  narrative: feedback
+composed_of:
+- ATO_REQUEST_FOR_FEEDBACK
+- ATO_SELF_OBSERVATION
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive:
+  - Wie wirkt das auf dich, wenn ich das sage?
+  - "Ich bin mir unsicher, wie ich r\xFCberkomme. Kannst du mir das spiegeln?"
+  - "Was h\xF6rst du in meinen Worten?"
+  - "Ich brauche eine Au\xDFenperspektive. Wie siehst du das?"
+  - Sag mir, was du wahrnimmst, wenn du mich so siehst.
+  - "Ich habe das Gef\xFChl, ich drehe mich im Kreis. Kannst du mir helfen, klarer\
+    \ zu sehen?"
+  - Spiegel mir mal, was du bei mir beobachtest.
+  - "Ich m\xF6chte, dass du mir zur\xFCckmeldest, wie mein Verhalten auf dich wirkt."
+  - "Ich verliere gerade den \xDCberblick. Was nimmst du wahr?"
+  - Ich brauche dein Feedback. Wie kommt das bei dir an?
+  negative: []
+tags:
+- mirroring

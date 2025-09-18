@@ -1,0 +1,39 @@
+activation:
+  params:
+    count: 1
+  rule: ANY
+category: ATOMIC
+description: Marker für Validierung durch den Therapeuten
+examples:
+  negative: []
+  positive:
+  - Das ist nachvollziehbar.
+  - Danke für das Teilen.
+  - Es ist okay, so zu fühlen.
+  - Das wäre für viele schwer.
+  - Ich kann verstehen, dass Sie sich so fühlen.
+  - Ihre Reaktion ist absolut verständlich.
+  - Das ist ein mutiger Schritt.
+  - Ich schätze Ihre Offenheit.
+  - Das ist gültig.
+  - Sie sind nicht allein damit.
+frame:
+  concept: legitimizing the experience
+  narrative: permission
+  pragmatics: safety / trust
+  signal:
+  - explicit validation/normalization
+id: ATO_VALIDATION_THERAPIST
+pattern:
+- (?i)das ist nachvollziehbar|that makes sense
+- (?i)danke f(ü|u)r das teilen|thanks for sharing
+- (?i)es ist okay, so zu f(ü|u)hlen|it's okay to feel that
+- (?i)das w(ä|ae)re f(ü|u)r viele schwer|many would find this hard
+scoring:
+  weight: 1.0
+tags:
+- atomic
+- therapist_move
+- validation
+- safety
+version: '3.4'

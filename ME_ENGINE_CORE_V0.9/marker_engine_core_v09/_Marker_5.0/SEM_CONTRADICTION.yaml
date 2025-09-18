@@ -1,0 +1,44 @@
+id: SEM_CONTRADICTION
+frame:
+  signal:
+  - andererseits
+  - aber
+  - doch
+  - gleichzeitig
+  - einerseits
+  - und doch
+  - Widerspruch
+  - Ambivalenz
+  - Zerrissenheit
+  concept: contradiction expression
+  pragmatics: signal conflicting attitudes
+  narrative: internal conflict
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY
+  params:
+    count: 1
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- Einerseits will ich dir helfen, andererseits habe ich selber genug Sorgen.
+- Ich liebe es hier, aber gleichzeitig macht es mich fertig.
+- "Ich m\xF6chte da hin, doch ich hab einfach keine Zeit."
+- "Ich unterst\xFCtze dich, aber ich kann nicht alles tragen."
+- Ich freue mich auf den Urlaub, doch irgendwie hab ich Bedenken.
+- Ich glaube an das Projekt, aber ich sehe Risiken.
+- Ich vertraue dir, und doch sorgt mich dein Verhalten.
+- "Ich sch\xE4tze dein Feedback, aber ich bin nicht \xFCberzeugt."
+- Ich sage Ja, aber mein Bauch sagt Nein.
+- "Ich bin daf\xFCr, ich bin dagegen, was ist richtig?"
+- Ich will mitmachen, aber ich habe Zweifel.
+- "Ich m\xF6chte helfen, aber ich muss zuerst meine eigenen Probleme l\xF6sen."
+- "Auf der einen Seite freue ich mich, andererseits habe ich Angst vor Ver\xE4nderungen."
+- "Ich bin bereit zu unterst\xFCtzen, aber nur unter bestimmten Bedingungen."
+- "Einerseits f\xFChle ich mich zu dir hingezogen, andererseits halte ich Abstand."
+- Ich finde die Idee gut, aber die Umsetzung bereitet mir Sorgen.
+tags:
+- contradiction
+- ambivalence

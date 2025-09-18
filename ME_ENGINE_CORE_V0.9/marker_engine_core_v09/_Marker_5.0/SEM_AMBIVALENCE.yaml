@@ -1,0 +1,25 @@
+id: SEM_AMBIVALENCE
+frame:
+  signal:
+  - "Widerspruch im Gef\xFChl oder Willen"
+  - Ambivalenz
+  - Zerrissenheit
+  concept: Ambivalenz
+  pragmatics: Zweifel, Unsicherheit, innere Zerrissenheit
+  narrative: "Konflikt zwischen Wunsch und Angst, zwischen N\xE4he und Distanz"
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- "Ich will wirklich, dass du bleibst, aber ein Teil von mir glaubt, dass eine Trennung\
+  \ besser f\xFCr uns w\xE4re."
+- Klar hab ich Bock auf den Urlaub! Aber mein Kontostand schreit gerade ganz laut
+  Nein.
+- "Ich bin hin- und hergerissen zwischen Bleiben und Gehen \u2013 ich wei\xDF nicht\
+  \ mehr weiter."
+- Ich liebe den Job, aber gleichzeitig zweifle ich jeden Tag daran.
+- "Ich sch\xE4tze Ihr Vertrauen in mich f\xFCr diese Bef\xF6rderung sehr, gleichzeitig\
+  \ habe ich Bedenken."

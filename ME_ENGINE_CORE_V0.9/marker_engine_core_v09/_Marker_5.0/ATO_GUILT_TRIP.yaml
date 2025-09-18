@@ -1,0 +1,18 @@
+id: ATO_GUILT_TRIP
+schema_version: LD-3.3
+lang: en
+category: ATOMIC
+description: Atomic pattern for guilt-inducing language
+frame:
+  signal: ["guilt induction"]
+  concept: "Guilt trip signal"
+  pragmatics: "lexical indicator"
+  narrative: "surface"
+pattern: ["(?i)\\b(disappointed|hurt me|ungrateful|selfish|after all|sacrificed)\\b"]
+examples:
+  - "I'm so disappointed in you."
+  - "You're really going to hurt me like this?"
+  - "How can you be so ungrateful?"
+  - "You're being selfish right now."
+  - "After all I've sacrificed for you."
+tags: [atomic, v3.3, guilt-trip, emotional-manipulation]

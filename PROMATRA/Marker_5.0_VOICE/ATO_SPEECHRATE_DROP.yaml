@@ -1,0 +1,28 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: ATO_SPEECHRATE_DROP
+lang: de
+category: ATOMIC
+description: "Sprechtempo fällt deutlich relativ zur Sprecherbasis (WPM ≤ −20%)."
+frame:
+  signal: ["WPM sinkt ≥20% ggü. Basis"]
+  concept: "Sprechtempo↓"
+  pragmatics: "Vorsicht/Planung, Problemindikation"
+  narrative: "Prosodie"
+pattern:
+  - detect_class: prosody
+    rule: "wpm_delta <= -0.20"
+activation_logic: "ANY 1"
+examples:
+  - "… (langsamer) Ich … denke … wir … sollten … warten."
+  - "Also … ich … weiß … nicht."
+  - "Können … wir … das … später … klären?"
+  - "Ich … äh … bin … unsicher."
+  - "Lass … uns … kurz … nachdenken."
+  - "Okay … hm … ich … prüfe das."
+  - "Vielleicht … ist … das … riskant."
+  - "Ich … brauche … einen … Moment."
+tags: [atomic, audio, prosody]
+metadata:
+  modality: audio

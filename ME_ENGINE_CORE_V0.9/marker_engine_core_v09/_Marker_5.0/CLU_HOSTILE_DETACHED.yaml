@@ -1,0 +1,47 @@
+activation:
+  params:
+    count: 1
+  rule: ANY
+category: CLUSTER
+composed_of:
+- SEM_CONFLICT_MACRO
+- SEM_CONFLICT_MICRO
+description: 'Feindselig–distanziertes Muster: hoher Verachtungsanteil mit anschließender
+  oder paralleler Distanz/Abbruch.'
+examples:
+- Sarkasmus/Häme häufen sich, danach Funkstille für Stunden/Tage.
+- Spott (🙄) im Streit, kurze Rechtfertigung, dann Gesprächsabbruch.
+- Mehrere herabsetzende Nachrichten, später kühle Ein-Wort-Antworten.
+- 'Makro-Eskalation mit Verachtung, anschließend: ''Wie du meinst.'''
+- Zunehmende Ironie/Spott, dann Rückzug in Schweigen.
+- Regelmäßig 'so peinlich' + '…' → Distanz verfestigt sich.
+- Spöttische Seitenhiebe über Tage, dann keine Reaktion mehr.
+filters:
+  require_any_atomic:
+  - ATO_GOTTMAN_CONTEMPT
+  - ATO_GOTTMAN_STONEWALL
+frame:
+  concept: Hostile–Detached Dyad
+  narrative: cold_loop
+  pragmatics: Chronische Entwertung + Distanz
+  signal:
+  - Wiederholte Verachtung + Makro-/Mikroeskalation, oft mit Rückzug
+id: CLU_HOSTILE_DETACHED
+lang: de
+last_updated: '2025-08-19'
+schema_version: LD-3.3
+scoring:
+  base: 2.1
+  decay: 0.01
+  formula: logistic
+  weight: 1.3
+tags:
+- cluster
+- conflict
+- gottman
+- hostile_detached
+- toxic
+version: '3.3'
+weights:
+  SEM_CONFLICT_MACRO: 0.7
+  SEM_CONFLICT_MICRO: 0.3

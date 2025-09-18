@@ -1,0 +1,25 @@
+id: MEMA_RAPPORT_DYNAMICS
+version: '1.0'
+category: META
+description: Dynamik des Rapports zwischen Gesprächspartnern
+frame:
+  signal: [rapport_indicators]
+  concept: Rapport Dynamics
+  pragmatics: Relationship quality
+  narrative: connection_flow
+examples:
+  positive:
+    - "Wir sind auf einer Wellenlänge."
+    - "Ich fühle mich dir sehr verbunden."
+    - "Unsere Kommunikation fließt reibungslos."
+    - "Ich spüre eine tiefe Verbindung zwischen uns."
+    - "Wir verstehen uns ohne viele Worte."
+    - "Es ist leicht, mit dir zu reden."
+    - "Ich fühle mich sicher und geborgen in deiner Gegenwart."
+    - "Wir ergänzen uns perfekt."
+    - "Es herrscht eine harmonische Atmosphäre."
+    - "Ich habe das Gefühl, wir sind ein gutes Team."
+  negative: []
+tags:
+  - rapport
+  - dynamics

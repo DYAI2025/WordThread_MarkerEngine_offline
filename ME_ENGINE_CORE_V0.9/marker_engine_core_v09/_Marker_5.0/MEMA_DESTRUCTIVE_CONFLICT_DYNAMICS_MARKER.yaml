@@ -1,0 +1,30 @@
+id: MEMA_DESTRUCTIVE_CONFLICT_DYNAMICS_MARKER
+frame:
+  signal:
+  - Meta-Syndrom aus indirekter Konfliktvermeidung
+  - Dominanzmuster
+  - destruktive Beziehungsstruktur
+  concept: Destruktive Konfliktdynamik
+  pragmatics: Meta-Analyse von destruktiven Konfliktmustern
+  narrative: Systemische Erkennung hochriskanter Beziehungsdynamiken
+composed_of:
+- CLU_SUSPICIOUS_BEHAVIOR
+- CLU_PSYCHOLOGICAL_DIGITAL_MANIPULATION
+- SEM_AGGRESSIVE_BEHAVIOR
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+examples:
+- "Person A feuert binnen zwei Tagen sieben passive Aggressions-Marker, Person B reagiert\
+  \ defensiv \u2192 Cluster aktiv, Meta l\xF6st aus."
+- "Dauerhaft destruktive Kritik und Machtbeschl\xFCsse von A \u2192 Dominance-Pattern\
+  \ aktiv \u2192 Meta meldet hochriskante Dynamik."
+- "Wechsel: Schuldumkehr-Schleife + Abwertung, dann Schweigen \u2192 beide Cluster\
+  \ aktiv, Meta >1."
+- "Chat-Analyse zeigt 4 Guilt-Twists, 3 Unilateral Decisions im Fenster \u2192 Meta."
+- "Sprint-Retro eskaliert: Attack, Withdrawal, Power Play \u2013 offene Diskussion\
+  \ unm\xF6glich \u2192 Meta."

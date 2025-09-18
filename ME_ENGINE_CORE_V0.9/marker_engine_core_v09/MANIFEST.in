@@ -1,0 +1,34 @@
+include README.md
+include LICENSE
+include CHANGELOG.md
+include SECURITY.md
+include CONTRIBUTING.md
+include CODE_OF_CONDUCT.md
+include .env.example
+include nginx.conf
+include docker-compose.yml
+include Dockerfile
+include Makefile
+include tox.ini
+include .pre-commit-config.yaml
+
+recursive-include _Marker_5.0 *.yaml
+recursive-include DETECT_ *.json
+recursive-include SCH_ *.json *.md
+recursive-include docs *.rst *.md
+recursive-include tests *.py
+
+exclude .DS_Store
+exclude .kombai
+exclude __pycache__
+exclude *.pyc
+exclude *.pyo
+exclude *.pyd
+exclude .pytest_cache
+exclude .mypy_cache
+exclude htmlcov
+exclude .coverage
+exclude coverage.xml
+exclude .env
+exclude .env.local
+exclude .env.production

@@ -1,0 +1,41 @@
+id: ATO_UNCLEAR_INTENTION
+frame:
+  signal:
+  - ich blick da nicht durch
+  - keine Ahnung, was hier abgeht
+  - ich verstehe gar nicht
+  - "alles wirkt so nebul\xF6s"
+  - ich kriege keinen klaren Eindruck
+  - "ich check\u2019s nicht"
+  - ich hab keinen Plan
+  - mir fehlt der Durchblick
+  - das ist mir zu schwammig
+  - "was soll ich daraus schlie\xDFen"
+  concept: unklare Absicht
+  pragmatics: absichtliche Verschleierung
+  narrative: "T\xE4uschung"
+pattern:
+- "(?i)\\b(ich blick da nicht durch|keine Ahnung, was hier abgeht|ich verstehe gar\
+  \ nicht|alles wirkt so nebul\xF6s|ich kriege keinen klaren Eindruck|ich check(?:'|e)?s\
+  \ nicht|ich hab keinen Plan|mir fehlt der Durchblick|das ist mir zu schwammig|was\
+  \ soll ich daraus schlie\xDFen)\\b"
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+  positive:
+  - Ich blick da nicht durch.
+  - Keine Ahnung, was hier abgeht.
+  - Ich verstehe gar nicht, was du von mir willst.
+  - "Alles wirkt so nebul\xF6s."
+  - Ich kriege keinen klaren Eindruck.
+  - Ich check's nicht.
+  - Ich hab keinen Plan.
+  - Mir fehlt der Durchblick.
+  - Das ist mir zu schwammig.
+  - "Was soll ich daraus schlie\xDFen?"
+  negative: []
+tags:
+- concealment
+- confusion

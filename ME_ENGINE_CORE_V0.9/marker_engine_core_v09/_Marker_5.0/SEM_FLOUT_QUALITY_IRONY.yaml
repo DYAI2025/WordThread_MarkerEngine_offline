@@ -1,0 +1,29 @@
+id: SEM_FLOUT_QUALITY_IRONY
+frame:
+  signal:
+  - "Ironie/Sarkasmus als Qualit\xE4ts-Versto\xDF"
+  concept: Gegenteilbehauptung lesbar machen
+  pragmatics: Implikatur erzwingen
+  narrative: antiphrase
+composed_of:
+- ATO_SARCASM_CUES
+- ATO_AMBIGUITY_QUOTES
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 2
+      unit: messages
+examples:
+- Ja, genau, ein 'sicherer' Plan.
+- Na klar, total 'stabil'.
+- "Ganz bestimmt 'schnell' gel\xF6st."
+- "Super, die \u201EExperten\u201C schon wieder."
+- Klar, 'robust' wie immer.
+tags:
+- humor
+- grice_quality
+- irony
+- semantics
+- v33

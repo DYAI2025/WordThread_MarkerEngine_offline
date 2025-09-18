@@ -1,0 +1,40 @@
+id: ATO_CONTRASTIVE_CONNECTOR_ABER
+version: '3.3'
+lang: de
+frame:
+  signal:
+  - Kontrast-Konnektor
+  concept: aber/trotzdem/dennoch
+  pragmatics: Wendung ins Belastende
+  narrative: contrast
+pattern:
+- (?i)\b(aber|trotzdem|dennoch)\b
+activation:
+  rule: ANY
+  params:
+    count: 1
+    window:
+      size: 20
+      unit: messages
+window:
+  messages: 20
+scoring:
+  base: 1.5
+  weight: 0.3
+  decay: 0.01
+  formula: logistic
+examples:
+- "\u2026 aber ich halte das nicht mehr aus."
+- "\u2026 trotzdem m\xFCsstest du heute noch \u2026"
+- "\u2026 dennoch w\xE4re es wichtig, dass du \u2026"
+- "Ich wei\xDF, du hast viel um die Ohren, aber \u2026"
+- "Kein Stress \u2013 trotzdem br\xE4uchte ich jetzt \u2026"
+- "Verstehe dich total, aber ich brauche \u2026"
+- "Alles entspannt, dennoch m\xFCsste das \u2026"
+- "Ist schon okay, trotzdem w\xE4re es gut \u2026"
+- "Klar, aber wenn du k\xF6nntest \u2026"
+- "Ja schon, dennoch ist es wichtig \u2026"
+tags:
+- ato
+- connector
+- contrast

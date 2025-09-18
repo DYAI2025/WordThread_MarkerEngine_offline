@@ -1,0 +1,22 @@
+id: MEMA_SELF_VICTIMIZATION_CYCLE
+schema_version: LD-3.3
+lang: en
+category: MEMA
+description: Meta marker for chronic self-victimization and learned helplessness patterns
+criteria: "Persistent pattern of self-victimization that resists change and maintains dysfunctional dynamics"
+composed_of:
+  - SEM_VALIDATION_SEEKING
+  - CLU_INDIRECT_CONFLICT_AVOIDANCE
+  - SEM_EMOTIONAL_OVERWHELM
+examples:
+  - "Chronic victim stance that resists all attempts at empowerment or change."
+  - "Self-victimization combined with blame of others for all negative outcomes."
+  - "Learned helplessness pattern that maintains dependency and avoids responsibility."
+  - "Victim identity so strong it prevents engagement with solutions or growth."
+  - "Pattern of creating crisis to maintain victim status and gain sympathy."
+  - "Workplace context where employee consistently presents as victim of circumstances."
+  - "Family system where member maintains victim role to manipulate family dynamics."
+  - "Therapeutic context showing resistance to change through persistent victimization."
+  - "Relationship pattern where victim stance is used to control partner behavior."
+  - "Long-term victimization cycle preventing personal growth and authentic relationships."
+tags: [mema, v3.3, self-victimization, learned-helplessness]

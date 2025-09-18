@@ -1,0 +1,44 @@
+id: ATO_JOY
+frame:
+  signal:
+  - ich freue mich
+  - super
+  - yay
+  - "gl\xFCcklich"
+  - mega
+  - hammer
+  - geil
+  - happy
+  concept: Freude
+  pragmatics: positive Valenz
+  narrative: Emotionsausdruck
+pattern:
+- "(?i)\\b(freue mich|super|yay|gl\xFCcklich|mega|hammer|geil|happy)\\b"
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- Ich freue mich so sehr!
+- Super gemacht!
+- "Yay, das ist gro\xDFartig!"
+- "Wie gl\xFCcklich ich gerade bin!"
+- Das macht mich sehr froh.
+- Yeah, cool, Mann!
+- Mega nice!
+- Ich bin echt begeistert!
+- Das ist der Hammer!
+- Einfach fantastisch!
+- Ich kann's kaum erwarten!
+- Besser geht's nicht!
+- Hab noch nie so was Tolles erlebt!
+- "Das zaubert mir ein L\xE4cheln ins Gesicht!"
+- "Ich f\xFChl mich wie auf Wolken!"
+- "So ein geiles Gef\xFChl!"
+- Man, das macht mich richtig happy!
+- I'm thrilled!
+- This is amazing!
+- Feeling so good right now!
+tags:
+- joy
+- happiness

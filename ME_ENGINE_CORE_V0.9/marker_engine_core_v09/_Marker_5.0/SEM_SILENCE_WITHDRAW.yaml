@@ -1,0 +1,45 @@
+id: SEM_SILENCE_WITHDRAWAL
+lang: en
+category: SEMANTIC
+description: 'Communicative withdrawal markers: silence/avoidance.'
+frame:
+  signal:
+  - "\u2026"
+  - doesn't matter
+  - no answer
+  - later/excuse
+  concept: Loss of contact surface
+  pragmatics: Conflict suppression
+  narrative: Dodging instead of clarifying
+composed_of:
+- ATO_SILENCE
+- ATO_EXCUSE
+scoring:
+  base: 1.2
+  weight: 0.95
+window:
+  messages: 6
+examples:
+  positive:
+  - '...'
+  - Ist egal.
+  - Keine Antwort.
+  - "Lass uns das sp\xE4ter besprechen."
+  - "Ich will dar\xFCber nicht reden."
+  - (Schweigen)
+  - Ich habe dazu nichts zu sagen.
+  - "Das f\xFChrt zu nichts."
+  - "Ich bin m\xFCde, lass uns das verschieben."
+  - "Ich habe jetzt keine Zeit daf\xFCr."
+  negative: []
+tags:
+- semantic
+- withdrawal
+- silence
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 4
+      unit: messages

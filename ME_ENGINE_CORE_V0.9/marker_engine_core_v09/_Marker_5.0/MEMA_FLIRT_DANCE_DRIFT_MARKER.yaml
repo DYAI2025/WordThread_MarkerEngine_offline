@@ -1,0 +1,79 @@
+id: MEMA_FLIRT_DANCE_DRIFT_MARKER
+frame:
+  signal:
+  - sag mal
+  - "h\xF6r zu"
+  - verstehst du
+  concept: Kommunikationsmuster
+  pragmatics: "Dialog f\xFChren"
+  narrative: exchange
+composed_of:
+- CLU_GENERIC_PATTERN
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 30
+      unit: messages
+scoring:
+  base: 2.0
+  weight: 1.5
+examples:
+- "Beide f\xFChren eine Art 'emotionale Zweitbeziehung' im Chat, die durch Geheimhaltung\
+  \ und extreme Stimmungsschwankungen zwischen Euphorie und Panik gekennzeichnet ist."
+- "Er schl\xE4gt vor, zusammen wegzufahren (SOFT_COMMITMENT), sagt aber im gleichen\
+  \ Satz, er sei 'nicht gut in sowas' (AMBIVALENCE) und dass 'niemand davon erfahren\
+  \ darf' (SECRET_BONDING)."
+- "Innerhalb einer Woche von 'Du bist der witzigste Mensch' zu 'Ich hab noch nie \xFC\
+  ber meine Kindheit gesprochen' und dann zu 'Ich bin \xFCberfordert, lass uns das\
+  \ Thema wechseln'."
+- "Die Konversation f\xFChlt sich an wie eine exklusive, geheime Welt (SECRET_BONDING),\
+  \ in der die Regeln (N\xE4he/Distanz) st\xE4ndig neu verhandelt werden (ADAPTIVE_POLARIZATION)."
+- "Erst wochenlanges Love-Bombing, dann ein pl\xF6tzlicher R\xFCckzug mit der Begr\xFC\
+  ndung 'Ich habe Angst', gefolgt von der Beteuerung, dass 'nur du mich verstehst'."
+- "St\xE4ndige Wechsel zwischen 'Ich will dich unbedingt sehen' und 'Ich wei\xDF nicht,\
+  \ ob das eine gute Idee ist', gepaart mit t\xE4glichem Kontakt und der Bitte, 'niemandem\
+  \ davon zu erz\xE4hlen'."
+- '- Donnerstag: "Ich musste gestern viel nachdenken. Niemand bringt mich so durcheinander
+  wie du.'
+- 'A: "Ich hab dich vermisst. Das ist unser Geheimnis, ok?'
+- 'B: "Was kannst du nicht?'
+- 'B: "Findest du? Ich finde es perfekt.'
+- "Tag 3: \"Sorry f\xFCr gestern. Hab an dich gedacht. Sag das blo\xDF niemandem.\"\
+  \ (SECRET_BONDING + SOFT_FLIRT)"
+- "Tag 1: \"Ich kann mit dir \xFCber alles reden.\" (RAPID_SELF_DISCLOSURE)"
+- 'B: "Ich glaub, wir sollten weniger schreiben." (ADAPTIVE_POLARIZATION)'
+- "B: \"Niemand wei\xDF, dass ich dir schreibe.\" (SECRET_BONDING)"
+- "B: \"Ja, nur Stress. Reden wir sp\xE4ter.\" (ADAPTIVE_POLARIZATION)"
+- "A: \"Ich erz\xE4hl dir das jetzt einfach: Ich sch\xE4me mich f\xFCr...\" (RAPID_SELF_DISCLOSURE)"
+- 'A: "Du bringst mich echt zum Lachen." (SOFT_FLIRT)'
+- "- Kurz davor der R\xFCckzug: \"Ich glaub, das wird mir zu viel.\" (ADAPTIVE_POLARIZATION)."
+- '*Szenario "Vermeidender Bindungsstil":*'
+- 'A: "Du verstehst mich besser als jeder andere." (SOFT_FLIRT)'
+- "- Dann eine Nachricht: \"Sorry, war nur viel los. Das mit uns ist besonders, das\
+  \ wei\xDF keiner.\" (SECRET_BONDING)."
+- "B: \"Ja, irgendwann. Aber sag blo\xDF niemandem, dass wir uns treffen wollen.\"\
+  \ (SECRET_BONDING)"
+- "A: \"Wir sollten das mal pers\xF6nlich besprechen.\" (SOFT_COMMITMENT)"
+- '*Woche 2: Ein Treffen wird vage in Aussicht gestellt, aber nie fixiert.*'
+- "A: \"Ich hab das noch nie jemandem erz\xE4hlt, aber ich hab Angst vor...\" (RAPID_SELF_DISCLOSURE)"
+- 'B: "Vielleicht ist das unser Geheimrezept.'
+- "A: \"Crazy, wir schreiben t\xE4glich, aber niemand wei\xDF davon."
+- "*Funkstille \u2192 pl\xF6tzlich 15-Minuten-Voicenote voller Sehnsucht* B: \"Ich\
+  \ hab dich vermisst, red mit mir."
+- "A: \"Ich f\xFChl mich bei dir sicher \u2026 und unruhig zugleich. Weird?"
+- 'B: "Hab Karten besorgt, sag niemandem, dass du mit mir gehst.'
+- "B: \"Brauche Luft. Hei\xDFt nicht, dass ich weg bin."
+- "A: \"Warum ziehst du dich zur\xFCck, wenn\u2019s grad intensiv wird?"
+- "B: \"Wie definierst du \u203Awir\u2039 eigentlich?"
+- "A: \"Fun-Fact: Ich erz\xE4hl dir grad Dinge, die nicht mal meine beste Freundin\
+  \ wei\xDF."
+- "T\xE4glicher Meme-Ping, n\xE4chtliche Tief-Voicenote, heimliches Treffen \u2013\
+  \ aber 'wir lassen"
+- "Viermal Deep Talk in acht Tagen, dann Funkstille, dann 'Du fehlst mir' \u2013 alles\
+  \ im"
+- "Gemeinsame Playlist namens \u2018Nobody knows\u2019, t\xE4gliche Updates, aber\
+  \ kein offizieller"
+tags:
+- communication

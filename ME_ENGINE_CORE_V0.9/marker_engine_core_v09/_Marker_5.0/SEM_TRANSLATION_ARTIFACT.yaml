@@ -1,0 +1,42 @@
+id: SEM_TRANSLATION_ARTIFACT
+frame:
+  signal:
+  - falsche Grammatik
+  - "w\xF6rtliche \xDCbersetzung"
+  - "ungew\xF6hnliche Phrasierung"
+  concept: "\xDCbersetzungsartefakt"
+  pragmatics: Inkonsistenz, Betrugsrisiko, sprachliche Unbeholfenheit
+  narrative: "Verr\xE4terische Sprachmuster durch automatische \xDCbersetzung"
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- Ich hoffe, dich bald zu umarmen mit meinen Armen.
+- "Du bist eine Frau von hoher Qualit\xE4t."
+- "Meine Gef\xFChle f\xFCr dich sind wie Feuer brennen."
+- "Bitte senden Sie mir das Geld f\xFCr die Maschine Reparatur."
+- Ich mache Arbeit als Ingenieur auf Meer.
+- Ich bin ein Mann von guter Moral und Kirche.
+- "Mein Herz ist springen f\xFCr dich."
+- "Ich bin sehr allein hier ohne eine Familie zu k\xFCmmernd."
+- Du bist meine Sonne scheinen in den Tag.
+- Lass uns machen eine Zukunft zusammen.
+- Ich schicke dir Kuss auf deine Lippe.
+- "Du hast ein L\xE4cheln wie ein Engel von Gott."
+- Ich bin ein ehrlicher Mann, ich mache kein Betrug zu dir.
+- Meine Liebe, ich bin warten auf deine Antwort Brief.
+- Ich habe Schmerz in meinem Kopf wegen der Sorge.
+- "Ich m\xF6chte dich treffen in Person Gesicht."
+- "Du bist die Frau meiner Tr\xE4ume in der Nacht."
+- "Mein Job ist sehr Gefahr, aber ich mache es f\xFCr uns."
+- "Bitte schicke mir das Geld f\xFCr das Essen zu kaufen."
+- Ich liebe dich mehr als das Leben selbst tut.
+tags:
+- translation
+- artefact
+- fraud
+- sprachmuster
+- forensik
+composed_of:
+- ATO_PLACEHOLDER

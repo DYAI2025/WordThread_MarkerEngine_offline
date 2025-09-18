@@ -1,0 +1,33 @@
+id: ATO_UNCERTAINTY_PHRASE
+lang: de
+category: ATOMIC
+description: "Dr\xFCckt Unsicherheit oder Unentschlossenheit aus."
+frame:
+  signal:
+  - vielleicht
+  - mal sehen
+  - "wei\xDF nicht"
+  - "k\xF6nnte sein"
+  - bin mir nicht sicher
+  concept: Unklarheit
+  pragmatics: "Z\xF6gern ausdr\xFCcken"
+  narrative: Unentschlossenheit
+pattern:
+- (?i)\bvielleicht\b
+- (?i)\bmal sehen\b
+- "(?i)\\bwei\xDF nicht\\b"
+- "(?i)\\bk\xF6nnte sein\\b"
+- (?i)\bbin mir nicht sicher\b
+examples:
+- "Vielleicht mache ich das sp\xE4ter."
+- Mal sehen, ob das klappt.
+- "Ich wei\xDF nicht genau, ob ich dabei bin."
+- "K\xF6nnte sein, dass ich nicht schaffe."
+- Bin mir da gerade nicht sicher.
+tags:
+- uncertainty
+- atomic
+activation:
+  rule: ANY
+  params:
+    count: 1

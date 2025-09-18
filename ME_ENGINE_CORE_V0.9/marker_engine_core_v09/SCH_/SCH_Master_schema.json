@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/schemas/marker/master/3.4",
+  "title": "Marker Master Schema – Lean-Deep 3.4",
+  "version": "3.4",
+  "files_review": [
+    {
+      "file": "relation_analyse_schema.json",
+      "role": "Beispiel-Analyse-Output",
+      "keep": true,
+      "required_fixes": []
+    },
+    {
+      "file": "schema_builder_app.jsx",
+      "role": "GUI-Prototype",
+      "keep": true,
+      "required_fixes": [
+        "AJV-Validation gegen SCH_marker.schema.v3.2.json integrieren",
+        "Präfix-Migration (slugify) & pattern→array-Normalisierung",
+        "Dual-Export (JSON+YAML)",
+        "Plugin-Hook (plugins/*.js)"
+      ]
+    }
+  ],
+  "required_templates": [
+    "schemas/SCH_marker.schema.v3.2.json",
+    "schemas/SCH_fraud-markers.schema.json",
+    "templates/ATO.yaml",
+    "templates/SEM.yaml",
+    "templates/CLU.yaml",
+    "templates/MEMA.yaml"
+  ]
+}

@@ -1,0 +1,39 @@
+id: SEM_PROCESS_STRUCTURE
+frame:
+  signal:
+  - erstens
+  - "n\xE4chster punkt"
+  - zusammenfassend
+  - "abschlie\xDFend"
+  - "schritt f\xFCr schritt"
+  concept: Ablaufstruktur
+  pragmatics: Meta-Kommunikation
+  narrative: Strukturierung
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive:
+  - "Erstens m\xF6chte ich sagen, dass... Zweitens..."
+  - "Der n\xE4chste Punkt, den ich ansprechen m\xF6chte, ist..."
+  - "Zusammenfassend l\xE4sst sich sagen, dass..."
+  - "Abschlie\xDFend m\xF6chte ich noch erw\xE4hnen, dass..."
+  - "Lassen Sie uns das Schritt f\xFCr Schritt durchgehen."
+  - "Zun\xE4chst einmal m\xFCssen wir..."
+  - "Dar\xFCber hinaus gibt es noch einen weiteren Aspekt."
+  - "Um das Ganze abzuschlie\xDFen,..."
+  - "Ich m\xF6chte das in drei Teile gliedern."
+  - Bevor wir weitermachen, lassen Sie uns das bisherige zusammenfassen.
+  negative: []
+tags:
+- meta_communication
+- structuring

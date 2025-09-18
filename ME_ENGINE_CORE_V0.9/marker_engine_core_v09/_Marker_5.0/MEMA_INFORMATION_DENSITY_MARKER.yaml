@@ -1,0 +1,23 @@
+activation:
+  params:
+    count: 1
+  rule: ANY
+composed_of:
+- SEM_AGGRESSIVE_BEHAVIOR
+- SEM_FOGGING
+- CLU_DIGITAL_MANIPULATION
+examples:
+- 50+ Nachrichten in einer Stunde → Meta detektiert Informationsüberflutung.
+- Kommunikationsdichte überschreitet normale Parameter → System aktiviert Filterung.
+- 'Meta-Analyse zeigt: 200% über durchschnittlicher Nachrichtenfrequenz.'
+- 'Algorithmus erkennt: Informations-Bombardement statt normaler Konversation.'
+- 'Density-Marker aktiviert Schutzfunktion: ''Kommunikationspause empfohlen''.'
+frame:
+  concept: Informationsdichte-Analyse
+  narrative: Bewertung von Informationsfluss und -dichte
+  pragmatics: Meta-Analyse der Kommunikationsintensität
+  signal:
+  - Informationsdichte
+  - Kommunikationsvolumen
+  - Nachrichtenhäufigkeit
+id: MEMA_INFORMATION_DENSITY_MARKER

@@ -1,0 +1,40 @@
+activation:
+  params:
+    count: 1
+  rule: ANY
+category: ATOMIC
+description: Marker für das Herunterspielen von Themen
+examples:
+  negative: []
+  positive:
+  - Ach nee, ist schon gut.
+  - Lass mal, ist nicht so wichtig.
+  - Egal, vergiss es.
+  - It's fine, forget it.
+  - Never mind.
+  - Ist doch nicht der Rede wert.
+  - Das ist nur eine Kleinigkeit.
+  - Kein Problem.
+  - Alles in Ordnung.
+  - Mach dir keine Gedanken.
+frame:
+  concept: topic dismissal
+  narrative: turning away
+  pragmatics: avoidance / de-escalation by minimization
+  signal:
+  - downplaying after raising a topic
+id: ATO_DISMISSIVE_DOWNPLAY
+pattern:
+- (?i)ach nee, (ist|war) schon gut
+- (?i)lass (mal|das), (nicht so wichtig|ist gut)
+- (?i)egal, vergiss es
+- (?i)it's fine, forget it
+- (?i)never mind
+scoring:
+  weight: 1.0
+tags:
+- atomic
+- downplay
+- avoidance
+- dismissal
+version: '3.4'

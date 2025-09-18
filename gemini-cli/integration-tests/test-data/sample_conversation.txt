@@ -1,0 +1,6 @@
+This is a sample text file for the integration test. It contains a simple conversation that the PROMATRA module will parse.
+
+Speaker A: Hello, how is the project going?
+Speaker B: It's going well. We are on track to meet the deadline.
+Speaker A: Great to hear. Any blockers?
+Speaker B: No, everything is clear.

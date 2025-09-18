@@ -1,0 +1,60 @@
+id: ATO_FEELING_CONNECTION
+lang: de
+category: ATOMIC
+description: "Detektiert Phrasen, die ein Gef\xFChl von Verbundenheit oder emotionaler\
+  \ N\xE4he direkt ausdr\xFCcken."
+frame:
+  signal:
+  - "Gef\xFChl von Verbundenheit"
+  - "emotionale N\xE4he"
+  - connectedness
+  concept: Emotionale Verbindung
+  pragmatics: "Bindungsst\xE4rkung, Zugeh\xF6rigkeit"
+  narrative: connection
+pattern:
+- "(?i)ich f\xFChle mich dir verbunden"
+- "(?i)ich sp\xFCre eine verbindung zu dir"
+- (?i)wir sind (so )?eng verbunden
+- (?i)uns verbindet etwas besonderes
+- "(?i)mit dir f\xFChle ich mich ganz"
+- "(?i)ich f\xFChle mich zugeh\xF6rig"
+- (?i)mit dir bin ich zuhause
+- "(?i)bei dir f\xFChle ich mich angekommen"
+- "(?i)es f\xFChlt sich vertraut an mit dir"
+- (?i)zwischen uns stimmt die chemie
+- (?i)das verbindet uns
+examples:
+- "Ich f\xFChle mich dir sehr verbunden."
+- Mit dir bin ich zuhause.
+- "Ich sp\xFCre eine besondere Verbindung zwischen uns."
+- "Bei dir f\xFChle ich mich angekommen."
+- Uns verbindet etwas, das ich mit niemand anderem habe.
+- "Mit dir f\xFChle ich mich ganz."
+- "Es f\xFChlt sich vertraut an mit dir."
+- "Ich f\xFChle mich zugeh\xF6rig, wenn wir zusammen sind."
+- Zwischen uns stimmt einfach die Chemie.
+- Das verbindet uns auf einer tiefen Ebene.
+- "Die Zeit gestern mit dir war sehr sch\xF6n, ich habe mich lange nicht mehr so gut\
+  \ unterhalten, danke!"
+- Immer wenn du da bist, werde ich ganz ruhig und entspannt haha, deine Gegenwart
+  ist sehr beruhigend.
+- Als wir uns gesehen hatten, war selbst das zusammen Schweigen mit dir etwas Besonderes.
+- "Ich f\xFChle mich bei dir immer so wohl, als ob ich nach Hause komme."
+tags:
+- verbindung
+- "n\xE4he"
+- bindung
+- connection
+- atomic
+window:
+  messages: 7
+scoring:
+  base: 1.0
+  weight: 1.0
+  decay: 0.0
+  formula: linear
+schema_version: '3.2'
+activation:
+  rule: ANY
+  params:
+    count: 1

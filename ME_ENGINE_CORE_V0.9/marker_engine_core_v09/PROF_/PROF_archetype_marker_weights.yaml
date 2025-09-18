@@ -1,0 +1,39 @@
+# =====================================================================
+# archetype_marker_weights.yaml   –   Lean-Deep 3.2-kompatibel
+# =====================================================================
+#
+#   Weist jedem Archetypen eine gewichtete Liste von Marker-IDs zu.
+#   IDs tragen jetzt das 4-Buchstaben-Präfix (ATO_/SEM_/CLU_/MEMA_).
+#   Gewicht ∈ 0-1, Summe pro Archetyp darf > 1 sein.
+#
+# ---------------------------------------------------------------------
+
+archetype_weights:
+
+  CAREGIVER:
+    - id: SEM_EMPATHIC_VALIDATION
+      weight: 0.60
+    - id: ATO_WARM_TONE
+      weight: 0.25
+    - id: CLU_SUPPORT_LOOP
+      weight: 0.40
+
+  TRICKSTER:
+    - id: SEM_SARCASM_SUBTLE
+      weight: 0.55
+    - id: ATO_IRONIC_EMOJI
+      weight: 0.30
+    - id: CLU_RELATIONAL_DESTABILIZATION_LOOP
+      weight: 0.35
+
+  HERO:
+    - id: SEM_CONFIDENT_PROJECTION
+      weight: 0.50
+    - id: ATO_POWER_PHRASE
+      weight: 0.20
+    - id: MEMA_SOLUTION_DRIVEN_PHASE
+      weight: 0.45
+
+metadata:
+  schema_version: 3.2
+  updated_at: "2025-08-03T22:45:00Z"

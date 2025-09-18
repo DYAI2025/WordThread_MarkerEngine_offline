@@ -1,0 +1,49 @@
+id: CLU_THERAPEUTIC_MIRRORING
+lang: en
+category: CLUSTER
+description: Development via reflective distance + external mirroring while negotiating
+  boundaries.
+frame:
+  signal:
+  - outside view
+  - mirroring requested
+  - boundaries set
+  concept: Therapeutic mirroring
+  pragmatics: Self-clarification, co-regulation
+  narrative: Growth through reflection
+composed_of:
+- SEM_REFLECTIVE_BOUNDARY_SETTING
+- SEM_MIRRORING_REQUEST
+scoring:
+  base: 1.6
+  weight: 1.1
+  decay: 0.005
+window:
+  messages: 10
+examples:
+  positive:
+  - "K\xF6nnen Sie mir spiegeln, wie das bei Ihnen ankommt?"
+  - "Ich brauche gerade eine Au\xDFenperspektive. Wie sehen Sie das?"
+  - "Ich setze hier eine Grenze, aber ich m\xF6chte verstehen, wie mein Standpunkt\
+    \ auf Sie wirkt."
+  - "Sagen Sie mir, was Sie h\xF6ren, wenn ich das sage."
+  - "Ich m\xF6chte, dass Sie mir zur\xFCckmelden, was Sie bei mir wahrnehmen."
+  - "Ich f\xFChle mich unsicher. K\xF6nnen Sie mir helfen, meine Gedanken zu sortieren,\
+    \ indem Sie sie wiedergeben?"
+  - Das ist mein Standpunkt. Wie kommt das bei Ihnen an?
+  - Ich brauche eine Spiegelung, um mich selbst besser zu verstehen.
+  - "Bevor wir weitermachen, k\xF6nnen Sie mir sagen, was Sie gerade bei mir sehen?"
+  - "Ich merke, ich brauche eine R\xFCckmeldung. Was nehmen Sie wahr?"
+  negative: []
+tags:
+- needs_review
+- cluster
+- reflection
+- boundaries
+activation:
+  rule: AT_LEAST
+  params:
+    count: 2
+    window:
+      size: 10
+      unit: messages

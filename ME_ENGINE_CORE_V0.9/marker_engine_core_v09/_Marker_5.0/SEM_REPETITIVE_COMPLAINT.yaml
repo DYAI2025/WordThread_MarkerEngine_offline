@@ -1,0 +1,42 @@
+activation:
+  params:
+    count: 1
+  rule: ANY
+examples:
+- Es ist immer wieder das gleiche mit dir und deiner Unpünktlichkeit.
+- Schon wieder dieses Thema – ich dachte, wir hätten es längst geklärt.
+- Nicht schon wieder musst du mich daran erinnern, ich weiß es doch.
+- Jedes Mal dasselbe Drama, wenn du zu spät bist.
+- Wir hatten das doch schon besprochen, warum redest du immer noch davon?
+- Immer wieder fängst du damit an.
+- Wie so oft kommst du zu spät.
+- Zigmal gesagt – es ändert sich nichts.
+- Wieso drehen wir uns ständig im Kreis?
+- Es wiederholt sich jedes Wochenende.
+frame:
+  concept: Chronifizierung eines Konflikts
+  narrative: Wiederholung
+  pragmatics: Frust/Druckaufbau durch Rekurrenz
+  signal:
+  - wiederholte Beschwerde
+  - Thema kehrt immer wieder
+id: SEM_REPETITIVE_COMPLAINT
+justification: Temporäre SEM-Definition auf Pattern-Basis; ATO-Mapping folgt (v3.3-Ausnahme).
+meta:
+  created_at: '2025-07-23T01:07:11.156251'
+  created_by: FRAUSAR_GUI_v2
+  schema_version: '3.3'
+  semantische_grabber_id: AUTO_SEM_20250723_F191
+  source_version: '1.0'
+pattern:
+- immer wieder
+- schon wieder
+- jedes Mal dasselbe
+- wir hatten das doch schon
+- ständig das gleiche
+tags:
+- needs_review
+- sem_composition_exception
+- complaint
+- repetition
+version: '3.3'

@@ -1,0 +1,30 @@
+{
+  "id": "SCH_FREUNDSCHAFT_V1",
+  "description": "Schema zur Analyse von platonischen Freundschaftsdynamiken.",
+  "weights": {
+    "default": 1.0,
+    "marker_groups": [
+      {
+        "group_name": "CONNECTION_SUPPORT",
+        "markers": ["ATO_MUTUAL_SUPPORT", "ATO_SHARED_EXPERIENCE", "SEM_POSITIVE_RESONANCE"],
+        "weight": 1.5 
+      },
+      {
+        "group_name": "BOUNDARIES_AUTONOMY",
+        "markers": ["ATO_BOUNDARY_SETTING", "SEM_AUTONOMY_RESPECT"],
+        "weight": 1.3
+      },
+      {
+        "group_name": "CONFLICT",
+        "markers": ["ATO_ACCUSATION", "ATO_DEFENSE", "SEM_UNRESOLVED_ISSUE"],
+        "weight": 1.0
+      },
+      {
+        "group_name": "ROMANTIC_IRRELEVANT",
+        "markers": ["ATO_FLIRTATION", "SEM_ROMANTIC_ESCALATION", "ATO_JEALOUSY"],
+        "weight": 0.0 
+      }
+    ]
+  },
+  "notes": "Priorisiert Verbindungs- und Autonomie-Marker. Romantische Marker sind deaktiviert."
+}

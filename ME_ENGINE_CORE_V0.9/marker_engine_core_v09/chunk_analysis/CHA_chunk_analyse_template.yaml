@@ -1,0 +1,44 @@
+marker_name: chunk_analyse_template
+# Chunk-Analyse-Template (Vorlage)
+chunk_id: <ID oder Zeitstempel>
+zeit: <Datum/Uhrzeit>
+zeitspanne: <von-bis>
+beteiligte: [<Name1>, <Name2>, ...]
+titel: <Kurzer Titel der Analyse>
+beschreibung: >
+  <Ein Satz zum Fokus: z.B. "Analyse der Drift-, Repair- und Ritualmarker im Kontext eines Konflikts.">
+marker_auswertung:
+  - marker_id: <MARKER_NAME>
+    cluster: <Cluster/Meta-Marker, falls relevant>
+    hits: <Anzahl Treffer>
+    beispiele:
+      - "<Beispiel 1 aus dem Text>"
+      - "<Beispiel 2 ...>"
+      - "<Beispiel 3 ...>"
+    bewertung: <Kurze Einschätzung: Häufung, Rückgang, Korrelation ...>
+driftachsen:
+  - name: <Driftachse>
+    veränderung: <z.B. "Anstieg", "Abfall", "Stabil", "Sprunghaft">
+    trend: <z.B. "Positiv", "Negativ", "Neutral">
+    beispielturns: [<Turn1>, <Turn2>]
+archetypen:
+  - person: <Name>
+    aktive_archetypen:
+      - <Archetyp 1>
+      - <Archetyp 2>
+      - <Archetyp 3>
+    beispielmarker: [<MARKER_1>, <MARKER_2>]
+kombianalyse:
+  methoden: [Archetypen, Driftachsen, Marker-Heatmap, Repair-Analyse, ...]
+  zentrale_narrative: >
+    <Erzählung, wie sich die Methoden ergänzen und was sie gemeinsam zeigen.>
+change_points:
+  - zeitpunkt: <Datum/Turn>
+    ereignis: <Beschreibung, z.B. "Konflikt eskaliert", "Versöhnung", "Drift beginnt">
+    marker: [<MARKER_1>, <MARKER_2>]
+meta_reflexion:
+  beobachtung: >
+    <Kurze Systemreflexion – z.B. "Trotz Drift bleiben Repair-Impulse präsent, System zeigt hohe Resilienz.">
+
+kategorie: UNCATEGORIZED
+tags: [needs_review]

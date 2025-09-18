@@ -1,0 +1,30 @@
+id: CLU_ATTACHMENT_STYLE_AVOIDANT_MARKER
+frame:
+  signal:
+  - brauche Abstand
+  - muss allein
+  - keine Zeit
+  concept: Vermeidende Bindung
+  pragmatics: Distanz schaffen
+  narrative: withdrawal
+composed_of:
+- SEM_GENERIC_PATTERN
+activation:
+  rule: AT_LEAST
+  params:
+    count: 2
+    window:
+      size: 5
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Elterliche Abwesenheit wird n\xFCchtern, ohne Emotion, erw\xE4hnt."
+- Lob wird als unwichtig oder peinlich dargestellt.
+- Bindungen zu Freunden wichtiger als zu Familie.
+- "Konflikte werden durch R\xFCckzug gel\xF6st, nicht durch Dialog."
+- "Erfolg wird auf eigene Leistung, nie auf Unterst\xFCtzung zur\xFCckgef\xFChrt."
+- Eltern werden sachlich, aber distanziert beschrieben.
+tags:
+- attachment

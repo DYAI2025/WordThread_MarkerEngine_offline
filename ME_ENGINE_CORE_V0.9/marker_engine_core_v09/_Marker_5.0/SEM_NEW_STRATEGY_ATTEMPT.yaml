@@ -1,0 +1,32 @@
+id: SEM_NEW_STRATEGY_ATTEMPT
+frame:
+  signal:
+  - let's try
+  - new approach
+  - alternative plan
+  - different tactic
+  - how about we
+  concept: strategy attempt
+  pragmatics: proposal of new strategy
+  narrative: innovation in interaction
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Wie w\xE4re es, wenn wir dieses Mal einen anderen Weg gehen?"
+- "Let\u2019s try a different approach this time."
+- "Vielleicht k\xF6nnten wir es mal anders angehen."
+- How about we test a new strategy for our negotiation?
+- Lass uns einen alternativen Plan entwickeln.
+tags:
+- strategy
+- innovation

@@ -1,0 +1,33 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: SEM_SHAME_PROSODY
+lang: de
+category: SEMANTIC
+description: "Prosodische Scham: Lautheit↓, Flattening, lange Pausen, Seufzer im Nahfenster."
+frame:
+  signal: ["≥2 Signale: Intensity↓, F0-Varianz↓, lange Pause, Seufzer"]
+  concept: "Scham (Prosodie)"
+  pragmatics: "Rückzug, Gesichtsverlust minimieren"
+  narrative: "Prosodische Bündelung"
+composed_of:
+  - ATO_INTENSITY_DIP
+  - ATO_F0_VARIANCE_LOW
+  - ATO_PAUSE_LONG
+  - ATO_SIGH
+pattern:
+  - detect_class: count
+    rule: ">=2 of [INTENSITY_DIP, F0_VARIANCE_LOW, PAUSE_LONG, SIGH] within 2 turns"
+scoring: { base: 0.70 }
+examples:
+  - "(leiser) Tut mir leid … [Pause] (flach) Ja. (seufzt)"
+  - "(gedämpft) Ich … [Pause] äh … (flach) sorry."
+  - "(leise) War nicht gut … (flat) hm … [Pause]"
+  - "(seufzt) Okay … (leiser) ich probier’s neu … (flat)"
+  - "(gedämpft) Peinlich … [Pause] (flach) weiter."
+  - "(leiser) Sorry … (flat) schon gut … [Pause]"
+  - "(seufzt) Verstanden … (gedämpft) passt."
+  - "(flat) Ich melde mich … [Pause] (leise) später."
+tags: [semantic, audio, shame]
+metadata:
+  type: SEM

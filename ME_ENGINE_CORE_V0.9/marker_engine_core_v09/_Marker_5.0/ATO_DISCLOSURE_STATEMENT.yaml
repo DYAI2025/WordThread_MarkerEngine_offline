@@ -1,0 +1,40 @@
+activation:
+  params:
+    count: 1
+  rule: ANY
+category: ATOMIC
+description: Marker für persönliche Offenbarungen und Selbstoffenlegung
+examples:
+  negative: []
+  positive:
+  - Ich habe niemandem gesagt, dass ich mich so fühle.
+  - Zum ersten Mal sage ich das laut.
+  - Ich traue mich kaum, das zu sagen.
+  - Ehrlich gesagt, ich bin sehr einsam.
+  - Ich muss Ihnen etwas gestehen.
+  - Das ist ein Geheimnis, das ich noch nie geteilt habe.
+  - Ich fühle mich sehr verletzlich, wenn ich das sage.
+  - Ich habe Angst, was Sie denken werden, aber ich muss es sagen.
+  - Das ist sehr persönlich, aber ich möchte es Ihnen erzählen.
+  - Ich öffne mich Ihnen jetzt.
+frame:
+  concept: opening up
+  narrative: reveal
+  pragmatics: rapport / trust indicator
+  signal:
+  - new personal information
+  - self-disclosure
+id: ATO_DISCLOSURE_STATEMENT
+pattern:
+- (?i)ich habe niemandem gesagt|i haven't told anyone
+- (?i)zum ersten mal sage ich|for the first time i'm saying
+- (?i)ich traue mich kaum zu sagen|i hardly dare to say
+- (?i)ehrlich gesagt|honestly,
+scoring:
+  weight: 1.0
+tags:
+- atomic
+- disclosure
+- openness
+- rapport_signal
+version: '3.4'

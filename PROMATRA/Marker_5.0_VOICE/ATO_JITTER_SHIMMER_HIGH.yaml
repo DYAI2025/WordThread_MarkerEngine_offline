@@ -1,0 +1,28 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: ATO_JITTER_SHIMMER_HIGH
+lang: de
+category: ATOMIC
+description: "Erhöhte Stimminstabilität (Jitter/Shimmer) relativ zur Sprecherbasis."
+frame:
+  signal: ["Jitter/Shimmer ↑"]
+  concept: "Stimminstabilität"
+  pragmatics: "Erregung, Unsicherheit, Stress"
+  narrative: "Stimmqualität"
+pattern:
+  - detect_class: voice
+    rule: "jitter_z >= 0.8 OR shimmer_z >= 0.8"
+activation_logic: "ANY 1"
+examples:
+  - "(stimmzittern) Ich… äh… versuche das."
+  - "(unstet) Ich weiß nicht…"
+  - "(zittrig) Okay… machen wir’s so."
+  - "(unstabil) Hm… vielleicht."
+  - "(zitternd) Tut mir leid."
+  - "(unstet) Ich… kann kurz warten."
+  - "(zittrig) Alles gut… denke ich."
+  - "(unstabil) Ja… passt."
+tags: [atomic, audio, voice]
+metadata:
+  modality: audio

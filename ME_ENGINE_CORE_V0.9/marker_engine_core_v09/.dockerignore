@@ -1,0 +1,56 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.kombai/
+Thumbs.db
+
+# Documentation
+docs/_build/
+*.md
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Development
+.pre-commit-config.yaml
+tox.ini
+Makefile
+.github/
+
+# Tests
+tests/
+test_*.py
+*_test.py
+
+# CI/CD
+.github/
+
+# Docker
+Dockerfile
+docker-compose.yml
+nginx.conf

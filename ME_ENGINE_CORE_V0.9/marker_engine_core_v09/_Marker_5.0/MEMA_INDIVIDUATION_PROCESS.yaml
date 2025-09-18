@@ -1,0 +1,37 @@
+id: MEMA_INDIVIDUATION_PROCESS
+version: '3.3'
+frame:
+  signal:
+  - Individuationsprozess mit Selbsterkenntnis
+  concept: Psychologische Individuation
+  pragmatics: "Pers\xF6nlichkeitsentwicklung"
+  narrative: individuation
+composed_of:
+- CLU_THERAPEUTIC_AWARENESS
+- CLU_DEFENSIVE_RETREAT
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 30
+      unit: messages
+window:
+  messages: 30
+scoring:
+  base: 3.0
+  weight: 2.0
+  decay: 0.01
+  formula: logistic
+examples:
+- "L\xE4ngerer Prozess von Selbsterkenntnis, R\xFCckzug, Integration und Wachstum"
+- Zyklische Bewegung zwischen therapeutischer Einsicht und defensivem Schutz
+- 'Entwicklungsprozess: Vom unbewussten Agieren zur bewussten Selbstgestaltung'
+- 'Individuationsweg: Muster erkennen, durcharbeiten, transzendieren'
+- "Pers\xF6nlichkeitsentwicklung durch wiederholte Zyklen von \xD6ffnung und Schutz"
+tags:
+- meta
+- individuation
+- entwicklung
+- prozess
+schema_version: '3.3'

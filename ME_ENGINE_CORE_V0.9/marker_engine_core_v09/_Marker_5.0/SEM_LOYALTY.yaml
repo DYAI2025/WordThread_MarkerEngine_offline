@@ -1,0 +1,36 @@
+id: SEM_LOYALTY
+frame:
+  signal:
+  - Ich stehe zu dir
+  - "Du kannst auf mich z\xE4hlen"
+  - Egal was passiert
+  concept: "Loyalit\xE4t"
+  pragmatics: "Bindung st\xE4rken"
+  narrative: commitment
+composed_of:
+- ATO_INVITING_RESONANCE
+- ATO_SVT_BEZIEHUNG_DU_BOTSCHAFT
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.4
+  weight: 1.1
+examples:
+- "Du kannst auf mich z\xE4hlen \u2013 immer."
+- Ich stehe zu dir, komme was wolle.
+- Egal was passiert, ich bin bei dir.
+- "Ich bin immer f\xFCr dich da."
+- Auf mich kannst du bauen.
+- "Unsere Verbindung halte ich f\xFCr unersch\xFCtterlich."
+- Ich lasse dich nie im Stich.
+- "Du hast meine volle Unterst\xFCtzung."
+- Gemeinsam schaffen wir alles.
+- Du bist nie allein, versprochen.
+tags:
+- loyalty
+- commitment

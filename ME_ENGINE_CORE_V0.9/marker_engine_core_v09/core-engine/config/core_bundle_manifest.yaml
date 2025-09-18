@@ -1,0 +1,37 @@
+version: "1.0.0"
+artifacts:
+  - kind: "enhanced_set_overrides"
+    path: "config/enhanced_set_overrides.yaml"
+    version: "1.0.0"
+    hash: "sha256:a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456"
+    depends_on: ["sets_overrides", "detect_registry"]
+  
+  - kind: "primary_access_weights_overrides"
+    path: "config/primary_access_weights_overrides.yaml"
+    version: "1.0.0"
+    hash: "sha256:b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef1234567"
+    depends_on: []
+  
+  - kind: "sets_overrides"
+    path: "config/sets_overrides.yaml"
+    version: "1.0.0"
+    hash: "sha256:c3d4e5f6789012345678901234567890abcdef1234567890abcdef12345678"
+    depends_on: ["detect_registry"]
+  
+  - kind: "detect_registry"
+    path: "config/detect_registry.json"
+    version: "1.0.0"
+    hash: "sha256:d4e5f6789012345678901234567890abcdef1234567890abcdef123456789"
+    depends_on: []
+  
+  - kind: "scr_window"
+    path: "config/scr_window.json"
+    version: "1.0.0"
+    hash: "sha256:e5f6789012345678901234567890abcdef1234567890abcdef1234567890"
+    depends_on: ["detect_registry"]
+  
+  - kind: "doc"
+    path: "schemas/self_analysis_report.schema.json"
+    version: "LD-3.3"
+    hash: "sha256:f6789012345678901234567890abcdef1234567890abcdef1234567890ab"
+    depends_on: []

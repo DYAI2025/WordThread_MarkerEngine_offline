@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://leandeep.ai/schemas/sch_self_deep_33.json",
+  "title": "Schema Configuration for Self-Deep Analysis v3.3",
+  "description": "Multi-layer self-analysis schema for WordThread with progressive depth exploration",
+  "type": "object",
+  "required": ["id", "weights", "window", "decay"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "const": "SCH_SELF_DEEP_33",
+      "description": "Schema identifier for self-analysis configuration"
+    },
+    "weights": {
+      "type": "object",
+      "required": ["ATO_", "SEM_", "CLU_", "MEMA_"],
+      "properties": {
+        "ATO_": {
+          "type": "number",
+          "minimum": 0,
+          "default": 1.0,
+          "description": "Weight for atomic markers (baseline)"
+        },
+        "SEM_": {
+          "type": "number", 
+          "minimum": 0,
+          "default": 1.1,
+          "description": "Weight for semantic patterns (slight emphasis)"
+        },
+        "CLU_": {
+          "type": "number",
+          "minimum": 0, 
+          "default": 1.3,
+          "description": "Weight for cluster patterns (moderate emphasis)"
+        },
+        "MEMA_": {
+          "type": "number",
+          "minimum": 0,
+          "default": 1.6,
+          "description": "Weight for meta patterns (highest emphasis)"
+        }
+      }
+    },
+    "window": {
+      "type": "object",
+      "required": ["messages"],
+      "properties": {
+        "messages": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 120,
+          "description": "Analysis window size in message count"
+        },
+        "time_hours": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Optional time-based window in hours"
+        }
+      }
+    },
+    "decay": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.006,
+      "description": "Temporal decay factor for marker relevance"
+    },
+    "depth_progression": {
+      "type": "object",
+      "properties": {
+        "surface_threshold": {
+          "type": "number",
+          "default": 0.3,
+          "description": "Threshold for surface-level pattern detection"
+        },
+        "pattern_threshold": {
+          "type": "number", 
+          "default": 0.5,
+          "description": "Threshold for behavioral pattern detection"
+        },
+        "deep_threshold": {
+          "type": "number",
+          "default": 0.7,
+          "description": "Threshold for deep personality insights"
+        }
+      }
+    },
+    "personality_axes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "markers", "weight"],
+        "properties": {
+          "name": {"type": "string"},
+          "markers": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "weight": {"type": "number", "minimum": 0},
+          "interpretation": {"type": "string"}
+        }
+      },
+      "default": [
+        {
+          "name": "Bindungssicherheit",
+          "markers": ["MEMA_SUPPORT_STABILITY", "SEM_VALIDATION_SEEKING", "CLU_EMOTIONAL_SUPPORT"],
+          "weight": 1.2,
+          "interpretation": "Secure vs. insecure attachment patterns"
+        },
+        {
+          "name": "Konfliktstil: indirekt ↔ direkt", 
+          "markers": ["SEM_CONFLICT_ESCALATION", "SEM_PASSIVE_AGGRESSIVE_BEHAVIOR", "SEM_BOUNDARY_SETTING"],
+          "weight": 1.1,
+          "interpretation": "Direct vs. indirect conflict resolution style"
+        },
+        {
+          "name": "Selbstreflexion",
+          "markers": ["SEM_SELF_REFLECTION", "ATO_SELF_REFLECTION", "MEMA_THERAPEUTIC_RESISTANCE_PATTERN"],
+          "weight": 1.3,
+          "interpretation": "Capacity for self-awareness and introspection"
+        }
+      ]
+    },
+    "notes": {
+      "type": "string",
+      "default": "Multi-layer self-analysis for WordThread; Meta-patterns weighted higher for deeper insights"
+    }
+  }
+}

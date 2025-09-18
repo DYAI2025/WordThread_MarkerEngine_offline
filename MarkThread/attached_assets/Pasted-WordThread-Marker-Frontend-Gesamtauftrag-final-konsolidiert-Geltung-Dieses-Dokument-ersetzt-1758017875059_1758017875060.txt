@@ -1,0 +1,383 @@
+WordThread / Marker-Frontend — Gesamtauftrag (final, konsolidiert)
+
+Geltung: Dieses Dokument ersetzt alle vorherigen Teilpläne. Später Gesagtes hat Vorrang. Ziel ist ein vollständig lauffähiges Frontend inkl. Logik, Anbindung und CI/CD, nach FrontCollabRepoSetup.
+
+1. Ziel und Scope
+
+Eigenständiges Frontend-Modul der Marker-Engine.
+
+Offline-first via Electron. Browser-Fallback mit File-Upload.
+
+Sichtbare, performante UI im WordThread-Design (Glow, Gradient, volumetrisches Licht).
+
+Strikte Einhaltung der Marker-Architektur ATO → SEM → CLU → MEMA und Intuitions-CLUs, keine Schemaänderung notwendig.
+
+Validierung gegen AnalysisBundle v1.0 und PromatraHandshake v0.2.
+
+Keine Mockups in Produktion. PNG- und JSON-Export integriert.
+
+2. Terminologie (verbindlich)
+Begriff	Definition
+Marker-Logic	Vorverarbeitung von Language-Patterns (YAML/JSON auf MongoDB), gesteuert durch Schema- und Gewichtungsdateien.
+Spark-Service	Batch-Verarbeitung der Marker-Logic, semantisches Reasoning.
+shakehands	Übergabe-Schnittstelle zwischen Marker-Logic und Spark-Service.
+Lean‑DB 3.4	Konventionen für Marker-Schemas, Strukturen, Validierung und CI.
+Intuitions‑Marker (CLU_INTUITION_*)	Zustandsbehaftete CLUs, die Familien von SEM bündeln; Laufzeit-States provisional → confirmed → decayed inkl. Multiplier und Telemetrie.
+
+Hinweis: SEM benötigen ≥2 distinkte ATO in composed_of. Pro Marker genau ein Strukturblock: pattern oder composed_of oder detect_class. Beispiele ≥5. CI prüft dies.
+
+3. Architektur
+
+Schichten: Ingest → Validation → Store → Selectors → Worker‑Renderer → UI.
+Laufzeiten: Primär Electron (Node‑FS), optional Browser (File‑Upload).
+Datenweg: Input: AnalysisBundle(JSON)/SQLite, optional Handshake. Output: Canvas‑Render, PNG‑Snapshot, JSON‑Sichtzustand.
+
+Marker‑Kontext: Vier Ebenen (ATO/SEM/CLU/MEMA). ATOs sind reine Beobachtung, Bedeutung entsteht über Kombinationen. UI muss diesen Bottom‑up‑Pfad sichtbar machen.
+
+Backend‑Referenz: Marker- und Event‑Collections (atomic/semantic/cluster/meta) und Zeitachsen‑Indizes sind gesetzt. Frontend spiegelt diese Perspektiven in Filtern/Selectoren.
+
+4. Datenmodelle & Verträge
+4.1 AnalysisBundle v1.0 (JSON)
+
+Felder: bundle, context, input, hits[], aggregates, scores, drift, provenance.
+Zod‑Pflicht: Schema strikt; invalid → Abbruch mit Meldung.
+
+4.2 Dash‑Out‑Sys (SQLite)
+
+Tabellen: messages, hits, aggregates, scores, drift_axes, provenance. Pflichtindizes für Zeit/Conversation.
+Electron: native SQLite. Browser: WASM/Worker.
+
+4.3 PromatraHandshake v0.2
+
+Nur über Attachments/Evidence referenziert.
+
+4.4 Marker‑Vorlagen (Referenz für UI/Evidence)
+
+ATO: Regex/Token + Beispiele.
+
+SEM: composed_of ≥2 ATO, Aktivierungsregel.
+
+CLU: Aggregation über Fenster, activation, scoring.
+
+MEMA: Regel- oder Detector‑basiert, genau ein Strukturblock.
+
+Schema‑Gewichte & Score‑Fenster sind darstellbar (KPI/Overlay).
+
+Intuitions‑CLUs (familienbasiert, runtime‑zuständig). UI zeigt State, Multiplier, Telemetrie.
+
+5. Funktionale Anforderungen (FRD)
+
+Ingest
+
+FSAdapter: Beobachten von OUTBOX/*.json und *.sqlite.
+
+HttpAdapter: optionale /api/v1/... Endpunkte.
+
+Gemeinsame IIngestAdapter‑Schnittstelle.
+
+Validation
+
+Zod‑Schemas für AnalysisBundle v1.0 und PromatraHandshake v0.2.
+
+Bei Fehler: Abbruch + klare Fehlermeldung.
+
+Store
+
+Append‑only. Kein Mutieren des Original‑Bundles.
+
+Selectors: Top‑Marker, Marker→Hits, Zeitbereich, Drift‑Achsen.
+
+Rendering
+
+OffscreenCanvas im Worker. Fallback: ImageBitmap.
+
+Charts: LineChart, Heatmap, DriftChart.
+
+LTTB‑Downsampling, Virtualisierung ≥10k Rows.
+
+UI
+
+Header/KPIs; Top‑Marker‑Tabelle; Drift‑Panel; Detail‑Hits; Evidence‑Panel; Provenance‑Log.
+
+Export: PNG‑Snapshot des Canvas; JSON‑Export des Sichtzustands.
+
+6. Nicht‑funktionale Anforderungen (NFR)
+
+Performance: First Paint < 500 ms bei Bundle ≤ 10 MB. Interaktion ≥ 30 FPS.
+
+Availability: Offline‑first (Electron). Browser‑Build mit File‑Upload.
+
+Security/Integrity: SHA‑256‑Digests sichtbar. Append‑only. Keine Mutation.
+
+Quality Gates: pre‑commit: lint, typecheck, tests, no‑mockups‑check.
+
+7. Repo‑Setup & Tooling (FrontCollab‑konform)
+
+Tech‑Stack
+
+React + TypeScript + Vite.
+
+Electron (Main/Preload/Renderer).
+
+Zod, Comlink/Worker, better‑sqlite3 (Electron), sql.js (Browser).
+
+Tests: Jest + Playwright. Lint: eslint + prettier.
+
+Hooks & CI
+
+pre‑commit: eslint, prettier, markdownlint, json/yaml‑linters; ruff/black/isort/mypy nur falls Python‑Artefakte vorliegen.
+
+GitHub Actions: ci.yml (Lint, Type, Test, Build), release.yml.
+
+Docker/Compose + Makefile für Dev/CI.
+
+Governance
+
+Branch‑Policy: main geschützt, develop Integration, kurze Feature‑Branches.
+
+Conventional Commits. SemVer‑Tags vX.Y.Z.
+
+Lizenz
+
+CC BY‑NC‑SA 4.0. Datei LICENSE beilegen.
+
+8. Verzeichnisstruktur (final)
+wordthread-frontend/
+├─ apps/
+│  ├─ main/            # Electron Main
+│  ├─ preload/         # FS/Node-Bridge
+│  └─ renderer/        # React/TS + Canvas
+│     ├─ components/
+│     ├─ pages/
+│     └─ assets/       # bg-waves.svg, upload-icon.svg
+├─ schema/             # Zod-Schemata (Bundle, Handshake)
+├─ examples/           # Beispiel-Bundles + SQLite
+├─ configs/
+│  ├─ app.config.json
+│  ├─ env/.env.example
+│  └─ policies/
+├─ scripts/            # bootstrap_repo.sh, dev_run.sh, check_preflight.sh
+├─ tests/
+│  ├─ unit/
+│  ├─ integration/
+│  └─ perf/
+├─ .github/workflows/  # ci.yml, release.yml
+├─ Dockerfile
+├─ docker-compose.yml
+├─ Makefile
+├─ package.json
+├─ tsconfig.json
+├─ vite.config.ts
+├─ .pre-commit-config.yaml
+├─ .editorconfig
+├─ CODEOWNERS
+└─ CONTRIBUTING.md
+
+9. MVP‑Scope
+
+Repo + Bootstrap + CI.
+
+FSAdapter + HttpAdapter.
+
+Zod‑Validation.
+
+Store (append‑only).
+
+Renderer (LineChart, Heatmap).
+
+UI: Header, Marker‑Tabelle, Drift‑Panel.
+
+PNG + JSON‑Export.
+
+10. Stories & Tasks (priorisiert)
+
+Epic 1 – Setup & CI
+T1 Repo‑Skeleton + Vite/Electron + tsconfig.
+T2 pre‑commit + eslint/prettier + markdownlint.
+T3 GitHub Actions + Docker/Compose + Makefile.
+
+Epic 2 – Ingest
+T4 FSAdapter mit Watcher auf OUTBOX.
+T5 HttpAdapter für /api/v1/....
+T6 Gemeinsame Schnittstelle + Retry/Backoff.
+
+Epic 3 – Validation & Store
+T7 Zod‑Schemas (Bundle, Handshake).
+T8 Append‑only Store, Rehydration, Snapshots.
+T9 Selectors (Top‑Marker, Zeit, Drift).
+
+Epic 4 – Renderer
+T10 Worker‑Setup (OffscreenCanvas, Fallback).
+T11 Charts: Line + Heatmap.
+T12 LTTB + Virtualisierung + Perf‑Tests.
+
+Epic 5 – UI
+T13 Layout (Glow/Gradient/Waves).
+T14 Text‑Input + Counter.
+T15 Moduswahl Chat/Einzel + Semantik‑Kontext.
+T16 Upload (Drag&Drop + Klick).
+T17 Evidence/Provenance‑Panels (inkl. Gewichte/Fenster).
+
+Epic 6 – Export
+T18 PNG‑Snapshot.
+T19 JSON‑Export Sichtzustand.
+
+Epic 7 – Wächter/Intuition (UI‑Telemetry)
+T20 Intuition‑Kacheln: confirmed, retracted, ewma.
+
+11. Akzeptanzkriterien (Gherkin)
+Feature: Offline-Frontend for Marker-Engine
+Scenario: Load valid AnalysisBundle
+  Given a valid analysis_bundle.json in OUTBOX
+  When the frontend loads it
+  Then it is validated and ingested
+  And charts are rendered within 500 ms
+
+Scenario: Block invalid AnalysisBundle
+  Given an invalid analysis_bundle.json
+  When the frontend loads it
+  Then an error is shown
+  And the store remains unchanged
+
+Scenario: Export view state
+  Given a rendered bundle
+  When user triggers export
+  Then PNG and JSON are produced
+
+12. Definition of Ready / Done
+
+DoR
+Zod‑Schemas vorhanden. Test‑Fixtures liegen im Repo. Config‑Keys dokumentiert. Rollout‑Plan (Electron/Browser) benannt.
+
+DoD
+UI sichtbar und interaktiv, Design wie spezifiziert. CI grün (Lint/Type/Test). docker compose up startet Electron + Mock. Bundles validiert, Charts gerendert. Performance‑Budget eingehalten. PNG/JSON Export aktiv. Keine ungetaggten Breaking Changes. Hooks aktiv. Keine Mockups.
+
+13. API‑Skelett (OpenAPI)
+openapi: 3.0.3
+info:
+  title: Marker Frontend Adapters
+  version: 1.0.0
+paths:
+  /api/v1/bundles/latest:
+    get:
+      summary: Fetch latest AnalysisBundle
+      responses: { "200": { description: OK } }
+  /api/v1/health:
+    get:
+      summary: Health check
+      responses: { "200": { description: OK } }
+
+14. Zod‑Skelett (Validation)
+// schema/analysisBundle.ts
+import { z } from "zod";
+
+export const Hit = z.object({
+  id: z.string(),
+  marker_id: z.string(),         // ATO/SEM/CLU/MEMA
+  ts: z.number(),
+  conv: z.string().optional(),
+  payload: z.record(z.any()).optional(),
+});
+
+export const AnalysisBundle = z.object({
+  bundle: z.string(),
+  context: z.record(z.any()).optional(),
+  input: z.record(z.any()).optional(),
+  hits: z.array(Hit),
+  aggregates: z.record(z.any()).optional(),
+  scores: z.record(z.any()).optional(),
+  drift: z.record(z.any()).optional(),
+  provenance: z.record(z.any()).optional(),
+}).strict();
+
+15. Worker‑Channel & Renderer‑Kontrakt
+// apps/renderer/worker/render.worker.ts
+self.onmessage = (e) => {
+  const { cmd, payload } = e.data;
+  if (cmd === "render") {
+    // OffscreenCanvas zeichnen, LTTB anwenden
+    // postMessage({ cmd: "done", metrics: { fps, paintMs } }, [imageBitmap]);
+  }
+};
+
+16. CI‑Skeleton (GitHub Actions)
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test -- --ci
+      - run: npx playwright install --with-deps
+      - run: npm run test:e2e
+      - run: npm run build
+
+17. Pre‑commit (Node + optional Python)
+# .pre-commit-config.yaml
+repos:
+  - repo: local
+    hooks:
+      - id: eslint
+        name: eslint
+        entry: bash -lc "npm run lint"
+        language: system
+        types: [javascript, jsx, ts, tsx]
+      - id: prettier
+        name: prettier
+        entry: bash -lc "npm run format:check"
+        language: system
+        types: [javascript, jsx, ts, tsx, json, css, md, yaml]
+      - id: markdownlint
+        name: markdownlint
+        entry: bash -lc "npx markdownlint-cli2 **/*.md"
+        language: system
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks: [{ id: ruff }]
+
+  - repo: https://github.com/psf/black
+    rev: 24.8.0
+    hooks: [{ id: black }]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.11.1
+    hooks: [{ id: mypy }]
+
+
+Python‑Hooks nur aktiv, wenn Python‑Files vorhanden sind (FrontCollab‑Konvention).
+
+18. Roadmap (Now / Next / Later)
+
+Now: Setup, Validation, Ingest, Store.
+
+Next: Renderer, Charts, UI‑Komponenten.
+
+Later: Erweiterte Drift‑Visualisierung, SSE‑Events, Integrationen.
+
+19. Design‑Assets und UI‑Leitplanken
+
+Branding: „WordThread“ Titel mit Glow (orange→gelb Gradient).
+
+Hintergrund: dunkel, volumetrische Wellen (SVG/CSS‑Layer, Blur).
+
+Interaktion: Hover‑States, Drag‑Highlight, aktive Modus‑Buttons.
+
+Responsiv: Mobile bis 4K.
+
+Barrierearm: Kontraste, Tastatur‑Fokus, ARIA.
+
+20. Compliance‑Hinweise
+
+Marker‑Ebenen und Beispiele gem. LD‑3.4 dokumentiert; Intuitions‑CLUs nur Runtime‑Logik, schema‑kompatibel.
+
+Gewichte/Fenster (SCH/SCR) optional visualisieren, nicht mutieren.
+
+Lizenz CC BY‑NC‑SA 4.0. Keine kommerzielle Nutzung.

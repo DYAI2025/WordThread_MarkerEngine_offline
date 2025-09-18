@@ -1,0 +1,31 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: SEM_AROUSAL_SPIKE_AT_BREAK
+lang: de
+category: SEMANTIC
+description: "Erregungsspitze nach Erwartungsbruch (F0/Intensity ↑, Jitter ↑ in ≤3s)."
+frame:
+  signal: ["F0/Intensität↑, Jitter↑ kurz nach Break"]
+  concept: "Erregungsspitze bei Bruch"
+  pragmatics: "Irritation, Alarm, Re-Kalibrierung"
+  narrative: "Sequenz nach Break"
+composed_of:
+  - ATO_JITTER_SHIMMER_HIGH
+pattern:
+  - detect_class: sequence
+    steps: ["expectancy_break","prosodic_spike"]
+    max_span_seconds: 3
+scoring: { base: 0.68 }
+examples:
+  - "(Break) — (höher/lauter) Was?"
+  - "(unerwartet unterbrochen) — (spike) Moment!"
+  - "(Störung) — (spike) Nein, halt!"
+  - "(Themenbruch) — (spike) Wie bitte?"
+  - "(Glitch) — (spike) Ernsthaft?"
+  - "(Break) — (spike) Was war das?"
+  - "(Cut) — (spike) Hey!"
+  - "(Stocken) — (spike) Äh?!"
+tags: [semantic, audio, arousal]
+metadata:
+  type: SEM

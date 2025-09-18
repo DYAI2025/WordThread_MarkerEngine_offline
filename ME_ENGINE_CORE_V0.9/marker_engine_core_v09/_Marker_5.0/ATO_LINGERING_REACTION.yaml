@@ -1,0 +1,23 @@
+id: ATO_LINGERING_REACTION
+frame:
+  signal:
+  - Ellipsen
+  - "z\xF6gerlicher Tonfall"
+  - stille Pause
+  concept: "Verz\xF6gerte Reaktion"
+  pragmatics: "Z\xF6gern oder Andeutung"
+  narrative: Spannungsaufbau
+pattern:
+- '...'
+- "\u2026"
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- "Hm\u2026"
+- '...'
+- "\xC4hm\u2026"
+- "\U0001F636\u200D\U0001F32B\uFE0F"
+- "\u2026"
+tags: []

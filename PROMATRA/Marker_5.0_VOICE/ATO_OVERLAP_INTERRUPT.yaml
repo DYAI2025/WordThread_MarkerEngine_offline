@@ -1,0 +1,28 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: ATO_OVERLAP_INTERRUPT
+lang: de
+category: ATOMIC
+description: "Überlappende Sprache/Unterbrechung (Overlap ≥150 ms)."
+frame:
+  signal: ["Sprach-Overlap >150 ms"]
+  concept: "Überlappung/Unterbrechung"
+  pragmatics: "Dominanz, Eile, Missverständnisrisiko"
+  narrative: "Timing/Turn-Taking"
+pattern:
+  - detect_class: timing
+    rule: "overlap_ms >= 150"
+activation_logic: "ANY 1"
+examples:
+  - "A: Ich denke— B: (überlappt) Moment!"
+  - "A: Also wir— B: (rein) Stopp kurz."
+  - "A: Und dann— B: (überlappt) Nein, so nicht."
+  - "A: Ich wollte— B: (rein) Halt, anders."
+  - "A: Kannst du— B: (überlappt) Warte, ich—"
+  - "A: Also— B: (rein) Genau!"
+  - "A: Hm— B: (überlappt) Ja, klar."
+  - "A: Ich— B: (rein) Lass mich kurz."
+tags: [atomic, audio, overlap]
+metadata:
+  modality: audio

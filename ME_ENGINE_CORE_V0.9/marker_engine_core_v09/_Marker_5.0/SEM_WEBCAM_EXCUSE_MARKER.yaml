@@ -1,0 +1,48 @@
+id: SEM_WEBCAM_EXCUSE
+frame:
+  signal:
+  - "Ausrede f\xFCr fehlenden Videoanruf"
+  - Vermeidung visueller Verifikation
+  - "technische/pers\xF6nliche Hinderungsgr\xFCnde"
+  concept: "Identit\xE4tsverschleierung, Kontaktvermeidung"
+  pragmatics: Schutz vor Enttarnung, Aufrechterhaltung einer Fiktion
+  narrative: "Strategische Hinderungsgr\xFCnde f\xFCr fehlende Verifikation"
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- "Ich w\xFCrde ja gerne, aber ich bin auf einer Milit\xE4rbasis und Kameras sind\
+  \ hier streng verboten."
+- Mein Laptop ist alt und die Webcam hat schon vor Jahren den Geist aufgegeben.
+- "Die Internetverbindung auf dieser \xD6lplattform ist zu schlecht f\xFCr ein Videotelefonat."
+- Ich sehe heute schrecklich aus, habe kaum geschlafen. Lass uns das auf morgen verschieben.
+- "Ich bin zu sch\xFCchtern f\xFCr die Kamera. Ich mag es lieber, wenn wir schreiben."
+- Mein Glaube erlaubt mir keine Videoanrufe.
+- "Ich bin gerade bei meiner Familie, hier kann ich nicht ungest\xF6rt per Video telefonieren."
+- "Der Treiber f\xFCr meine Kamera muss aktualisiert werden, das dauert ewig."
+- Lass uns erst eine tiefere Verbindung aufbauen, bevor wir uns per Video sehen.
+- "Ich habe gerade eine schlimme Erk\xE4ltung, ich will nicht, dass du mich so siehst."
+- Die Sicherheitssoftware meiner Firma blockiert alle Video-Ports.
+- Ich bin nicht der Typ, der sich gerne selbst auf dem Bildschirm sieht.
+- Meine Haare sind eine Katastrophe!
+- Es ist schon dunkel hier, das Licht ist zu schlecht.
+- Ich habe nur mein Handy und die Frontkamera ist gesprungen.
+- "Vielleicht ein andermal, ich f\xFChle mich gerade nicht danach."
+- "Ich finde, unsere Stimmen am Telefon zu h\xF6ren, ist viel intimer."
+- "Ich bin in einem \xF6ffentlichen WLAN, das ist zu unsicher f\xFCr Video."
+- Meine Religion verbietet die Abbildung von Personen.
+- "Lass uns das geheimnisvoll halten. Die Vorfreude ist doch das Sch\xF6nste."
+- Gerade ist mein Bildschirm schwarz, keine Ahnung warum.
+- Oh nein, Zoom funktioniert bei mir einfach nie!
+- Das Mikro ist okay, aber das Bild geht schon wieder nicht.
+- Ich habe eine Panikattacke, wenn ich mich selbst auf Video sehe.
+- "Sorry, das Licht ist so schlecht, du w\xFCrdest eh nichts erkennen."
+tags:
+- webcam
+- excuse
+- ausrede
+- "identit\xE4t"
+- catfishing
+composed_of:
+- ATO_PLACEHOLDER

@@ -1,0 +1,25 @@
+id: SEM_LIE_CONCEALMENT
+frame:
+  signal:
+  - widersprüchliche Aussagen
+  - ausweichende Formulierungen
+  - vage Antworten
+  - Deflektion
+  concept: lie concealment
+  pragmatics: evasion
+  narrative: obfuscation
+detect_class: DetectLieConcealment
+examples:
+  positive:
+    - '"Ich war... beschäftigt." (vage und ausweichend)'
+    - '"Das ist eine interessante Frage. Was denkst du denn darüber?" (Deflektion)'
+    - '"Ich kann mich nicht genau erinnern." (ausweichend)'
+    - '"Das ist kompliziert." (ausweichend)'
+    - '"Ich habe getan, was ich tun musste." (vage)'
+    - '"Darüber möchte ich nicht reden." (ausweichelich)'
+    - '"Das ist nicht wirklich wichtig." (ausweichend)'
+    - '"Ich war zu Hause. Also, meistens." (widersprüchlich)'
+    - '"Ich habe mit niemandem darüber gesprochen. Außer vielleicht mit ein paar Leuten." (widersprüchlich)'
+    - '"Ich weiß davon nichts." (obwohl die Person offensichtlich informiert ist)'
+  negative: []
+tags: []

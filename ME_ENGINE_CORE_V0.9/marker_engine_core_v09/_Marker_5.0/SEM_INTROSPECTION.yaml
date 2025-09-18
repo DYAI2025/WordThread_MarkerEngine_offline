@@ -1,0 +1,39 @@
+id: SEM_INTROSPECTION
+frame:
+  signal:
+  - I wonder
+  - upon reflection
+  - I realized
+  - I have noticed
+  - I question
+  concept: introspection
+  pragmatics: self-reflection
+  narrative: inner exploration
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive:
+  - Ich frage mich, warum ich immer so reagiere.
+  - "Bei n\xE4herer Betrachtung erkenne ich ein Muster."
+  - Mir ist klar geworden, dass ich Angst vor dem Scheitern habe.
+  - Ich habe bemerkt, dass ich in letzter Zeit sehr reizbar bin.
+  - "Ich hinterfrage, ob mein derzeitiger Weg der richtige f\xFCr mich ist."
+  - "Ich denke dar\xFCber nach, was mir wirklich wichtig ist im Leben."
+  - "Ich versuche zu verstehen, woher diese Gef\xFChle kommen."
+  - "Ich habe erkannt, dass ich meine Bed\xFCrfnisse oft ignoriere."
+  - Ich nehme mir Zeit, um in mich zu gehen und Klarheit zu finden.
+  - "Ich reflektiere \xFCber meine Reaktionen und versuche, mich besser zu verstehen."
+  negative: []
+tags:
+- introspection
+- self_reflection

@@ -1,0 +1,31 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: SEM_REPAIR_FAILURE_AUDIO
+lang: de
+category: SEMANTIC
+description: "Reparatur scheitert (Audio): Versuch → keine Antwort/Topic-Shift in ≤6s."
+frame:
+  signal: ["Reparaturversuch gefolgt von Schweigen/Shift"]
+  concept: "Reparatur scheitert (Audio)"
+  pragmatics: "Kooperationsbruch, Missverständnis verfestigt"
+  narrative: "Sequenz"
+composed_of:
+  - ATO_LONG_RESPONSE_GAP
+pattern:
+  - detect_class: sequence
+    steps: ["repair_attempt","no_answer_or_topic_shift"]
+    max_span_seconds: 6
+scoring: { base: 0.72 }
+examples:
+  - "… okay? (steigend) — [1.5s Gap] — Themawechsel."
+  - "… passt? — [2.0s Gap] — Weiter im Text."
+  - "… so? — [1.3s Gap] — neues Thema."
+  - "… richtig? — [2.2s Gap] — anderes ToDo."
+  - "… ja? — [1.4s Gap] — weiter."
+  - "… weiter? — [1.6s Gap] — ignoriert."
+  - "… gut? — [1.9s Gap] — next."
+  - "… jetzt? — [2.1s Gap] — skip."
+tags: [semantic, audio, repair]
+metadata:
+  type: SEM

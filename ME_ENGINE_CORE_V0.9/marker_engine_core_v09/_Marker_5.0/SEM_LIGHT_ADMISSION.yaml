@@ -1,0 +1,35 @@
+id: EMO_LIGHT_ADMISSION
+lang: de
+category: SEMANTIC
+description: "Leichtes Eingest\xE4ndnis eines Vers\xE4umnisses oder Fehlers."
+frame:
+  signal:
+  - hab vergessen
+  - ups
+  - mein Fehler
+  concept: "Eingest\xE4ndnis"
+  pragmatics: Beziehungswahrung durch Offenheit
+  narrative: sanfte_entschuldigung
+composed_of:
+- ATO_ADMISSION_CUE
+- ATO_FAULT_REFERENCE
+scoring:
+  base: 1.4
+  weight: 1.1
+examples:
+- Ups, ganz vergessen dir zu schreiben.
+- "Mein Fehler, h\xE4tte ich vorher sagen sollen."
+- "Sorry, das hab ich \xFCbersehen."
+- Huch, vergessen den Anhang mitzuschicken.
+- Oh, da war ich wohl unaufmerksam.
+tags:
+- semantic
+- emotional
+- admission
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages

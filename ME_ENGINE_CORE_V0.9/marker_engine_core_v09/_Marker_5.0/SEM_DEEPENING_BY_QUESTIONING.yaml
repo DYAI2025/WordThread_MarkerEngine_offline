@@ -1,0 +1,64 @@
+id: SEM_DEEPENING_BY_QUESTIONING
+frame:
+  signal:
+  - open-ended question
+  - introspective prompt
+  - follow-up inquiry
+  - self-disclosure invitation
+  - reflective question
+  concept: deepening by questioning
+  pragmatics: build emotional intimacy
+  narrative: dialogical exploration
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Was besch\xE4ftigt dich gerade am meisten?"
+- "Wie hat dieses Erlebnis dich pers\xF6nlich ver\xE4ndert?"
+- "Erz\xE4hl mir mehr dar\xFCber, warum dir das so wichtig ist."
+- "Welche Gef\xFChle kommen hoch, wenn du daran denkst?"
+- "Was w\xFCrde sich \xE4ndern, wenn du dich in dieser Situation vollkommen sicher\
+  \ f\xFChlen w\xFCrdest?"
+- "Gibt es etwas, das du mir noch nicht erz\xE4hlt hast, aber gerne teilen w\xFCrdest?"
+- "Wie f\xFChlst du dich wirklich in Bezug auf das, was wir gerade besprechenn?"
+- "Was denkst du \xFCber die Entscheidungen, die du in der Vergangenheit getroffen\
+  \ hast?"
+- "Welche Tr\xE4ume oder Hoffnungen hast du f\xFCr die Zukunft?"
+- "Was bedeutet Freundschaft f\xFCr dich in diesem Moment?"
+- Wie gehst du mit Herausforderungen um, die dir emotional nahegehen?
+- "Was ist eine Erinnerung, die dich immer wieder ber\xFChrt?"
+- "Wie w\xFCrdest du deine Beziehung zu dir selbst beschreiben?"
+- "Was ist etwas, das du gerne in deinem Leben ver\xE4ndern w\xFCrdest?"
+- Welche Werte sind dir in zwischenmenschlichen Beziehungen am wichtigsten?
+- "Wie k\xF6nnen wir unsere Kommunikation noch weiter vertiefen?"
+- "Was ist eine Frage, die du dir selbst selten stellst, aber gerne beantworten w\xFC\
+  rdest?"
+- "Wie k\xF6nnen wir uns gegenseitig besser verstehen?"
+- Eher Kaffee oder Tee? Und warum?
+- Was ist eine Sache, die du schon immer mal ausprobieren wolltest, aber nie die Gelegenheit
+  dazu hattest?
+- "Was ist eine Eigenschaft, die du an dir selbst sch\xE4tzt, die aber nicht jeder\
+  \ sieht?"
+- "Wie k\xF6nnen wir unsere Verbindung noch st\xE4rker machen?"
+- Was ist eine Lektion, die du aus deinen bisherigen Erfahrungen gelernt hast?
+- "Lieber f\xFCnf Sterne in Paris oder 1000 Sterne unter freiem Himmel?"
+- "Was ist eine Frage, die du dir selbst noch nie gestellt hast, aber gerne beantworten\
+  \ w\xFCrdest?"
+- "Was ist eine Sache, die du gerne \xFCber mich wissen w\xFCrdest?"
+- "Was musss ich unbedingt \xFCber dich wissen, um mit dir zusammen zu sein?"
+- Der oder Das Nutella?
+- ' Berge oder Meer?'
+- Was ist eine Eigenschaft, die du an anderen Menschen bewunderst?
+tags:
+- deepening
+- questioning
+- intimacy

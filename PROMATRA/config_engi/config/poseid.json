@@ -1,0 +1,10 @@
+{
+  "similarity": "cosine",
+  "threshold": 0.72,
+  "min_duration_s": 1.5,
+  "diarization": { "enabled": true, "min_silence_ms": 300 },
+  "store_raw_audio": false,
+  "embedding_only": true,
+  "fallback_label": "SPEAKER_UNK"
+}
+

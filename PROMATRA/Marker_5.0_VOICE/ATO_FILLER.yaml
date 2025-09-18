@@ -1,0 +1,28 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: ATO_FILLER
+lang: de
+category: ATOMIC
+description: "Fülllaute signalisieren Planungslücken, Unsicherheit oder Halten des Turns."
+frame:
+  signal: ["äh","ähm","hm"]
+  concept: "Fülllaut"
+  pragmatics: "Turn halten, Nachdenken markieren"
+  narrative: "Prosodie/ASR-Token"
+pattern:
+  - detect_class: asr_token
+    list: ["äh","ähm","hm"]
+activation_logic: "ANY 1"
+examples:
+  - "… äh … ich denke, wir könnten … ähm … morgen starten."
+  - "Hm, also … äh … ich bin unsicher."
+  - "Ähm, das ist schwierig zu sagen."
+  - "Ich … äh … melde mich später."
+  - "Hm … ähm … vielleicht besser verschieben."
+  - "Äh, ja, verstanden."
+  - "Ähm, warte kurz."
+  - "Hm … ich überlege noch."
+tags: [atomic, audio, filler]
+metadata:
+  modality: audio

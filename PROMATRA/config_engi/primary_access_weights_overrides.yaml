@@ -1,0 +1,49 @@
+version: "1.0.0"
+weights:
+  - target_id: "SEM_SOFT_DECLINE"
+    weight: 1.2
+    context: 
+      lang: "de"
+      channel: "chat"
+  
+  - target_id: "CLU_PROCRASTINATION_LOOP"
+    weight: 1.5
+
+  - target_id: "SEM_TENSION_MICROINSTABILITY"
+    weight: 1.8
+    context:
+      channel: "audio"
+
+  - target_id: "SEM_ASSURED_CLOSURE"
+    weight: 1.6
+    context:
+      lang: "de"
+
+  - target_id: "ATO_JITTER_HIGH"
+    weight: 1.4
+    context:
+      channel: "audio"
+
+  - target_id: "ATO_SHIMMER_HIGH"
+    weight: 1.3
+    context:
+      channel: "audio"
+
+  - target_id: "ATO_VOICE_BREAK_EVENT"
+    weight: 1.7
+    context:
+      channel: "audio"
+
+  - target_id: "SEM_INSECURE_QUESTION"
+    weight: 1.1
+    context:
+      lang: "de"
+
+  - target_id: "ATO_BOUNDARY_SETTING"
+    weight: 1.4
+
+  - target_id: "ATO_FIRST_PERSON_PRONOUN"
+    weight: 1.0
+
+  - target_id: "MEMA_SELF_NARRATIVE_STABILITY"
+    weight: 2.0

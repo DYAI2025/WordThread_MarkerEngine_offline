@@ -1,0 +1,77 @@
+marker_name: combi_chunk_analyse_3_
+chunk_id: 571-574
+zeit: 2022-04-28–2022-04-30
+beteiligte: [Ben, Zoe]
+titel: Emotionale Verletzungen & Herkunft – Vergangenheit im aktuellen Dialog
+beschreibung: >
+  Analyse der Emergenz von alten Verletzungen, internalisierten Glaubenssätzen und Kindheitsprägungen im aktuellen Beziehungschat.
+
+marker_auswertung:
+  - marker_id: PAST_WOUND_MARKER
+    cluster: Vergangenheit/Verletzung
+    hits: 4
+    beispiele:
+      - "Ich habe das Gefühl, ich bin immer der, der verlassen wird."
+      - "Das erinnert mich daran, wie ich als Kind immer übersehen wurde."
+      - "Ich hab Angst, dass ich wieder enttäuscht werde wie damals."
+      - "Ich kann mich nur schwer öffnen, das kommt aus meiner Kindheit."
+    bewertung: Alte Muster und Verletzungen werden getriggert und sichtbar gemacht.
+
+  - marker_id: SELF_REFLECTION_MARKER
+    cluster: Selbstreflexion
+    hits: 3
+    beispiele:
+      - "Mir ist gerade klar geworden, warum ich so reagiere."
+      - "Ich erkenne, dass das mit mir selbst zu tun hat."
+      - "Ich arbeite daran, das nicht mehr auf dich zu projizieren."
+    bewertung: Aktive Reflexion und Bewusstwerdung vergangener Prägungen.
+
+  - marker_id: TRUST_ISSUE_MARKER
+    cluster: Vertrauen
+    hits: 2
+    beispiele:
+      - "Es fällt mir schwer zu glauben, dass du bleibst."
+      - "Ich glaube oft zu schnell, dass ich nicht genug bin."
+    bewertung: Vertrauensthemen, die aus alten Erfahrungen gespeist sind.
+
+  - marker_id: REPAIR_MARKER
+    cluster: Repair
+    hits: 2
+    beispiele:
+      - "Danke, dass du mir das gesagt hast, ich will dir glauben."
+      - "Ich weiß, das ist schwer für dich, ich helfe dir da raus."
+    bewertung: Versuche, mit den Triggern konstruktiv umzugehen.
+
+driftachsen:
+  - name: "Verletzungs- und Vertrauensachse"
+    veränderung: "Aufschwung alter Ängste, dann leichte Annäherung durch Repair"
+    trend: "Schwankend, aber wachstumsfähig"
+    beispielturns: [3, 8, 11]
+
+archetypen:
+  - person: Ben
+    aktive_archetypen: [Der Verwundete, Der Vermittler]
+    beispielmarker: [PAST_WOUND_MARKER, REPAIR_MARKER]
+  - person: Zoe
+    aktive_archetypen: [Die Suchende, Die Wächterin]
+    beispielmarker: [SELF_REFLECTION_MARKER, TRUST_ISSUE_MARKER]
+
+kombianalyse:
+  methoden: [Vergangenheitsintegration, Reflexionsanalyse, Repair-Tracking, Archetypen]
+  zentrale_narrative: >
+    Alte Verletzungen tauchen in spezifischen Trigger-Situationen wieder auf. Beide Partner reflektieren aktiv ihre Herkunft und versuchen, neue Umgangsweisen mit diesen Mustern zu etablieren. Die Systemdynamik ist von Schwankungen geprägt, aber Repair-Impulse und Selbstreflexion sorgen für Wachstumsfenster und Vertrauen.
+
+change_points:
+  - zeitpunkt: "2022-04-29 10:18"
+    ereignis: "Altes Verlassenheitsmuster wird durch Thema 'Wochenende allein' aktiviert."
+    marker: [PAST_WOUND_MARKER]
+  - zeitpunkt: "2022-04-30 16:44"
+    ereignis: "Reflexion und Repair nach Vertrauensfrage"
+    marker: [SELF_REFLECTION_MARKER, REPAIR_MARKER]
+
+meta_reflexion:
+  beobachtung: >
+    Die Vergangenheit bleibt im aktuellen System als latente Achse präsent. Erst durch bewusste Reflexion und Repair werden die Verletzungen transformiert – der Dialog gewinnt an Tiefe und Langfristigkeit.
+
+kategorie: UNCATEGORIZED
+tags: [needs_review]

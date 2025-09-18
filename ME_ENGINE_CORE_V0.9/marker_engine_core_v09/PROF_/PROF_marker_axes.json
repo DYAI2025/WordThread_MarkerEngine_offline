@@ -1,0 +1,9 @@
+{
+  "marker_axes": [
+    "SEM_EXAMPLE_SEMANTIC",
+    "CLU_EXAMPLE_CLUSTER",
+    "MEMA_EXAMPLE_META"
+  ],
+  "schema_version": "3.2",
+  "updated_at": "2025-08-03T22:45:00Z"
+}

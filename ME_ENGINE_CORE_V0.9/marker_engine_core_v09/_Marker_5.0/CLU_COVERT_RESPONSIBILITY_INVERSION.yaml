@@ -1,0 +1,46 @@
+id: CLU_COVERT_RESPONSIBILITY_INVERSION
+version: '3.3'
+frame:
+  signal:
+  - "Verschiebung der Kausalit\xE4t eigener Handlungen"
+  concept: Verdeckte Verantwortungsumkehr
+  pragmatics: Schuldzuweisung mit plausible Abstreitbarkeit
+  narrative: responsibility_shift
+pattern: "ich (h\xE4tte|m\xFCsste|w\xFCrde) nicht .+ wenn du"
+conditional_structures:
+  wenn_dann: "wenn du .+ (dann|w\xFCrde) ich nicht"
+  weil_deshalb: weil du .+ (deshalb|darum) (habe|bin) ich
+  haette_pattern: "ich h\xE4tte nicht .+ m\xFCssen, wenn"
+activation:
+  rule: ANY
+  params:
+    count: 1
+    window:
+      size: 15
+      unit: messages
+window:
+  messages: 15
+scoring:
+  base: 2.9
+  weight: 0.88
+  decay: 0.015
+  formula: logistic
+psychological_indicators:
+- codependency
+- emotional_immaturity
+- blame_shifting
+- causal_inversion
+examples:
+- "Ich m\xFCsste nicht laut werden, wenn du beim ersten Mal zuh\xF6ren w\xFCrdest"
+- "Du wei\xDFt, wie ich bin, wenn ich gestresst bin - warum bringst du das heute zur\
+  \ Sprache?"
+- "Ich habe nur so reagiert, weil du mir das Gef\xFChl gegeben hast, unwichtig zu\
+  \ sein"
+- "Ich w\xFCrde nicht so misstrauisch sein, wenn du ehrlicher w\xE4rst"
+- "Ich h\xE4tte nicht gehen m\xFCssen, wenn du mich besser verstanden h\xE4ttest"
+tags:
+- cognitive
+- responsibility
+- blame_shifting
+- manipulation
+schema_version: '3.3'

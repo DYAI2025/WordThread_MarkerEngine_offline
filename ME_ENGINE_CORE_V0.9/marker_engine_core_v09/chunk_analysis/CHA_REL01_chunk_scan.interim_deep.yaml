@@ -1,0 +1,15 @@
+interim_deep_profile:
+  period: chunks_1_to_9
+  gap_index: 0.42
+  unsaid_need_ratio: 0.58
+  attachment_profile:
+    anxious: 0.15
+    avoidant: 0.55
+    secure: 0.30
+  key_meta_markers_active:
+    - MM_SELF_REGULATED_INTEGRATION
+    - MM_RELATIONAL_STABILITY_FRIENDSHIP
+  key_meta_markers_missing:
+    - MM_SECRET_ATTACHMENT
+  narrative_marker_based: |
+    Hoher vermeidender Anteil, deutliche Lücken in Reassurance.

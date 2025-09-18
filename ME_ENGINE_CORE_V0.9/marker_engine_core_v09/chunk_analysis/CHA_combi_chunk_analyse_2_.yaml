@@ -1,0 +1,77 @@
+marker_name: combi_chunk_analyse_2_
+chunk_id: 582-585
+zeit: 2022-05-08–2022-05-09
+beteiligte: [Ben, Zoe]
+titel: Mikro-Drift, Re-Synchronisierung, externe Einflussfaktoren
+beschreibung: >
+  Kombination aus Kommunikationsstil-Synchronität, Ritualpersistenz, Balance und Kontext-Einflussanalyse auf einen Chatabschnitt, in dem Laufbänder und Außenpersonen explizit Thema sind.
+
+marker_auswertung:
+  - marker_id: STYLE_SYNC_MARKER
+    cluster: Synchronisation
+    hits: 2
+    beispiele:
+      - "Deine Nachrichten klingen jetzt fast wie meine."
+      - "Wir schreiben irgendwie immer das Gleiche."
+    bewertung: Sprachstil gleicht sich nach vorangegangener Drift rasch wieder an, deutet auf Repair-Prozess.
+
+  - marker_id: KUSSFORMEL_MARKER
+    cluster: Ritual/Bindung
+    hits: 3
+    beispiele:
+      - "Bis später xx"
+      - "Nacht xxx"
+      - "Danke dir für heute xx"
+    bewertung: Ritual bleibt trotz kleiner Störungen durchgehend aktiv – Bindung bleibt hoch.
+
+  - marker_id: REQUEST_MARKER
+    cluster: Balance/Geben-Nehmen
+    hits: 2
+    beispiele:
+      - "Kannst du das bitte noch raussuchen?"
+      - "Holst du die Sachen morgen?"
+    bewertung: Leichtes Übergewicht bei Zoe im Fordern/Klären – Ben reagiert aber ohne Groll.
+
+  - marker_id: EXTERNAL_PERSON_MARKER
+    cluster: Kontext
+    hits: 2
+    beispiele:
+      - "Marike will am Wochenende die Kinder bringen."
+      - "Meine Mutter hat gefragt, wie es uns geht."
+    bewertung: Außenpersonen treten als Systemeinflüsse auf, aber System bleibt reguliert.
+
+driftachsen:
+  - name: "Stil-Synchronität & Ritualpersistenz"
+    veränderung: "Leichter kurzfristiger Drift, dann erneut hohe Synchronität durch aktive Rituale"
+    trend: "Stabil"
+    beispielturns: [9, 13]
+
+balance-analyse:
+  initiativen_ben: 3
+  initiativen_zoe: 6
+  support_acts_ben: 2
+  support_acts_zoe: 1
+  fazit: >
+    Tendenz zu etwas mehr Initiative bei Zoe, jedoch kein Ungleichgewicht. Beide regulieren aktiv.
+
+heatmap:
+  marker_hits:
+    STYLE_SYNC_MARKER: [chunk_582, chunk_584]
+    KUSSFORMEL_MARKER: [chunk_582, chunk_583, chunk_585]
+    REQUEST_MARKER: [chunk_582, chunk_585]
+    EXTERNAL_PERSON_MARKER: [chunk_584, chunk_585]
+
+kontextanalyse:
+  außenpersonen: ["Marike", "Mutter"]
+  systemeinflüsse:
+    - Kinderorganisation
+    - Familienfeedback
+  beobachtung: >
+    System bleibt trotz Einflüssen von außen robust; keine nachhaltige Störung oder Drift-Phase.
+
+meta_reflexion:
+  beobachtung: >
+    Die Analyse zeigt, wie Kommunikationsstil, Rituale und Balance sich gegenseitig stabilisieren – auch bei externer Belastung. Das System beweist adaptive Resilienz; Ritual und Stilangleichung wirken als "Selbstheilungskräfte" bei kleinen Mikrodrifts.
+
+kategorie: UNCATEGORIZED
+tags: [needs_review]

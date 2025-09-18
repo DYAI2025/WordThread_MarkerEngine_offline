@@ -1,0 +1,50 @@
+id: SEM_GUILT_APPEAL_NEEDINESS
+version: '3.3'
+lang: de
+frame:
+  signal:
+  - "Schuldappell + Abh\xE4ngigkeit"
+  concept: Guilt-Appeal (Neediness)
+  pragmatics: "N\xE4he erzwingen"
+  narrative: guilt_neediness_bind
+composed_of:
+- ATO_GUILT_APPEAL_SUPPORT
+- ATO_HELPLESSNESS_DEPENDENCY
+activation:
+  rule: ANY
+  params:
+    count: 1
+    window:
+      size: 25
+      unit: messages
+window:
+  messages: 25
+scoring:
+  base: 2.9
+  weight: 0.8
+  decay: 0.01
+  formula: logistic
+examples:
+  positive:
+  - "Wenn du mich wirklich lieben w\xFCrdest, w\xFCrdest du mir helfen. Ich schaffe\
+    \ das nicht allein."
+  - "Ich dachte, ich k\xF6nnte auf dich z\xE4hlen. Ohne dich bin ich aufgeschmissen."
+  - "Ich will dich nicht belasten, aber ich habe niemanden au\xDFer dir. Bitte lass\
+    \ mich nicht im Stich."
+  - Du bist der Einzige, der mir helfen kann. Wenn du es nicht tust, was soll ich
+    dann machen?
+  - "Ich wei\xDF, du hast viel zu tun, aber ich brauche dich jetzt wirklich. Ich bin\
+    \ so verzweifelt."
+  - "Ich w\xFCrde dich nicht fragen, wenn es nicht so schlimm w\xE4re. Ich bin am\
+    \ Ende."
+  - "Ich f\xFChle mich so schuldig, dich um Hilfe zu bitten, aber ich bin so hilflos."
+  - "Ich dachte, wir w\xE4ren ein Team. Aber anscheinend muss ich da alleine durch."
+  - "Ich opfere so viel f\xFCr dich. Ist es zu viel verlangt, dass du einmal f\xFC\
+    r mich da bist?"
+  - "\"Vergiss es, ich will dir keine Umst\xE4nde machen. Ich komme schon irgendwie\
+    \ klar.\" (passiv-aggressiv)"
+  negative: []
+tags:
+- sem
+- guilt
+- neediness

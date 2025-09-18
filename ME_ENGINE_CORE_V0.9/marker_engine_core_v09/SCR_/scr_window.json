@@ -1,0 +1,16 @@
+{
+  "target_markers": [
+    "SEM_SOFT_DECLINE",
+    "CLU_PROCRASTINATION_LOOP",
+    "SEM_SEXUAL_TENSION_SIGNALS",
+    "SEM_VALIDATION_SEEKING",
+    "SEM_VALIDATED_DISCLOSURE"
+  ],
+  "window": { 
+    "messages": 30 
+  },
+  "aggregation": { 
+    "method": "sum", 
+    "decay": 0.02 
+  }
+}

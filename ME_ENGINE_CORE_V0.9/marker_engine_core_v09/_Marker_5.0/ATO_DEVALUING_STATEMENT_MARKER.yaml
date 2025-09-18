@@ -1,0 +1,72 @@
+id: ATO_DEVALUING_STATEMENT
+lang: de
+category: ATOMIC
+description: "Detektiert abwertende oder l\xE4cherlichmachende \xC4u\xDFerungen gegen\xFC\
+  ber Gef\xFChlen, Priorit\xE4ten oder Handlungen des Gegen\xFCbers."
+frame:
+  signal:
+  - Abwertung
+  - "L\xE4cherlichmachen"
+  - Herabsetzung
+  concept: Emotionale Abwertung
+  pragmatics: "Schw\xE4cht Bindung, signalisiert Missachtung"
+  narrative: devaluation
+pattern:
+- "(?i)l\xE4cherlich"
+- (?i)stell dich nicht so an
+- "(?i)\xFCbertreib (mal)? nicht"
+- (?i)kindisch
+- "(?i)h\xF6r auf zu jammern"
+- (?i)drama.?queen
+- (?i)so sensibel
+- (?i)nicht der rede wert
+- (?i)heul(s)? wegen
+- "(?i)priorit\xE4ten.*seltsam"
+- "(?i)daf\xFCr machst du stress"
+- (?i)empfindlich
+- (?i)luxusproblem
+- (?i)erwachsen werden
+- (?i)wie du dich anstellst
+- (?i)reg dich ab
+- (?i)theater mach(s)?t
+- (?i)grenzen.*weich
+- (?i)tust so, als.*leben und tod
+- (?i)halb so wild
+scoring:
+  base: 1.0
+  weight: 1.0
+  decay: 0.0
+  formula: linear
+window:
+  messages: 5
+examples:
+- "Deine Sorge ist doch l\xE4cherlich."
+- "Stell dich nicht so an, war nur ein Spa\xDF."
+- Wenn du damit nicht klarkommst, ist das dein Problem.
+- "\xDCbertreib mal nicht, so schlimm war's nicht."
+- Das ist doch kindisch, ehrlich jetzt.
+- "H\xF6r auf zu jammern, du Drama-Queen."
+- So sensibel? Ernsthaft?
+- Das Thema ist nicht der Rede wert.
+- Du heulst wegen jeder Kleinigkeit.
+- "Deine Priorit\xE4ten sind wirklich seltsam."
+- "Echt jetzt, daf\xFCr machst du Stress?"
+- Du bist aber empfindlich heute.
+- Das klingt nach Luxusproblem.
+- Kannst du bitte erwachsen werden?
+- Es nervt, wie du dich anstellst.
+- Reg dich ab, das war harmlos.
+- Typisch, dass du gleich Theater machst.
+- Boah, deine Grenzen sind echt weich.
+- Du tust so, als ginge es um Leben und Tod.
+- Ist doch alles halb so wild.
+tags:
+- devaluing
+- abwertung
+- herabsetzung
+- atomic
+schema_version: '3.2'
+activation:
+  rule: ANY
+  params:
+    count: 1

@@ -1,0 +1,23 @@
+id: ATO_DOUBLE_ENTENDRE
+frame:
+  signal:
+  - Doppeldeutigkeit
+  - Doppelboden
+  concept: Zweideutige Hinweise
+  pragmatics: Subtile Andeutung
+  narrative: Ironie
+pattern:
+- "(?i)\\bwer wei\xDF, was passiert\\b"
+- (?i)\bspiel mit dem feuer\b
+- "(?i)\\bmal sehen, wohin das f\xFChrt\\b"
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- Na, mal sehen, was noch so passiert...
+- "Willst du wissen, was ich meine? \U0001F609"
+- Spielst du wieder mit dem Feuer?
+- "Naja, wer wei\xDF, was heute noch so l\xE4uft..."
+- Ich verrate dir nicht alles, haha.
+tags: []

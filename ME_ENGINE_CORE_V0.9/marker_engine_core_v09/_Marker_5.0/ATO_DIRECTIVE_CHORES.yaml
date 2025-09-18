@@ -1,0 +1,50 @@
+id: ATO_DIRECTIVE_CHORES
+display_title: Haushaltsanweisungen
+version: '3.3'
+lang: de
+category: ATOMIC
+description: "Erkennung von direktiven \xC4u\xDFerungen bez\xFCglich Haushaltst\xE4\
+  tigkeiten."
+frame:
+  signal:
+  - "r\xE4um auf"
+  - mach dein Bett
+  - "bring den M\xFCll raus"
+  - "sp\xFCl ab"
+  - saug Staub
+  concept: Haushaltsanweisungen
+  pragmatics: "Direktive Sprechakte f\xFCr h\xE4usliche Ordnung"
+  narrative: Aufgabenzuweisung
+pattern:
+- "(?i)\\br\xE4um(t)? (bitte )?auf\\b"
+- (?i)\bmach(t)? (bitte )?(dein|euer) Bett\b
+- "(?i)\\bbring(t)? (bitte )?den M\xFCll raus\\b"
+- "(?i)\\bsp\xFCl(t)? (bitte )?ab\\b"
+- (?i)\bsaug(t)? (bitte )?Staub\b
+- (?i)\bputz(t)? (bitte )?\w+
+- (?i)\bwasch(t)? (bitte )?die \w+
+activation:
+  rule: ANY
+  params:
+    count: 1
+window:
+  messages: 30
+scoring:
+  base: 1.3
+  weight: 0.45
+  decay: 0.02
+  formula: logistic
+examples:
+- "R\xE4um bitte dein Zimmer auf!"
+- Mach dein Bett, bevor du gehst.
+- "Bring den M\xFCll raus, der stinkt schon."
+- "Sp\xFCl ab, wenn du fertig bist."
+- Saug heute Staub im Wohnzimmer.
+tags:
+- atomic
+- directive
+- chores
+- family
+detect_class: null
+criteria: null
+updated_at: '2025-08-19T10:30:00Z'

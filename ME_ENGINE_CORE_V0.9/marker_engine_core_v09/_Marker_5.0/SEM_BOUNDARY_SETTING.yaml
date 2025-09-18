@@ -1,0 +1,49 @@
+id: SEM_BOUNDARY_SETTING
+schema_version: LD-3.3
+lang: en
+category: SEMANTIC
+description: Semantic pattern for healthy boundary setting
+frame:
+  signal:
+  - limit establishment
+  concept: Boundary Setting
+  pragmatics: micro pattern recognition
+  narrative: intent
+composed_of:
+- ATO_BOUNDARY_SETTING
+- ATO_EMOTIONAL_REGULATION
+- ATO_SELF_REFLECTION
+window:
+  messages: 2
+examples:
+  positive:
+  - Ich brauche jetzt eine Pause.
+  - Das ist meine Grenze.
+  - "Ich m\xF6chte das nicht."
+  - Ich bin damit nicht einverstanden.
+  - Bitte respektiere meine Entscheidung.
+  - Ich kann das jetzt nicht tun.
+  - Ich muss jetzt auf mich achten.
+  - "Das ist zu viel f\xFCr mich."
+  - Ich sage 'Nein'.
+  - Ich brauche Raum.
+  negative: []
+negative:
+- "Vielleicht sollten wir sp\xE4ter reden."
+- "Ich wei\xDF nicht, ob das okay ist."
+- "Man k\xF6nnte es so oder so sehen."
+- "Ich f\xFChle mich unwohl, aber mach du mal."
+- "Ich m\xF6chte nicht, aber gut\u2026"
+- I guess it's fine.
+- "K\xF6nnten wir vielleicht?"
+- "Ich w\xE4re eventuell daf\xFCr."
+- Das passt mir nicht so, aber na gut.
+- Mal schauen, wie es wird.
+tags:
+- semantic
+- v3.4
+- boundaries
+activation:
+  rule: ANY
+  params:
+    count: 2

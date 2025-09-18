@@ -1,0 +1,46 @@
+id: CLU_ATTACHMENT_STYLE_SECURE
+lang: de
+category: CLUSTER
+description: "Sichere Bindung: verl\xE4ssliche F\xFCrsorge, offene Kommunikation,\
+  \ 'Fehler sind okay', konsistent im Zeitfenster."
+frame:
+  signal:
+  - Geborgenheit
+  - offen reden
+  - Fehler sind okay
+  concept: Sichere Bindung
+  pragmatics: "Vertrauen, Reparaturf\xE4higkeit"
+  narrative: Stabile Beziehungserfahrungen
+composed_of:
+- SEM_SECURE_CHILDHOOD_REFERENCE
+scoring:
+  base: 1.9
+  weight: 1.25
+  decay: 0.01
+window:
+  messages: 20
+examples:
+  positive:
+  - Ich wusste immer, dass ich zu meinen Eltern kommen kann, egal was passiert.
+  - "Wir haben zu Hause offen \xFCber alles geredet, auch \xFCber schwierige Themen."
+  - Fehler zu machen war erlaubt, daraus haben wir gelernt.
+  - "Ich habe mich in meiner Kindheit meistens sicher und geliebt gef\xFChlt."
+  - "Meine Eltern waren verl\xE4sslich f\xFCr mich da."
+  - Auch wenn wir gestritten haben, wusste ich, dass die Beziehung stabil ist.
+  - "Ich konnte meine Gef\xFChle zeigen, ohne Angst vor Zur\xFCckweisung zu haben."
+  - "Ich hatte das Gef\xFChl, dass meine Bed\xFCrfnisse gesehen und respektiert wurden."
+  - Es gab eine Grundstimmung von Vertrauen und Geborgenheit.
+  - "Ich habe gelernt, dass man Konflikte l\xF6sen und sich wieder vertragen kann."
+  negative: []
+tags:
+- needs_review
+- cluster
+- attachment
+- secure
+activation:
+  rule: AT_LEAST
+  params:
+    count: 2
+    window:
+      size: 20
+      unit: messages

@@ -1,0 +1,33 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: SEM_UNCERTAINTY_PROSODY
+lang: de
+category: SEMANTIC
+description: "Prosodische Unsicherheit: Füller/Pause/Tempo↓/Final-Rise im Nahfenster."
+frame:
+  signal: ["≥2 Signale: Füller, lange Pause, Sprechtempo↓, finaler Pitch-Anstieg"]
+  concept: "Unsicherheit (Prosodie)"
+  pragmatics: "Vorsicht, Nachdenken, Reparaturbedarf"
+  narrative: "Prosodische Bündelung"
+composed_of:
+  - ATO_FILLER
+  - ATO_PAUSE_LONG
+  - ATO_SPEECHRATE_DROP
+  - ATO_F0_RISE_FINAL
+pattern:
+  - detect_class: count
+    rule: ">=2 of [FILLER, PAUSE_LONG, SPEECHRATE_DROP, F0_RISE_FINAL] within 1 turn"
+scoring: { base: 0.66 }
+examples:
+  - "Ähm … [Pause] … ist das okay? (steigend)"
+  - "Hm … ich … äh … warte? (steigend)"
+  - "Äh … langsam: Ich weiß nicht? (steigend)"
+  - "[Pause] Ähm … können wir das später? (steigend)"
+  - "Ich … äh … denke … [Pause] … vielleicht?"
+  - "Ähm … [Pause] … passt das?"
+  - "Hm … langsam … ist das gut?"
+  - "Äh … ich bin unsicher … (steigend)"
+tags: [semantic, audio, uncertainty]
+metadata:
+  type: SEM

@@ -1,0 +1,32 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: SEM_REPAIR_ATTEMPT_AUDIO
+lang: de
+category: SEMANTIC
+description: "Reparaturversuch (Audio): kurze Frageintonation + Pause (≤2s)."
+frame:
+  signal: ["kurze Frageintonation + Pause"]
+  concept: "Reparaturversuch (Audio)"
+  pragmatics: "Klärung anstoßen, Turn übergeben"
+  narrative: "Sequenz"
+composed_of:
+  - ATO_F0_RISE_FINAL
+  - ATO_PAUSE_LONG
+pattern:
+  - detect_class: sequence
+    steps: ["short_question_like_utterance","pause>=600ms"]
+    max_span_seconds: 2
+scoring: { base: 0.62 }
+examples:
+  - "… okay? (steigend) [Pause]"
+  - "… passt? (steigend) [Pause]"
+  - "… so? (steigend) [Pause]"
+  - "… richtig? (steigend) [Pause]"
+  - "… ja? (steigend) [Pause]"
+  - "… weiter? (steigend) [Pause]"
+  - "… gut? (steigend) [Pause]"
+  - "… jetzt? (steigend) [Pause]"
+tags: [semantic, audio, repair]
+metadata:
+  type: SEM

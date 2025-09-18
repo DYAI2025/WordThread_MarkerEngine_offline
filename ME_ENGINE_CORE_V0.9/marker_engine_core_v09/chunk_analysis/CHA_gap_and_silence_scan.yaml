@@ -1,0 +1,17 @@
+chunk_gap_scan:
+  chunk_id: 7
+  gap_snapshot:
+    unanswered_questions: 2
+    delayed_replies: 3
+    missing_reassurance: true         # Detektor schlägt an
+  silence_patterns:
+    - marker: A_DELAYED_REPLY
+      count: 3
+    - marker: S_INTERACTIVE_STONEWALLING
+      count: 1
+  attachment_shift:
+    axis_intimacy_vs_distance: -0.3   # fallend
+  interpretation_marker_based: |
+    Mehrfach unerwiderte Nachfragen → erhöhtes Rückzugssignal.
+  validity_checks:
+    - "Marker-Counts gegen Raw-Log geprüft"

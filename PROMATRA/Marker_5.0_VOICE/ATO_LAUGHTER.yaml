@@ -1,0 +1,28 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: ATO_LAUGHTER
+lang: de
+category: ATOMIC
+description: "Akustisches Lachen oder explizite [lachen]-ASR-Events."
+frame:
+  signal: ["[lachen] Token oder akustisches Muster"]
+  concept: "Lachen"
+  pragmatics: "Affektentladung, Spannungsausgleich, Ironie"
+  narrative: "ASR-Event/Prosodie"
+pattern:
+  - detect_class: asr_event
+    rule: "laughter_detected==true"
+activation_logic: "ANY 1"
+examples:
+  - "[lachen] Ach so, klar."
+  - "Haha, ja, verstanden."
+  - "[lachen] Das ist schiefgelaufen."
+  - "(lacht) Okay, erwischt."
+  - "Hehe, alles gut."
+  - "[lachen] Passt schon."
+  - "Haha… oh Mann."
+  - "(lacht) Weiter geht’s."
+tags: [atomic, audio, laughter]
+metadata:
+  modality: audio

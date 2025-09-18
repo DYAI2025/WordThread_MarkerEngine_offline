@@ -1,0 +1,66 @@
+id: SEM_CONNECTION
+frame:
+  signal:
+  - verbunden
+  - "Wellenl\xE4nge"
+  - Band
+  - gemeinsame Energie
+  - Team
+  concept: connection
+  pragmatics: rapport building
+  narrative: bonding
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Das ist wirklich sch\xF6n mit dir zu sprechen, das hatte ich lange nicht mehr mit\
+  \ jemanden"
+- "Wir h\xE4ngen irgendwie zusammen, Alter."
+- Unsere Freundschaft bedeutet mir viel.
+- Ich brauch das Band, das uns verbindet.
+- "Ich merke, wir sind auf einer Wellenl\xE4nge."
+- "Ich sp\xFCre unsere gemeinsame Energie."
+- Ich mag es, wenn wir uns so verstehen.
+- "Ich sch\xE4tze unsere Verbindung sehr."
+- "Du bist mir wichtig und ich f\xFChl das."
+- Ich brauch dich an meiner Seite.
+- "Ich wei\xDF, wir sind ein Team."
+- "Es ist, als w\xE4ren wir auf derselben Frequenz."
+- Ich vertraue dir blind.
+- "Mit dir f\xFChle ich mich verstanden."
+- "Du vervollst\xE4ndigst mich."
+- "Ich f\xFChle sehr stark, was du meinst und mir geht es \xE4hnlich."
+- Unsere Verbindung ist etwas Besonderes.
+- Manachmal sprichst du das aus, was ich gerade sagen wollte.
+- "Ich finde es toll, wie wir uns gegenseitig unterst\xFCtzen."
+- "Es ist, als k\xF6nnten wir Gedanken lesen."
+- "Ich f\xFChle mich bei dir zu Hause."
+- "Unsere Gespr\xE4che sind wie ein vertrauter Tanz."
+- "Ich sch\xE4tze die Leichtigkeit, mit der wir kommunizieren."
+- Es ist, als ob wir uns schon ewig kennen.
+- Ich liebe es, wie wir uns gegenseitig inspirieren.
+- Unsere Verbindung ist wie ein unsichtbares Band.
+- "Ich f\xFChle mich bei dir sicher und geborgen."
+- Es ist, als ob wir in einer eigenen Welt sind.
+- Ich finde es erstaunlich, wie gut wir uns verstehen.
+- "Unsere Gespr\xE4che sind wie ein Spiegel, der uns beide reflektiert."
+- "Ich f\xFChle mich dir so nahe, auch wenn wir uns nicht oft sehen."
+- Es ist, als ob wir eine gemeinsame Sprache sprechen.
+- "Ich liebe die Art, wie wir uns gegenseitig erg\xE4nzen."
+- "Unsere Verbindung ist wie ein unsichtbares Netz, das uns zusammenh\xE4lt."
+- Ich finde es faszinierend, wie wir uns gegenseitig motivieren.
+- Es ist, als ob wir in Harmonie schwingen.
+- "Als h\xE4tten wir uns in einem anderen Leben schon mal getroffen."
+tags:
+- connection
+- rapport
+- bonding

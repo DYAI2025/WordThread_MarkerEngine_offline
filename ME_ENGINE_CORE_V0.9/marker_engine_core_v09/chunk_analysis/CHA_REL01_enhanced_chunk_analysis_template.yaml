@@ -1,0 +1,103 @@
+# enhanced_chunk_analysis_template.yaml
+
+chunk_analysis:
+  # 1. Metadaten
+  chunk_id:             # Integer oder Zeitstempel
+    type: integer
+  time_frame:           # z.B. "05.–15.03.2025"
+    type: string
+  participants:         # z.B. [Ben, Zoé]
+    type: list[string]
+
+  # 2. Aktive Detektoren & Marker-Pipeline
+  detectors_active:     # Liste aller eingesetzten Detector-Klassen
+    - DETECT_EMOTIONAL_MANIPULATION
+    - EmotionDynamicsDetector
+    - DETECT_ESCALATION_MARKERS
+    - DETECT_SEMANTIC_PATTERNS
+    - ...              # immer aktuell gehalten
+  markers_monitored:    # alle Marker-Kategorien, die durchgängig geprüft werden
+    - atomic_markers
+    - cluster_markers
+    - semantic_markers
+    - meta_markers
+
+  # 3. High-Level-Snapshot
+  high_level_snapshot:
+    question:           # Markerbasierte Leitfrage für diesen Chunk
+      type: string
+    summary:            # 1–2 Sätze Kernergebnis, datenfundiert
+      type: string
+
+  # 4. Meta-Marker-Matrix
+  meta_marker_matrix:
+    - cluster:
+        type: string    # Name des Clusters, z.B. "Therapie-Reflexion"
+      top_marker:
+        name: string
+        count: integer
+      meta_marker:
+        name: string
+        count: integer
+      interpretation:
+        type: string    # 1–2 Sätze
+
+  # 5. Trend-Analyse (Chunk-Level)
+  trend_analysis:
+    valence:           # aggregierter Valenz-Score
+      type: number
+    intimacy:          # aggregierter Intimitäts-Score
+      type: number
+    arousal:           # aggregierter Arousal-Score
+      type: number
+    dominance:         # aggregierter Dominance-Score
+      type: number
+    volatility:        # aggregierter Volatilitäts-Score
+      type: number
+
+  # 6. Marker-Counts (Detail)
+  marker_counts:
+    - marker: string
+      count: integer
+    # … alle Marker dieses Chunks
+
+  # 7. Driftachsen (Chunk-Level)
+  drift_axes:
+    - axis: string      # z.B. "intimacy_vs_distance"
+      value: number     # Position auf der Achse (–1…+1)
+      trend: string     # "steigend", "fallend", "stabil"
+      interpretation:
+        type: string
+
+  # 8. Emergent Pattern & Ephemeral Events
+  emergent_patterns:
+    description:       # Erläuterung, warum Muster hier relevant sind
+      type: string
+    events:
+      - pattern_name: string      # z.B. "Einmaliger Sarkasmus"
+        detector: string          # Detektor-/Marker-ID
+        excerpt: string           # Originaltext-Snippet, falls vorhanden
+        count: integer            # 1 für einmalig
+      # … alle neuen, nur einmal getriggerten Muster
+
+  # 9. Syntax- und Verhaltenserkennung
+  syntax_analysis:
+    noteworthy_features:         # z.B. ungewöhnliche Zeichensetzung, Intensifier
+      - feature: string
+        example: string
+        interpretation: string
+
+  # 10. Narrative Interpretation
+  narrative_interpretation:
+    text:               # Kurze, datenfundierte Prosa, rein Marker- / Detektor-gestützt
+      type: string
+
+  # 11. Validity & Change-Detection-Checks
+  validity_checks:
+    - check: string     # z.B. "Marker-Counts gegen Raw-Log verifiziert"
+    - check: string     # z.B. "Emergent Patterns bestätigt durch Sliding-Window"
+
+  # 12. Chunk-Fazit / Empfehlung
+  conclusion:
+    text:               # 1–2 Sätze, Teilergebnis und Ausblick (z. B. Sensitivität für nächste Muster)
+      type: string

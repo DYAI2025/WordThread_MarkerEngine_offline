@@ -1,0 +1,34 @@
+id: ATO_SARCASM_SUBTILE
+frame:
+  signal:
+  - "oh, gro\xDFartig"
+  - ja klar
+  - klasse, wirklich toll
+  - wie erfrischend
+  - ganz im ernst
+  concept: subtiler Sarkasmus
+  pragmatics: ironische Kritik
+  narrative: versteckte Anschuldigung
+pattern:
+- "(?i)\\boh, gro\xDFartig\\b"
+- (?i)\bja klar\b
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+  positive:
+  - "Oh, gro\xDFartig."
+  - Ja klar.
+  - Klasse, wirklich toll.
+  - Wie erfrischend.
+  - Ganz im Ernst.
+  - "Das ist ja eine \xDCberraschung."
+  - Ich bin total begeistert.
+  - Das ist ja mal was Neues.
+  - Ich bin sprachlos.
+  - Das ist ja mal eine Leistung.
+  negative: []
+tags:
+- sarcasm
+- irony

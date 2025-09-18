@@ -1,0 +1,30 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: CLU_DISSONANCE_ALERT_AUDIO
+lang: de
+category: CLUSTER
+description: "Dissonanz-Cluster (Audio): Mindestens zwei unterschiedliche SEMs im Kurzfenster."
+frame:
+  signal: ["≥2 DISTINCT SEMs in 4 turns"]
+  concept: "Dissonanz-Cluster (Audio)"
+  pragmatics: "Klärung anstoßen, Inkongruenz sichtbar machen"
+  narrative: "Aggregat"
+composed_of:
+  - SEM_UNCERTAINTY_PROSODY
+  - SEM_REACTION_FORMATION_AUDIO
+  - SEM_SHAME_PROSODY
+activation_logic: "AT_LEAST 2 DISTINCT SEMs IN 4 turns"
+scoring: { base: 0.58, cap: 0.95 }
+examples:
+  - "(Unsicherheit) + (Lachen bei Negativ) in 3 Turns."
+  - "(Scham-Prosodie) + (Unsicherheit) in 2 Turns."
+  - "(Unsicherheit) + (Scham) + (Lachen) eng beieinander."
+  - "Mehrere prosodische Brüche in kurzem Verlauf."
+  - "Zwei SEMs in aufeinanderfolgenden Turns."
+  - "(Lachen+Negativ) plus lange Pause."
+  - "(Flattening + Sigh) plus Filler."
+  - "(Unsicherheit) wiederholt in 4 Turns."
+tags: [cluster, audio, dissonance]
+metadata:
+  family: "DISSONANCE"

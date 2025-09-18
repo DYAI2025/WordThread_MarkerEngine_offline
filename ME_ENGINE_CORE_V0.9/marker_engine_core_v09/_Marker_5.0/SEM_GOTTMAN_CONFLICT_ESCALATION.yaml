@@ -1,0 +1,39 @@
+id: SEM_GOTTMAN_CONFLICT_ESCALATION
+display_title: "Gottman: Konflikteskalation"
+version: "3.3"
+lang: de
+category: SEMANTIC
+description: "Semantische Kombination mehrerer Gottman-Konfliktstile zur Eskalationserkennung."
+frame:
+  signal: ["Mehrere Gottman-Konfliktstile"]
+  concept: "Gottman: Konflikteskalation"
+  pragmatics: "Akkumulation destruktiver Kommunikationsmuster"
+  narrative: "Eskalierte Konfliktdynamik"
+combination:
+  type: "OR"
+  components:
+    - marker_id: "ATO_GOTTMAN_CRITICISM"
+      weight: 0.4
+    - marker_id: "ATO_GOTTMAN_CONTEMPT"
+      weight: 0.5
+    - marker_id: "ATO_GOTTMAN_DEFENSIVENESS"
+      weight: 0.3
+    - marker_id: "ATO_GOTTMAN_STONEWALLING"
+      weight: 0.4
+  threshold: 0.8
+activation:
+  rule: "WEIGHTED_OR"
+window:
+  messages: 30
+scoring:
+  base: 1.8
+  weight: 0.7
+  decay: 0.05
+  formula: "logistic"
+examples:
+  - "Du machst immer alles falsch! - Das stimmt nicht! - Ich will nicht mehr reden."
+  - "Du bist so dumm! - Ich kann nichts dafür! - Lass mich in Ruhe!"
+tags: [semantic, gottman, conflict, escalation, destructive]
+detect_class: "E"
+criteria: "Kombination von mindestens zwei Gottman-Konfliktmustern"
+updated_at: "2025-08-19T10:30:00Z"

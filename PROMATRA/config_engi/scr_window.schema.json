@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://leandeep.ai/schemas/scr_window.json",
+  "title": "Score Window & Calculations",
+  "description": "Schema for aggregation windows and decay/methodology",
+  "type": "object",
+  "required": ["window", "aggregation"],
+  "properties": {
+    "target_markers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(ATO|SEM|CLU|MEMA)_[A-Z0-9_]+$"
+      },
+      "description": "Target markers for this window configuration"
+    },
+    "window": {
+      "type": "object",
+      "properties": {
+        "messages": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Window size in number of messages"
+        },
+        "seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Window size in seconds"
+        }
+      },
+      "description": "Window configuration"
+    },
+    "aggregation": {
+      "type": "object",
+      "required": ["method"],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": ["sum", "mean", "logistic"],
+          "description": "Aggregation method"
+        },
+        "decay": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Decay factor for time-based weighting"
+        }
+      },
+      "description": "Aggregation configuration"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+id: ATO_SUBTLE_IRRITATION
+frame:
+  signal:
+  - seufz
+  - "g\xE4hn"
+  - '*seufz*'
+  - "*g\xE4hn*"
+  - '*roll die Augen*'
+  concept: Reizbarkeit
+  pragmatics: Genervtheit anzeigen
+  narrative: subtile Emotion
+pattern:
+- (?i)\*?seufz\*?
+- "(?i)\\*?g\xE4hn\\*?"
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+  positive:
+  - "(Seufzt h\xF6rbar)"
+  - "(G\xE4hnt demonstrativ)"
+  - (Rollt mit den Augen)
+  - "(Tippt ungeduldig mit dem Fu\xDF)"
+  - "(Verschr\xE4nkt die Arme und blickt zur Seite)"
+  - (Antwortet mit einem genervten Unterton)
+  - (Zieht die Augenbrauen hoch)
+  - "(Sch\xFCttelt leicht den Kopf)"
+  - "(Macht eine abf\xE4llige Handbewegung)"
+  - "(Atmet h\xF6rbar aus)"
+  negative: []
+tags:
+- irritation

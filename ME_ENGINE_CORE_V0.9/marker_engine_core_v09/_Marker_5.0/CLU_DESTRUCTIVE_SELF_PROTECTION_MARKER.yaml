@@ -1,0 +1,30 @@
+id: CLU_DESTRUCTIVE_SELF_PROTECTION_MARKER
+frame:
+  signal:
+  - kann nicht mehr
+  - tut mir leid
+  - bin fertig
+  concept: Negative Emotion
+  pragmatics: "Leid ausdr\xFCcken"
+  narrative: sadness
+composed_of:
+- SEM_GENERIC_PATTERN
+activation:
+  rule: AT_LEAST
+  params:
+    count: 2
+    window:
+      size: 5
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Ich hab nie gesagt, dass ich das verspreche \u2013 du hast das einfach so angenommen."
+- "Also wenn du denkst, dass das alles meine Schuld ist, dann\u2026 okay."
+- "Du hast mich in diese Situation gebracht \u2013 ich hatte keine Wahl."
+- Jetzt verdrehst du mir wieder das Wort im Mund.
+- "Du willst immer, dass ich perfekt bin \u2013 das ist nicht fair."
+tags:
+- affect
+- emotion

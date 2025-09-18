@@ -1,0 +1,41 @@
+id: ATO_GUILT_APPEAL_SUPPORT
+version: '3.3'
+lang: de
+frame:
+  signal:
+  - "Schuldappell an Unterst\xFCtzung"
+  concept: "Du l\xE4sst mich im Stich"
+  pragmatics: Guilt-Induktion
+  narrative: appeal
+pattern:
+- "(?i)\\b(ich dachte, du w(\xE4|a)rst (immer )?f(\xFC|u)r mich da|du l(\xE4|a)sst\
+  \ mich (im stich|allein)|ich h(\xE4|a)tte das von dir erwartet)\\b"
+activation:
+  rule: ANY
+  params:
+    count: 1
+    window:
+      size: 25
+      unit: messages
+window:
+  messages: 25
+scoring:
+  base: 2.4
+  weight: 0.8
+  decay: 0.01
+  formula: logistic
+examples:
+- "Ich dachte, du w\xE4rst f\xFCr mich da."
+- "Du l\xE4sst mich im Stich."
+- "Ich h\xE4tte das von dir erwartet."
+- Ich dachte immer, du bist an meiner Seite.
+- "Du l\xE4sst mich gerade v\xF6llig allein zur\xFCck."
+- Ich hatte gehofft, du stehst zu mir.
+- "Du l\xE4sst mich h\xE4ngen, wenn ich dich brauche."
+- "Dachte, ich k\xF6nnte mich auf dich verlassen."
+- Du wendest dich von mir ab.
+- "Ich z\xE4hlte darauf, dass du da bist."
+tags:
+- ato
+- guilt
+- appeal

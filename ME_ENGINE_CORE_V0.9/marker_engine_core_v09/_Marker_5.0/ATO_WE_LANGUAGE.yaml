@@ -1,0 +1,38 @@
+activation:
+  params:
+    count: 1
+  rule: ANY
+category: ATOMIC
+description: Marker für Wir-Sprache und gemeinsame Ausrichtung
+examples:
+  negative: []
+  positive:
+  - Wir schaffen das gemeinsam.
+  - Unser Ziel ist es, eine Lösung zu finden.
+  - Wir sind ein Team.
+  - Wir ziehen an einem Strang.
+  - Wir sind auf dem gleichen Weg.
+  - Wir können das zusammen erreichen.
+  - Wir sind Partner in diesem Prozess.
+  - Wir haben ein gemeinsames Interesse.
+  - Wir sind füreinander da.
+  - Wir sind uns einig.
+frame:
+  concept: relational alignment
+  narrative: togetherness
+  pragmatics: affiliation / joint stance
+  signal:
+  - we/us/our terms
+id: ATO_WE_LANGUAGE
+pattern:
+- \bwir\b|\bwe\b
+- \bgemeinsam\b|\btogether\b
+- \bunser\w*\b|\bour\b
+scoring:
+  weight: 1.0
+tags:
+- atomic
+- affiliation
+- bonding
+- rapport_signal
+version: '3.4'

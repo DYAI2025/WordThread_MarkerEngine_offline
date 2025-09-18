@@ -1,0 +1,30 @@
+id: ATO_BLAME_SHIFT
+schema_version: LD-3.3
+lang: en
+category: ATOMIC
+description: Atomic pattern for blame shifting language
+frame:
+  signal:
+  - blame shift
+  concept: Blame shifting signal
+  pragmatics: lexical indicator
+  narrative: surface
+pattern:
+- (?i)\b(you made me|you forced me|because of you|your fault)\b
+examples:
+  positive:
+    - "Du hast mich dazu gebracht."
+    - "Du hast mich gezwungen."
+    - "Wegen dir."
+    - "Deine Schuld."
+    - "Du bist verantwortlich."
+    - "Du hast das verursacht."
+    - "Ich musste so reagieren, weil du..."
+    - "Das ist dein Problem."
+    - "Ich habe das nur getan, weil du..."
+    - "Es ist deine Verantwortung."
+  negative: []
+tags:
+- atomic
+- v3.3
+- auto-generated

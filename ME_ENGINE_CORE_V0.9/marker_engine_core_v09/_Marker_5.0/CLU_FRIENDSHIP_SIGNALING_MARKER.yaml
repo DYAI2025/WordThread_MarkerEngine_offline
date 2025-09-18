@@ -1,0 +1,29 @@
+id: CLU_FRIENDSHIP_SIGNALING_MARKER
+frame:
+  signal:
+  - sag mal
+  - "h\xF6r zu"
+  - verstehst du
+  concept: Kommunikationsmuster
+  pragmatics: "Dialog f\xFChren"
+  narrative: exchange
+composed_of:
+- SEM_GENERIC_PATTERN
+activation:
+  rule: AT_LEAST
+  params:
+    count: 2
+    window:
+      size: 5
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Wei\xDFt du noch, wie wir damals im Regen gefeiert haben?"
+- Du bist und bleibst mein Lieblingsidiot.
+- Egal was passiert, ich steh hinter dir, klar?
+- "Du kennst mich doch \u2013 ich brauch drei Tage zum Antworten \U0001F602"
+- Nur du darfst mich so nennen, Alter.
+tags:
+- communication

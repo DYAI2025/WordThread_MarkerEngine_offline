@@ -1,0 +1,36 @@
+id: SEM_SUPERIORITY_PUTDOWN
+frame:
+  signal:
+  - "\xDCberlegenheits-Frame (Target)"
+  concept: Spott/Putdown
+  pragmatics: Aggressiver Humor
+  narrative: jab_chain
+composed_of:
+- ATO_PUTDOWN_TEMPLATE
+- ATO_SARCASM_CUES
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+examples:
+  positive:
+  - Das ist ja eine brillante Idee. Bist du da ganz allein draufgekommen?
+  - Wow, das hast du ja fast richtig gemacht.
+  - Keine Sorge, das verstehst du irgendwann auch noch.
+  - Ach, du mit deinen kleinen Problemchen.
+  - "Das ist s\xFC\xDF, dass du das glaubst."
+  - "F\xFCr deine Verh\xE4ltnisse ist das gar nicht so schlecht."
+  - "Ich w\xFCrde es dir ja erkl\xE4ren, aber das w\xFCrde zu lange dauern."
+  - "Manche Leute brauchen eben etwas l\xE4nger."
+  - "Das ist ja eine ganz neue Erkenntnis f\xFCr dich, was?"
+  - "Rede du nur, ich wei\xDF es eh besser."
+  negative: []
+tags:
+- humor
+- superiority
+- target
+- semantics
+- v33

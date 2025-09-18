@@ -1,0 +1,49 @@
+id: SEM_REFLECTIVE_BOUNDARY_SETTING
+lang: en
+category: SEMANTIC
+description: Distanced self-reflection combined with explicit boundary setting.
+frame:
+  signal:
+  - "from the outside I see \u2026"
+  - "please mirror \u2026"
+  - no advice
+  - I need distance
+  concept: Reflective self-demarcation
+  pragmatics: Controlled depth, protection
+  narrative: Self-clarification with scope
+composed_of:
+- ATO_OUTSIDE_PERSPECTIVE
+- ATO_SET_BOUNDARY
+scoring:
+  base: 1.3
+  weight: 1.0
+window:
+  messages: 6
+examples:
+  positive:
+  - "Von au\xDFen betrachtet sehe ich, dass ich hier eine Grenze ziehen muss."
+  - Ich brauche jetzt Abstand, um das zu verarbeiten. Bitte respektiere das.
+  - Ich merke, dass ich mich hier abgrenzen muss, um bei mir zu bleiben.
+  - "Ich sehe, wie ich mich in dieser Situation verliere, und ich muss jetzt einen\
+    \ Schritt zur\xFCcktreten."
+  - Ich reflektiere gerade, und mir wird klar, dass ich hier ein klares 'Nein' sagen
+    muss.
+  - Ich brauche jetzt meine Ruhe. Das ist keine Ablehnung, sondern Selbstschutz.
+  - "Ich sehe, dass ich hier meine eigenen Bed\xFCrfnisse sch\xFCtzen muss, auch wenn\
+    \ es dir nicht gef\xE4llt."
+  - "Ich merke, dass ich mich \xFCberfordert f\xFChle, und ich muss jetzt eine Pause\
+    \ machen."
+  - "Ich reflektiere \xFCber unsere Interaktion und sehe, dass ich hier eine klare\
+    \ Grenze setzen muss."
+  - "Ich brauche jetzt Raum f\xFCr mich. Das ist wichtig f\xFCr meine mentale Gesundheit."
+  negative: []
+tags:
+- semantic
+- reflection
+- boundaries
+activation:
+  rule: ALL
+  params:
+    window:
+      size: 3
+      unit: messages

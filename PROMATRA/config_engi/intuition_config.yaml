@@ -1,0 +1,75 @@
+# intuition_config.yaml
+# Configuration for Intuition Package v3.3
+
+intuition:
+  # Global settings
+  enabled: true
+  version: "3.3"
+  
+  # Adaptive learning parameters
+  learning:
+    ewma_alpha: 0.2  # Smoothing factor for precision EWMA
+    adjustment_thresholds:
+      loosen: 0.70   # EWMA threshold to loosen rules
+      tighten: 0.50  # EWMA threshold to tighten rules
+    
+  # Default multiplier TTLs (messages)
+  multiplier_ttls:
+    grief: 8
+    conflict: 6
+    support: 8
+    commitment: 7
+    uncertainty: 7
+    
+  # Telemetry settings
+  telemetry:
+    enabled: true
+    retention_days: 30
+    endpoints:
+      - "/telemetry/intuition"
+      - "/telemetry/intuition/{family}"
+      - "/telemetry/intuition/dashboard"
+      
+  # Evidence policy settings
+  evidence_policy:
+    enabled: true
+    patterns:
+      - "according to"
+      - "research shows"
+      - "studies indicate"
+      - "data suggests"
+      - "source:"
+      - "reference:"
+      - "cite:"
+      - "proven by"
+    ttl_messages: 5
+    
+  # Family-specific overrides
+  families:
+    grief:
+      base_scoring_weight: 1.0
+      priority: "medium"
+    conflict:
+      base_scoring_weight: 1.2  # Higher weight for conflict detection
+      priority: "high"
+    support:
+      base_scoring_weight: 0.9
+      priority: "medium"
+    commitment:
+      base_scoring_weight: 1.0
+      priority: "low"
+    uncertainty:
+      base_scoring_weight: 1.1
+      priority: "medium"
+      
+  # Integration hooks
+  hooks:
+    phase_3_enabled: true
+    contextual_rescan: true
+    post_processing: false
+    
+  # Debug/development settings
+  debug:
+    log_state_changes: true
+    log_adaptations: true
+    annotation_enabled: true

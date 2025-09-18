@@ -1,0 +1,30 @@
+id: CLU_SUPERIORITY_STREAM
+frame:
+  signal:
+  - "Putdowns h\xE4ufen sich"
+  concept: "\xDCberlegenheits-Serie"
+  pragmatics: Aggressiver Stilcluster
+  narrative: jab_series
+composed_of:
+- SEM_SUPERIORITY_PUTDOWN
+activation:
+  rule: AT_LEAST
+  params:
+    count: 2
+    window:
+      size: 15
+      unit: messages
+scoring:
+  base: 2.1
+  weight: 1.45
+examples:
+- "Mehrere Spott-Bez\xFCge kurz hintereinander."
+- Wiederholt 'Nur ein Idiot ...'.
+- Putdown-Kaskade als Stilmittel.
+- Antiphrase + Target mehrfach.
+- Repetitive Herabsetzung.
+tags:
+- humor
+- superiority
+- cluster
+- v33

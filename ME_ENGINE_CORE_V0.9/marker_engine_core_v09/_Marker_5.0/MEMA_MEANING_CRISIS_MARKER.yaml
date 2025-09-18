@@ -1,0 +1,38 @@
+id: MEMA_MEANING_CRISIS_MARKER
+frame:
+  signal:
+  - Existenzielle Leerheitsindikatoren
+  concept: Existenzielle Leere
+  pragmatics: Sinnverlustausdruck
+  narrative: sinnkrise
+composed_of:
+- CLU_INNER_EMPTINESS_MARKER
+- CLU_PURPOSE_LOSS_PATTERN
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 30
+      unit: messages
+scoring:
+  base: 2.0
+  weight: 1.5
+examples:
+- "Ich frage mich immer \xF6fter, ob irgendwas davon wirklich z\xE4hlt."
+- "Es ist, als h\xE4tte alles seinen Wert verloren \u2013 ich sp\xFCre nichts mehr."
+- "Ich hab keine Ziele mehr. Keine Ahnung, was ich will, wof\xFCr ich hier bin."
+- "Ich mach Dinge, aber es f\xFChlt sich an, als w\xE4r ich gar nicht wirklich da."
+- "Nichts ergibt Sinn gerade, ich hab das Gef\xFChl, ich treibe nur so dahin."
+- Ich bin umgeben von Menschen, aber innerlich komplett allein.
+- "Selbst Sachen, die mir fr\xFCher Freude gemacht haben, f\xFChlen sich gerade nur\
+  \ noch leer an."
+- "Ich wache auf, bin m\xFCde und frage mich einfach: Wozu das alles?"
+- "Die Arbeit stapelt sich, aber ehrlich? Es ist mir v\xF6llig egal, ob ich was erledige\
+  \ oder nicht."
+- "Heute lag ich fast eine Stunde im Bett und hab mich gefragt, wozu ich \xFCberhaupt\
+  \ aufstehen soll."
+tags:
+- existential
+- meaning_loss
+- crisis

@@ -1,0 +1,35 @@
+id: ATO_DIRECT_BONDING_MESSAGE
+frame:
+  signal:
+  - "Ich f\xFChl mich verbunden"
+  - Du bist mir wichtig
+  - "Wir sind auf einer Wellenl\xE4nge"
+  concept: personal bonding
+  pragmatics: bonding
+  narrative: affiliation
+pattern:
+- "(?i)\\b(ich f\xFChl mich verbunden|du bist mir wichtig|wir sind auf einer wellenl\xE4\
+  nge)\\b"
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- "Ich f\xFChl mich echt verbunden mit dir."
+- "Wir h\xE4ngen irgendwie zusammen, Alter."
+- Unsere Freundschaft bedeutet mir viel.
+- "Du bist mir wichtig und ich f\xFChl das."
+- "Ich wei\xDF, wir sind ein Team."
+- "Ich sp\xFCre unsere gemeinsame Energie."
+- Ich mag es, wenn wir uns so verstehen.
+- "Ich sch\xE4tze unsere Verbindung sehr."
+- Ich brauch dich an meiner Seite.
+- Und es hat Zoom gemacht!
+- Du bist echt ein wichtiger Teil meines Lebens.
+- "Ich f\xFChl mich wohl, wenn wir reden."
+- "Du bist mir echt wichtig, wei\xDFt du das?"
+- Ich mag es, wie wir uns verstehen.
+- "Wir sind total synchron im Gespr\xE4ch."
+tags:
+- direct_address
+- bonding

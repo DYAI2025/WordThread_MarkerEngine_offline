@@ -1,0 +1,27 @@
+id: ATO_DEESCALATION_PHRASE
+frame:
+  signal:
+  - Deeskalation
+  - Friedensangebot
+  - Beruhigung
+  concept: "Konfliktentsch\xE4rfung"
+  pragmatics: Reduktion von Spannung
+  narrative: Schlichtung
+pattern:
+- "(?i)Schritt zur\xFCck"
+- (?i)Entschuldige
+- "(?i)l\xF6sen"
+- "(?i)kl\xE4ren"
+- (?i)verzeih
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- "Lass uns einen Schritt zur\xFCckgehen und besprechen, was passiert ist."
+- Entschuldige, wenn ich zu forsch war.
+- "Wie k\xF6nnen wir das l\xF6sen?"
+- "Ich m\xF6chte, dass wir das kl\xE4ren."
+- Das war nicht meine Absicht, bitte verzeih mir.
+tags:
+- deescalation

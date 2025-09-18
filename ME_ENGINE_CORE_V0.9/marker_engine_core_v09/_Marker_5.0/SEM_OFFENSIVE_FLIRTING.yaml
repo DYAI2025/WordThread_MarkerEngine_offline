@@ -1,0 +1,34 @@
+id: SEM_OFFENSIVE_FLIRTING
+frame:
+  signal:
+  - zweideutige Bemerkungen
+  - provokante Anspielungen
+  - direktes Flirten
+  concept: Offensives Flirten
+  pragmatics: "Grenz\xFCberschreitung, Unsicherheit, Provokation"
+  narrative: Interaktion, Tabubruch
+composed_of:
+- ATO_FLIRTING_PHRASE
+- ATO_BOUNDARY_CROSS
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+examples:
+- Na, heute bist du aber mutig drauf, oder?
+- Traust du dich, mir das auch privat zu sagen?
+- Wollen wir es heute Abend mal richtig krachen lassen?
+- "Du spielst ja ganz sch\xF6n mit dem Feuer."
+- "Wenn du weiter so machst, wird\u2019s gef\xE4hrlich."
+- Also als ich dich vorhin sah....da wurde mir recht warm im Lendenbereich
+- "Also, ich w\xFCrde es sehr sch\xF6n finden, dich jetzt bei mir zu haben...ganz\
+  \ nah \U0001F60D"
+- "\U0001F4A6\U0001F346 Du machst mich \xFCbelst hei\xDF!"
+- Du bist so fucking hot ey!
+- Hast du bock auf etwas Netflix & Chill?
+tags:
+- flirting
+- boundary

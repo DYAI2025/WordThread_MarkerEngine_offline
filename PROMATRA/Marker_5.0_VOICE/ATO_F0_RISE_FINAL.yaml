@@ -1,0 +1,28 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: ATO_F0_RISE_FINAL
+lang: de
+category: ATOMIC
+description: "Terminaler Pitch-Anstieg am Satzende (Frage-/Unsicherheitskontur)."
+frame:
+  signal: ["steigende Intonation am Satzende"]
+  concept: "Terminaler Pitch-Anstieg"
+  pragmatics: "Unsicherheit, Frage, Reparaturanstoß"
+  narrative: "Prosodie"
+pattern:
+  - detect_class: prosody
+    rule: "final_f0_slope > threshold"
+activation_logic: "ANY 1"
+examples:
+  - "… das wäre okay? (steigend)"
+  - "Du meinst das so? (steigend)"
+  - "Wir treffen uns morgen? (steigend)"
+  - "Ich schicke das ab? (steigend)"
+  - "Passt das so? (steigend)"
+  - "Geht das für dich? (steigend)"
+  - "Später weiter? (steigend)"
+  - "Ist das okay? (steigend)"
+tags: [atomic, audio, prosody]
+metadata:
+  modality: audio

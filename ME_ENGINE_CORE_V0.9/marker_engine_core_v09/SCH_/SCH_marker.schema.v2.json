@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/schemas/marker/v3.2",
+  "title": "Lean-Deep 3.2 Marker",
+  "type": "object",
+  "required": ["id", "lang", "description", "frame", "examples"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(ATO|SEM|CLU|MEMA)_[A-Z0-9_]+$"
+    },
+    "lang": {
+      "type": "string",
+      "pattern": "^[a-z]{2}$"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 4
+    },
+    "frame": {
+      "type": "object",
+      "required": ["signal", "concept", "pragmatics", "narrative"],
+      "properties": {
+        "signal": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1
+            }
+          ]
+        },
+        "concept":    { "type": "string" },
+        "pragmatics": { "type": "string" },
+        "narrative":  { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "pattern": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      ]
+    },
+    "composed_of": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["marker_ids", "weight"],
+        "properties": {
+          "marker_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^(ATO|SEM|CLU|MEMA)_[A-Z0-9_]+$"
+            },
+            "minItems": 1
+          },
+          "weight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "detect_class": { "type": "string" },
+    "activation":  { "type": "object" },
+    "window": {
+      "type": "object",
+      "properties": {
+        "messages": { "type": "integer", "minimum": 1 },
+        "seconds":  { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "scoring": {
+      "type": "object",
+      "properties": {
+        "base":   { "type": "number" },
+        "weight": { "type": "number" },
+        "decay":  { "type": "number" },
+        "formula": { "enum": ["logistic", "linear", "step"] }
+      },
+      "additionalProperties": false
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "examples": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 5
+    }
+  },
+  "oneOf": [
+    { "required": ["pattern"] },
+    { "required": ["composed_of"] },
+    { "required": ["detect_class"] }
+  ],
+  "additionalProperties": true
+}

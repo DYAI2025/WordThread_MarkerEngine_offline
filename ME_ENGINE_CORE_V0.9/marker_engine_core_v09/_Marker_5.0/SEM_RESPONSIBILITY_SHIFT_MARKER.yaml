@@ -1,0 +1,29 @@
+id: SEM_RESPONSIBILITY_SHIFT_MARKER
+frame:
+  signal:
+  - sag mal
+  - "h\xF6r zu"
+  - verstehst du
+  concept: Kommunikationsmuster
+  pragmatics: "Dialog f\xFChren"
+  narrative: exchange
+composed_of:
+- ATO_UNKNOWN
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Also ich bin da \u2013 aber wie du willst."
+- "Ich \xFCberlass dir die Entscheidung."
+- "Falls du Lust hast, k\xF6nnen wir was machen."
+- Ich will dir da nichts vorschreiben.
+- Du entscheidest, ich bin flexibel.
+tags:
+- communication

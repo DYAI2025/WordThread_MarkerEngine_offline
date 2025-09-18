@@ -1,0 +1,29 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: MEMA_DissonanceTrend_AUDIO
+lang: de
+category: META-ANALYSIS
+description: "Trend: Dissonanz (Audio) über längere Strecken (Counts/EWMA)."
+frame:
+  signal: ["Wiederkehr von CLU_DISSONANCE_ALERT_AUDIO im Langfenster"]
+  concept: "Trend: Dissonanz (Audio)"
+  pragmatics: "Persistenz erkennen, Follow-up priorisieren"
+  narrative: "Langzeit-Trend"
+composed_of:
+  - CLU_DISSONANCE_ALERT_AUDIO
+activation_logic: "COUNT(CLU_DISSONANCE_ALERT_AUDIO in 30 turns) >= 3 OR EWMA(alpha=0.2) >= 0.6"
+scoring: { base: 0.65, cap: 1.0 }
+examples:
+  - "Mehrere Dissonanz-Cluster innerhalb einer Sitzung."
+  - "Wiederkehrende Unsicherheits-/Schamprosodie über 20 Turns."
+  - "Häufung von Lachen-inkongruenten Passagen."
+  - "Cluster in drei aufeinanderfolgenden Meetings."
+  - "Trend: steigende Dissonanz in Weekly-Calls."
+  - "Mehrfach CLU_DISSONANCE_ALERT_AUDIO pro Stunde."
+  - "EWMA der Dissonanz über 0.6 im Verlauf."
+  - "Serien von Unsicherheits-Prosodie."
+tags: [meta, audio, dissonance]
+metadata:
+  type: MEMA
+  family: "DISSONANCE"

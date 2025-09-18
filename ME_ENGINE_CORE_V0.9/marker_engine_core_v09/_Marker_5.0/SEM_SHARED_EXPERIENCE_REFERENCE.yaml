@@ -1,0 +1,37 @@
+id: SEM_SHARED_EXPERIENCE_REFERENCE
+lang: de
+category: SEMANTIC
+description: "Verweis auf gemeinsam erlebte Situationen als Mittel zur Bindungsst\xE4\
+  rkung."
+frame:
+  signal:
+  - "Wei\xDFt du noch"
+  - Damals als
+  - Erinnerst du dich an
+  - Wie letztes Mal
+  concept: Gemeinsame Erinnerung
+  pragmatics: "St\xE4rkung der sozialen Bindung durch geteilte Vergangenheit"
+  narrative: Vergangenheitsbezug
+composed_of:
+- ATO_MEMORY_TRIGGER
+- ATO_SHARED_CONTEXT
+scoring:
+  base: 1.4
+  weight: 1.1
+examples:
+- "Wei\xDFt du noch, wie wir im Regen spazieren waren?"
+- "Erinnerst du dich an den verr\xFCckten Abend in Berlin?"
+- Wie letztes Mal, als wir den Sonnenaufgang gesehen haben.
+- Damals, als wir fast den Zug verpasst haben.
+- "Wei\xDFt du noch, wie laut wir gelacht haben in der Bar?"
+tags:
+- semantic
+- shared_experience
+- bonding
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages

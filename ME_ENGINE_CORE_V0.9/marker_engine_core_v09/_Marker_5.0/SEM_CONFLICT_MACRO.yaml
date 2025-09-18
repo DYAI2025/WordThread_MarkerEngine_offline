@@ -1,0 +1,44 @@
+id: SEM_CONFLICT_MACRO
+schema_version: LD-3.3
+version: '3.3'
+last_updated: '2025-08-19'
+lang: de
+category: SEMANTIC
+description: "Vollst\xE4ndige Eskalationskette nach Gottman: Kritik, Defensivit\xE4\
+  t, Verachtung (ggf. Stonewalling)."
+frame:
+  signal:
+  - "Kritik + Defensivit\xE4t + Verachtung (+ ggf. Stonewalling) in kurzer Sequenz"
+  concept: Makro-Eskalation
+  pragmatics: Rascher Beziehungsabstieg, Deeskalationsbarrieren
+  narrative: attack_counterattack_derision
+composed_of:
+- ATO_GOTTMAN_CRITICISM
+- ATO_GOTTMAN_DEFENSIVENESS
+- ATO_GOTTMAN_CONTEMPT
+- ATO_GOTTMAN_STONEWALL
+activation:
+  rule: ANY
+  params:
+    count: 3
+    window:
+      size: 5
+      unit: messages
+scoring:
+  base: 1.8
+  weight: 1.2
+examples:
+- "Du bist immer unzuverl\xE4ssig. \u2014 Ja, aber gestern warst du sp\xE4t. \u2014\
+  \ L\xE4cherlich."
+- "Du machst nie, was du sagst. \u2014 Das stimmt so nicht. \u2014 \U0001F644"
+- "Typisch du. \u2014 Nicht meine Schuld. \u2014 So peinlich."
+- "Alles falsch wegen dir. \u2014 Ich hab doch geschrieben! \u2014 Na klar, Meister."
+- "Du versaust es jedes Mal. \u2014 Du \xFCbertreibst. \u2014 Armselig."
+- "Du bist immer zu sp\xE4t. \u2014 Ja und du bist nie vorbereitet. \u2014 Wie dumm\
+  \ \u2026 \u2014 (Stille)"
+- "Nie h\xF6rst du zu. \u2014 Ja, aber du auch nicht. \u2014 \U0001F926"
+tags:
+- semantic
+- conflict
+- gottman
+- escalation

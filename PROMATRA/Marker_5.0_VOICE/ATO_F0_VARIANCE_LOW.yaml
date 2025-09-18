@@ -1,0 +1,28 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: ATO_F0_VARIANCE_LOW
+lang: de
+category: ATOMIC
+description: "Niedrige Grundfrequenz-Varianz (Flattening) relativ zur Sprecherbasis."
+frame:
+  signal: ["Pitch-Spread ↓"]
+  concept: "F0-Varianz niedrig (Flattening)"
+  pragmatics: "Affektabflachung, Unsicherheit, Scham"
+  narrative: "Prosodie"
+pattern:
+  - detect_class: prosody
+    rule: "f0_var_z <= -0.8"
+activation_logic: "ANY 1"
+examples:
+  - "(monoton) Ja. Okay. Passt."
+  - "(flach) Weiß nicht. Hm."
+  - "(kaum Modulation) Ist gut."
+  - "(flat) Schon okay."
+  - "(gleichförmig) Alles klar."
+  - "(monoton) Ja, verstanden."
+  - "(flach) Kann sein."
+  - "(gleichförmig) Vielleicht."
+tags: [atomic, audio, prosody]
+metadata:
+  modality: audio

@@ -1,0 +1,61 @@
+id: CLU_SUSTAINED_CONTACT
+lang: en
+category: CLUSTER
+description: "Unusually high voluntary contact frequency (\u22653/week for \u2265\
+  8 weeks) without external constraint."
+frame:
+  signal:
+  - daily/nearly daily pings
+  - good morning/night rituals
+  concept: Stable relationship intensity
+  pragmatics: Bonding by routine contact
+  narrative: Communication ritual
+detect_class: SUSTAINED_CONTACT_FREQ_V1
+activation:
+  rule: FREQUENCY
+  params:
+    count: 3
+    per: week
+    for:
+      size: 8
+      unit: weeks
+scoring:
+  base: 1.6
+  weight: 1.15
+window:
+  weeks: 8
+examples:
+- "Meld dich, wenn du wach bist \u2615\uFE0F"
+- "Gute Nacht \u2013 schreib morgen."
+- Memes des Tages schon gesehen?
+- Voice-Note Marathon again?
+- "Noch wach? \U0001F319"
+- Ping mich, wenn du Pause hast.
+- Schon zwei Monate Daily-Streak!
+- Kein Tag ohne dein Update.
+- Jeden Abend ein Recap, crazy.
+- "Hab extra Datenvolumen f\xFCr dich geholt."
+- "Wie immer p\xFCnktlich zum Morgenkaffee."
+- "Unser t\xE4glicher Austausch ist schon Routine."
+- Kein Tag vergeht ohne ein kurzes Update.
+- Abendliche Voice-Note, wie abgesprochen.
+- "Schon acht Wochen ohne Pause \u2013 beeindruckend."
+- Morgencheck-in wie immer?
+- Mittags-Ping nicht vergessen.
+- "Abendliche Zusammenfassung \u2013 Deal?"
+- "Unser t\xE4glicher Call steht noch."
+- 'Wie jeden Sonntag: Lagebericht.'
+- Daily streak for two months.
+- At least three chats per week without project pressure.
+- Good-night + morning check-ins consistently.
+- Regular memes/voice notes.
+- No day without a quick update.
+- Evening recap as a ritual.
+- Extra data volume 'for you'.
+- "Ping me when you're on break\u2014recurring."
+- Weekend check-ins without a reason.
+- Steady closeness via micro-pings.
+tags:
+- cluster
+- frequency
+- bonding

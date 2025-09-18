@@ -1,0 +1,40 @@
+activation:
+  params:
+    count: 1
+  rule: ANY
+category: SEMANTIC
+description: Patt-Sprache und Lösungslosigkeit
+examples:
+  negative: []
+  positive:
+  - Wir drehen uns im Kreis.
+  - Wir kommen hier nicht weiter.
+  - Es gibt keine Lösung.
+  - Das führt zu nichts.
+  - Wir stecken fest.
+  - Ich weiß nicht mehr, was ich noch sagen soll.
+  - Wir haben schon alles versucht.
+  - Das ist ein Teufelskreis.
+  - Ich sehe keinen Ausweg.
+  - Wir sind am Ende unserer Möglichkeiten.
+frame:
+  concept: discussion stuck
+  narrative: stagnation
+  pragmatics: frustration / risk of dropout
+  signal:
+  - stalemate language
+  - no-solution talk
+id: SEM_UNRESOLVED_ISSUE
+pattern:
+- (?i)drehen .* im kreis|round in circles
+- (?i)kommen .* nicht weiter|not getting anywhere
+- (?i)keine l(ö|oe)sung|no solution
+- (?i)f(ü|u)hrt zu nichts|leads to nothing
+- (?i)stecken fest|stuck
+scoring:
+  weight: 1.2
+tags:
+- semantic
+- stagnation
+- rupture_risk
+version: '3.4'

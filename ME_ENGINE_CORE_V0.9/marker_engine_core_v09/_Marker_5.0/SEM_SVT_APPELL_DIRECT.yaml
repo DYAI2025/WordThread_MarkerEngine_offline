@@ -1,0 +1,44 @@
+activation:
+  params:
+    count: 1
+  rule: ANY
+examples:
+- 'examples:'
+- '- "Fahr los!"'
+- '- "Schicken Sie mir den Bericht!"'
+- '- "Könntest du bitte das Fenster schließen?"'
+- '- "Du solltest das sofort überprüfen."'
+- '- "Hör jetzt bitte auf damit!"'
+- Mach bitte das Licht aus.
+- Gib mir kurz Bescheid.
+- Bitte hör zu.
+- Ruf mich heute an.
+- Lass das jetzt.
+frame:
+  concept: Appellebene (Schulz von Thun)
+  narrative: Direkte Bitte
+  pragmatics: Lenkung/Handlungsaufforderung
+  signal:
+  - expliziter Appell
+  - Imperativ/Bitte/Aufforderung
+id: SEM_SVT_APPEAL_DIRECT
+justification: Pattern-basierte SEM-Definition; ATO-Zerlegung (Imperativ-Präfixe)
+  ausstehend.
+meta:
+  created_at: '2025-07-20T11:48:12.759155'
+  created_by: FRAUSAR_GUI_v2
+  schema_version: '3.3'
+  semantische_grabber_id: SGR_SVT_APPEAL_DIRECT_01
+  source_version: 1.0.1
+pattern:
+- ^fahr
+- ^schicken sie
+- ^könntest du bitte
+- solltest du
+- müsstest du
+tags:
+- needs_review
+- sem_composition_exception
+- schulz_von_thun
+- appeal
+version: '3.3'

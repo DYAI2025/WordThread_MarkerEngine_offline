@@ -1,0 +1,94 @@
+{
+  "$schema": "../detect-registry-validator/schemas/detect-registry-schema.json",
+  "registry_version": "3.2",
+  "detectors": [
+    {
+      "id": "DETECT_MANEUVER_COMPONENTS",
+      "description": "Semantische Hinhalte-Manöver-Komponenten",
+      "lang": "de",
+      "module": "regex",
+      "file_path": "repo/detectors/DETECT_DETECT_MANEUVER_COMPONENTS.py",
+      "fires_marker": "SEM_MANEUVER_COMPONENTS",
+      "last_updated": "2025-08-03T23:10:00Z",
+      "schema_version": "3.2",
+      "priority": 1
+    },
+    {
+      "id": "DETECT_FAMILIENDYNAMIK",
+      "description": "Familiendynamik-Muster in Chat­texten",
+      "lang": "de",
+      "module": "regex",
+      "file_path": "repo/detectors/DETECT_FAMILIENDYNAMIK_MARKER.py",
+      "fires_marker": "SEM_FAMILIENDYNAMIK",
+      "last_updated": "2025-08-03T23:10:00Z",
+      "schema_version": "3.2",
+      "priority": 1
+    },
+    {
+      "id": "DETECT_REACTIVE_CONTROL_SPIRAL",
+      "description": "Reactive Control Spiral – eskalative Gesprächs­muster",
+      "lang": "de",
+      "module": "regex",
+      "file_path": "repo/detectors/DETECT_REACTIVE_CONTROL_SPIRAL.py",
+      "fires_marker": "CLU_REACTIVE_CONTROL_SPIRAL",
+      "last_updated": "2025-08-03T23:10:00Z",
+      "schema_version": "3.2",
+      "priority": 1
+    },
+    {
+      "id": "DETECT_RESONANCE",
+      "description": "Resonanz-Ausdrücke empathischer Bestätigung",
+      "lang": "de",
+      "module": "regex",
+      "file_path": "repo/detectors/DETECT_RESONANCE.py",
+      "fires_marker": "SEM_RESONANCE",
+      "last_updated": "2025-08-03T23:10:00Z",
+      "schema_version": "3.2",
+      "priority": 1
+    },
+    {
+      "id": "DETECT_CO_REGULATION_COLLAPSE",
+      "description": "Co-Regulation Collapse – wechselseitiger Rückzug",
+      "lang": "de",
+      "module": "regex",
+      "file_path": "repo/detectors/DETECT_CO_REGULATION_COLLAPSE.py",
+      "fires_marker": "CLU_CO_REGULATION_COLLAPSE",
+      "last_updated": "2025-08-03T23:10:00Z",
+      "schema_version": "3.2",
+      "priority": 1
+    },
+    {
+      "id": "DETECT_AMBIVALENCE_KNOT",
+      "description": "Ambivalenz-Knoten – widersprüchliche Ich-Botschaften",
+      "lang": "de",
+      "module": "regex",
+      "file_path": "repo/detectors/DETECT_AMBIVALENCE_KNOT.py",
+      "fires_marker": "CLU_AMBIVALENCE_KNOT",
+      "last_updated": "2025-08-03T23:10:00Z",
+      "schema_version": "3.2",
+      "priority": 1
+    },
+    {
+      "id": "DETECT_SYMBOLIC_ROLE_SWAP",
+      "description": "Symbolischer Rollentausch – Objekt-Projektionen",
+      "lang": "de",
+      "module": "regex",
+      "file_path": "repo/detectors/DETECT_SYMBOLIC_ROLE_SWAP.py",
+      "fires_marker": "CLU_SYMBOLIC_ROLE_SWAP",
+      "last_updated": "2025-08-03T23:10:00Z",
+      "schema_version": "3.2",
+      "priority": 1
+    },
+    {
+      "id": "DETECT_COMPLEX_MARKER_PATTERNS",
+      "description": "Komplexe Meta-Marker-Patterns (Beispiel-basierte Regex)",
+      "lang": "de",
+      "module": "regex",
+      "file_path": "repo/detectors/DETECT_COMPLEX_MARKER_PATTERNS.py",
+      "fires_marker": "MEMA_COMPLEX_MARKER_PATTERNS",
+      "last_updated": "2025-08-03T23:10:00Z",
+      "schema_version": "3.2",
+      "priority": 1
+    }
+  ]
+}

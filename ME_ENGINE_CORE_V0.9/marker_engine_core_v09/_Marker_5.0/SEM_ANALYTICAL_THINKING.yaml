@@ -1,0 +1,39 @@
+id: SEM_ANALYTICAL_THINKING
+frame:
+  signal:
+  - weil
+  - deshalb
+  - folglich
+  - basierend auf
+  - Daten zeigen
+  - wenn wir
+  - statistisch
+  concept: analytical thinking
+  pragmatics: logical argumentation
+  narrative: reasoned exploration
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Basierend auf den Verkaufszahlen konnten wir einen R\xFCckgang im Mai feststellen."
+- Wenn wir die Variablen X und Y isolieren, zeigt sich ein klarer Trend.
+- Die Daten legen nahe, dass unser Ansatz optimiert werden muss.
+- Folglich sollten wir die Strategie anpassen, um bessere Ergebnisse zu erzielen.
+- "Diese Analyse verdeutlicht, dass die Hypothese best\xE4tigt werden kann."
+- Ich habe die Ergebnisse tabellarisch zusammengefasst, um die Korrelation zu verdeutlichen.
+- "Es erscheint logisch, dass ein h\xF6heres Budget zu einer besseren Performance\
+  \ f\xFChrt."
+- Durch schrittweises Vorgehen konnten wir den Fehlerquellen auf den Grund gehen.
+- Statistisch ist die Abweichung signifikant und erfordert eine Ursachenforschung.
+- "Wir k\xF6nnen daraus schlie\xDFen, dass unsere Annahme valide ist."
+tags:
+- analytical_thinking

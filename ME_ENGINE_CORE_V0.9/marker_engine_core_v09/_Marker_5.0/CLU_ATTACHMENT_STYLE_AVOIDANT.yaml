@@ -1,0 +1,47 @@
+id: CLU_ATTACHMENT_STYLE_AVOIDANT
+lang: de
+category: CLUSTER
+description: "Vermeidendes Bindungsmuster: \xDCberbetonung von Autarkie, Minimierung\
+  \ von Gef\xFChlen, R\xFCckzug statt Dialog."
+frame:
+  signal:
+  - '''alleine klargekommen'''
+  - "Gef\xFChle = Schw\xE4che"
+  - "R\xFCckzug statt Austausch"
+  concept: Vermeidende Bindungsdynamik
+  pragmatics: "Distanz, Selbstgen\xFCgsamkeits-Frame"
+  narrative: "Selbstschutz \xFCber Autonomie"
+composed_of:
+- SEM_AVOIDANT_CHILDHOOD_REFERENCE
+scoring:
+  base: 1.8
+  weight: 1.2
+  decay: 0.01
+window:
+  messages: 20
+examples:
+  positive:
+  - "Ich habe fr\xFCh gelernt, meine Probleme f\xFCr mich zu behalten."
+  - "Gef\xFChle zu zeigen, galt bei uns als Schw\xE4che."
+  - "Ich war schon als Kind sehr selbstst\xE4ndig und habe niemanden gebraucht."
+  - "Wenn es schwierig wurde, habe ich mich am liebsten in mein Zimmer zur\xFCckgezogen."
+  - "Ich rede nicht gerne \xFCber meine Gef\xFChle, das bringt ja nichts."
+  - "Ich komme am besten alleine klar, dann bin ich von niemandem abh\xE4ngig."
+  - "N\xE4he f\xFChlt sich f\xFCr mich oft einengend an."
+  - Ich habe gelernt, meine Emotionen nicht so an mich herankommen zu lassen.
+  - "Ich brauche viel Freiraum und Zeit f\xFCr mich allein."
+  - "Ich verlasse mich am liebsten auf mich selbst, dann werde ich nicht entt\xE4\
+    uscht."
+  negative: []
+tags:
+- needs_review
+- cluster
+- attachment
+- avoidant
+activation:
+  rule: AT_LEAST
+  params:
+    count: 2
+    window:
+      size: 20
+      unit: messages

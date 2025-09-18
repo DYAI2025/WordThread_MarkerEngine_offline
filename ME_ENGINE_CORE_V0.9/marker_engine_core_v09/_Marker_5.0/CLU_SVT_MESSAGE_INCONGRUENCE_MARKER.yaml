@@ -1,0 +1,30 @@
+id: CLU_SVT_MESSAGE_INCONGRUENCE_MARKER
+frame:
+  signal:
+  - sag mal
+  - "h\xF6r zu"
+  - verstehst du
+  concept: Kommunikationsmuster
+  pragmatics: "Dialog f\xFChren"
+  narrative: exchange
+composed_of:
+- SEM_GENERIC_PATTERN
+activation:
+  rule: AT_LEAST
+  params:
+    count: 2
+    window:
+      size: 5
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Die Ampel ist gr\xFCn, aber du bist ja eine schlechte Fahrerin."
+- "Ihr Bericht ist sachlich korrekt, aber Sie sind einfach unzuverl\xE4ssig."
+- Die Zahlen stimmen, aber du bist einfach zu langsam.
+- Es ist Fakt, dass die Deadline morgen ist, aber du hast ja eh keine Zeit.
+- "Es wurde beschlossen, dass dein Team die F\xFChrung \xFCbernimmt, obwohl du offensichtlich\
+  \ \xFCberfordert bist."
+tags:
+- communication

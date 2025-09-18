@@ -1,0 +1,28 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: ATO_PAUSE_LONG
+lang: de
+category: ATOMIC
+description: "Lange Sprechpause innerhalb oder zwischen Turns (≥600 ms)."
+frame:
+  signal: [">= 600 ms Pause"]
+  concept: "Lange Pause"
+  pragmatics: "Nachdenken, Unsicherheit, Gesprächsregulation"
+  narrative: "Timing"
+pattern:
+  - detect_class: timing
+    rule: "pause_ms >= 600"
+activation_logic: "ANY 1"
+examples:
+  - "Text … [Pause 650ms] … weiter."
+  - "Ich denke … [Pause 900ms] … vielleicht."
+  - "Also … [Pause 1.2s] … ja."
+  - "[Pause 700ms] sorry, weiter."
+  - "Wann … [Pause 800ms] … passt dir das?"
+  - "Ich … [Pause 600ms] … weiß nicht."
+  - "Ok … [Pause 2.0s] … gut."
+  - "Ähm … [Pause 750ms] … lass uns gehen."
+tags: [atomic, audio, timing]
+metadata:
+  modality: audio

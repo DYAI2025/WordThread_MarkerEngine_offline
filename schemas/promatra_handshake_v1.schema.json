@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PromatraHandshake",
+  "description": "Output from the Promatra module, containing transcription, prosody, and voice marker data.",
+  "type": "object",
+  "required": ["metadata", "messages"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["source_file", "timestamp", "schema_version"],
+      "properties": {
+        "source_file": {
+          "type": "string",
+          "description": "Name of the original input file (audio or text)."
+        },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "schema_version": { "type": "string", "const": "promatra_handshake_v1" }
+      }
+    },
+    "messages": {
+      "type": "array",
+      "description": "Array of transcribed/chunked messages with associated data.",
+      "items": {
+        "type": "object",
+        "required": ["id", "timestamp", "text"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the message chunk."
+          },
+          "timestamp": {
+            "type": "number",
+            "description": "Start time of the message in seconds (0 for text-based input)."
+          },
+          "text": {
+            "type": "string",
+            "description": "The transcribed or chunked text."
+          },
+          "prosody": {
+            "type": ["object", "null"],
+            "description": "Prosodic features. Can be null for text-only input.",
+            "properties": {
+              "pitch": { "type": "number" },
+              "energy": { "type": "number" },
+              "speaking_rate": { "type": "number" }
+            }
+          },
+          "voice_markers": {
+            "type": "array",
+            "description": "Voice markers identified directly from audio. Can be null or empty.",
+            "items": {
+              "type": "object",
+              "required": ["marker_name", "confidence"],
+              "properties": {
+                "marker_name": { "type": "string" },
+                "confidence": { "type": "number" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+id: SEM_CONFLICT_LVL4_6
+frame:
+  signal:
+  - Derogatory accusation
+  - public shaming
+  - threat of consequences
+  - moral indictment
+  - blame shift
+  concept: conflict escalation level 4-6
+  pragmatics: "one\u2010sided penalty"
+  narrative: face loss for one party
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+- "Wenn du das noch einmal machst, sorgt jeder daf\xFCr, dass du total blamiert dastehst!"
+- "Echt peinlich, wie du dich hier auff\xFChrst \u2013 niemand wird dich noch ernst\
+  \ nehmen."
+- "Du hast es vermasselt, also \xFCbernimm die Konsequenzen."
+- Glaub ja nicht, dass ich das ungestraft hinnehme.
+- "Solche Fehler verzeihe ich nicht \u2013 das wirst du bereuen."
+- "Ich werde daf\xFCr sorgen, dass alle wissen, wer hier schuld ist."
+- "Das n\xE4chste Mal gehst du schlimmer baden, versprochen."
+- Meinetwegen kannst du dein Gesicht verlieren, aber bleib mir hier aus dem Weg.
+- Ich lasse dich vor allen Leuten schlecht dastehen.
+- "Du wirst deine Taten noch b\xFC\xDFen m\xFCssen."
+- "Wenn du nicht aufh\xF6rst, werde ich daf\xFCr sorgen, dass du deine Lektion lernst."
+- Du hast es dir selbst zuzuschreiben, wenn du jetzt die Konsequenzen tragen musst.
+- Niemand wird dir helfen, wenn du so weitermachst.
+- Ich habe dich bei der Polizei angezeigt, du wirst das noch bereuen!
+- "Ich habe es allen gesagt, was f\xFCr ein verficktes Arschloch du bist!"
+- "Ich werde nicht ruhen, bis du daf\xFCr bestraft wirst."
+- "Du h\xF6rst von meinem Anwalt, daf\xFCr wirst du teuer bezahlen"
+tags:
+- conflict
+- escalation
+- lvl4-6

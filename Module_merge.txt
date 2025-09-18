@@ -1,0 +1,28 @@
+Das Repo soll drei klar getrennte Module zusammenführen – Input (Promatra), Analyse-Kern (ME Engine Core V09) und Frontend (Mark Thread) – und sie so verschalten, dass daraus das erste voll funktionsfähige Produkt entsteht, kein Mock oder Demo mehr.
+
+Hebel:
+
+Koppelung über AnalysisBundle als einziges, unveränderliches Austauschformat.
+
+Strikte Vier-Ebenen-Architektur (ATO→SEM→CLU→MEMA) mit LD-3.4/3.5-Regeln.
+
+Frontend nutzt ausschließlich fertige Artefakte (AnalysisBundle.json oder SQLite) und führt keine Analyse mehr selbst aus.
+
+3-Zeilen-Plan:
+
+Promatra → Transkript + Prosodie in messages[] + PromatraHandshake.
+
+ME Engine Core V09 → erzeugt AnalysisBundle (hits, aggregates, scores, drift).
+
+Mark Thread → rendert das AnalysisBundle deterministisch als Dashboard (Tiles, Drift, Heatmaps).
+
+Risiken, Annahmen, Nächster Test:
+
+Risiko: Format-Inkompatibilitäten (Handshake → Core, Core → Bundle).
+
+Annahme: Alle Komponenten implementieren strikt das LD-3.4-Schema; LD-3.5-Upgrades bleiben schema-kompatibel.
+
+Nächster Test: Integrationstest mit vollem Audio-Input → Bundle → Frontend; prüfen, ob Driftkurven im Dashboard identisch zu Kern-Output sind.
+
+Metrik (heute): Klarheit 4, Hebelstärke 5, Entscheidungsreife 4.
+Nächster Test in einem Satz: Bundle-Durchlauf mit Beispielgespräch durch alle drei Module.

@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/schemas/analysis/relation/v3.4",
+  "title": "Relation Analyse Output – Lean-Deep 3.4",
+  "type": "object",
+  "required": ["schema_version","analysis_type","meta","input_data","marker_detection","drift_analysis","relationship_inference","outputs"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "3.4"
+    },
+    "analysis_type": { "type": "string" },
+    "meta": {
+      "type": "object",
+      "required": ["timestamp","session_id","analyzed_by"],
+      "properties": {
+        "timestamp":    { "type": "string","format":"date-time" },
+        "session_id":   { "type": "string" },
+        "analyzed_by":  { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "input_data": {
+      "type": "object",
+      "required": ["text_source","language","chunking_strategy"],
+      "properties": {
+        "text_source": { "type": "string" },
+        "language":    { "type": "string" },
+        "chunking_strategy": {
+          "type": "object",
+          "required": ["chunk_size","overlap"],
+          "properties": {
+            "chunk_size": { "type": "integer" },
+            "overlap":    { "type": "integer" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "marker_detection": {
+      "type": "object",
+      "required": ["atomic_markers","semantic_markers","cluster_markers","meta_markers"],
+      "properties": {
+        "atomic_markers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id","count"],
+            "properties": {
+              "id":    { "type": "string","pattern":"^ATO_[A-Z0-9_]+$" },
+              "count": { "type": "integer" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "semantic_markers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id","count"],
+            "properties": {
+              "id":    { "type": "string","pattern":"^SEM_[A-Z0-9_]+$" },
+              "count": { "type": "integer" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "cluster_markers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id","count"],
+            "properties": {
+              "id":    { "type": "string","pattern":"^CLU_[A-Z0-9_]+$" },
+              "count": { "type": "integer" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "meta_markers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id","active"],
+            "properties": {
+              "id":     { "type": "string","pattern":"^MEMA_[A-Z0-9_]+$" },
+              "active": { "type": "boolean" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "drift_analysis": {
+      "type": "object",
+      "required": ["drift_axes","marker_density_timeline"],
+      "properties": {
+        "drift_axes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["axis_name","curve","trend"],
+            "properties": {
+              "axis_name": { "type": "string" },
+              "curve":     { "type": "array","items": {} },
+              "trend":     { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "marker_density_timeline": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "additionalProperties": false
+    },
+    "relationship_inference": {
+      "type": "object",
+      "required": ["emotional_attachment_score","flirtation_index","projection_load","system_split_detected","dominant_tendencies"],
+      "properties": {
+        "emotional_attachment_score": { "type": "number" },
+        "flirtation_index":           { "type": "number" },
+        "projection_load":            { "type": "number" },
+        "system_split_detected":      { "type": "boolean" },
+        "dominant_tendencies": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "outputs": {
+      "type": "object",
+      "required": ["export_format","visualization"],
+      "properties": {
+        "export_format":  { "type": "array","items": { "type": "string" } },
+        "visualization":  { "type": "array","items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

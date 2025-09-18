@@ -1,0 +1,28 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: ATO_INTENSITY_DIP
+lang: de
+category: ATOMIC
+description: "Signifikante Lautheitsreduktion relativ zur Basis (RMS/Intensity z-score niedrig)."
+frame:
+  signal: ["RMS/Intensity sinkt signifikant"]
+  concept: "Lautheit↓"
+  pragmatics: "Zurückziehen, Vorsicht, Scham"
+  narrative: "Prosodie"
+pattern:
+  - detect_class: prosody
+    rule: "intensity_z <= -0.8"
+activation_logic: "ANY 1"
+examples:
+  - "(leiser) Ich… denke, wir warten."
+  - "(gedämpft) Tut mir leid."
+  - "(leise) Vielleicht später."
+  - "(flüsternd) Ich bin unsicher."
+  - "(gedämpft) Das passt schon."
+  - "(leiser) Okay."
+  - "(leiser) Hm…"
+  - "(gedämpft) Ist gut."
+tags: [atomic, audio, prosody]
+metadata:
+  modality: audio

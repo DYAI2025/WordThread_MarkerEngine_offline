@@ -1,0 +1,414 @@
+/* WordThread Marker-Engine Frontend Styles */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Root variables for WordThread branding */
+:root {
+    --wordthread-primary: #FF8C00;
+    --wordthread-secondary: #FFD700;
+    --wordthread-accent: #FFA500;
+    --wordthread-dark: #0E0E0E;
+    --wordthread-dark-secondary: #1A1A1A;
+    --wordthread-text: #FFFFFF;
+    --wordthread-text-muted: #B0B0B0;
+    --wordthread-gradient: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
+    --wordthread-glow: 0 0 20px rgba(255, 140, 0, 0.3);
+    --wordthread-glow-strong: 0 0 30px rgba(255, 140, 0, 0.6);
+}
+
+/* Global styles */
+.stApp {
+    background: var(--wordthread-dark) !important;
+    color: var(--wordthread-text) !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* WordThread header styling */
+.wordthread-header {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, rgba(255,140,0,0.1) 0%, rgba(255,215,0,0.1) 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(255,140,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.wordthread-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' fill='none'%3E%3Cpath d='M0,50 Q250,10 500,50 T1000,50 L1000,100 L0,100 Z' fill='rgba(255,140,0,0.1)'/%3E%3C/svg%3E") center bottom no-repeat;
+    background-size: cover;
+    pointer-events: none;
+}
+
+.wordthread-title {
+    font-size: 3.5rem !important;
+    font-weight: 700 !important;
+    background: var(--wordthread-gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: var(--wordthread-glow) !important;
+    margin-bottom: 0.5rem !important;
+    position: relative;
+    z-index: 1;
+}
+
+.wordthread-subtitle {
+    font-size: 1.2rem !important;
+    color: var(--wordthread-text-muted) !important;
+    font-weight: 400 !important;
+    margin: 0 !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Welcome screen styling */
+.welcome-container {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(255,140,0,0.05) 0%, rgba(255,215,0,0.05) 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(255,140,0,0.2);
+    margin: 2rem 0;
+}
+
+.welcome-content h2 {
+    color: var(--wordthread-secondary) !important;
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+    text-shadow: var(--wordthread-glow) !important;
+}
+
+.welcome-content p {
+    color: var(--wordthread-text-muted) !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    background: rgba(255,140,0,0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255,140,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--wordthread-glow-strong);
+    border-color: var(--wordthread-primary);
+}
+
+.feature-item h3 {
+    color: var(--wordthread-primary) !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.feature-item p {
+    color: var(--wordthread-text-muted) !important;
+    font-size: 0.95rem !important;
+    margin: 0 !important;
+}
+
+/* Sidebar styling */
+.css-1d391kg {
+    background: var(--wordthread-dark-secondary) !important;
+    border-right: 1px solid rgba(255,140,0,0.2) !important;
+}
+
+/* Tabs styling */
+.stTabs [data-baseweb="tab-list"] {
+    background: var(--wordthread-dark-secondary) !important;
+    border-radius: 10px !important;
+    padding: 0.5rem !important;
+    border: 1px solid rgba(255,140,0,0.3) !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: transparent !important;
+    color: var(--wordthread-text-muted) !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background: rgba(255,140,0,0.1) !important;
+    color: var(--wordthread-primary) !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background: var(--wordthread-gradient) !important;
+    color: var(--wordthread-dark) !important;
+    box-shadow: var(--wordthread-glow) !important;
+}
+
+/* Metric cards styling */
+.css-1r6slb0 {
+    background: linear-gradient(135deg, rgba(255,140,0,0.1) 0%, rgba(255,215,0,0.1) 100%) !important;
+    border: 1px solid rgba(255,140,0,0.3) !important;
+    border-radius: 12px !important;
+    padding: 1rem !important;
+}
+
+/* Button styling */
+.stButton button {
+    background: var(--wordthread-gradient) !important;
+    color: var(--wordthread-dark) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: var(--wordthread-glow) !important;
+}
+
+.stButton button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--wordthread-glow-strong) !important;
+}
+
+/* Selectbox styling */
+.stSelectbox > div > div {
+    background: var(--wordthread-dark-secondary) !important;
+    border: 1px solid rgba(255,140,0,0.3) !important;
+    border-radius: 8px !important;
+    color: var(--wordthread-text) !important;
+}
+
+/* File uploader styling */
+.uploadedFile {
+    background: rgba(255,140,0,0.1) !important;
+    border: 1px solid rgba(255,140,0,0.3) !important;
+    border-radius: 10px !important;
+}
+
+/* Drag and drop area */
+.stFileUploader > div {
+    border: 2px dashed var(--wordthread-primary) !important;
+    border-radius: 15px !important;
+    background: linear-gradient(135deg, rgba(255,140,0,0.05) 0%, rgba(255,215,0,0.05) 100%) !important;
+    transition: all 0.3s ease !important;
+}
+
+.stFileUploader > div:hover {
+    border-color: var(--wordthread-secondary) !important;
+    background: linear-gradient(135deg, rgba(255,140,0,0.1) 0%, rgba(255,215,0,0.1) 100%) !important;
+}
+
+/* Data editor styling */
+.stDataFrame {
+    background: var(--wordthread-dark-secondary) !important;
+    border: 1px solid rgba(255,140,0,0.3) !important;
+    border-radius: 10px !important;
+}
+
+/* Expander styling */
+.streamlit-expanderHeader {
+    background: rgba(255,140,0,0.1) !important;
+    border: 1px solid rgba(255,140,0,0.3) !important;
+    border-radius: 8px !important;
+    color: var(--wordthread-text) !important;
+}
+
+/* Progress bar styling */
+.stProgress > div > div {
+    background: var(--wordthread-gradient) !important;
+    border-radius: 10px !important;
+}
+
+/* Alert styling */
+.stSuccess {
+    background: linear-gradient(135deg, rgba(0,255,0,0.1) 0%, rgba(0,200,0,0.1) 100%) !important;
+    border: 1px solid rgba(0,255,0,0.3) !important;
+    border-radius: 10px !important;
+    color: #00FF00 !important;
+}
+
+.stError {
+    background: linear-gradient(135deg, rgba(255,0,0,0.1) 0%, rgba(200,0,0,0.1) 100%) !important;
+    border: 1px solid rgba(255,0,0,0.3) !important;
+    border-radius: 10px !important;
+    color: #FF6B6B !important;
+}
+
+.stWarning {
+    background: linear-gradient(135deg, rgba(255,193,7,0.1) 0%, rgba(255,140,0,0.1) 100%) !important;
+    border: 1px solid rgba(255,193,7,0.3) !important;
+    border-radius: 10px !important;
+    color: #FFC107 !important;
+}
+
+.stInfo {
+    background: linear-gradient(135deg, rgba(0,123,255,0.1) 0%, rgba(0,86,179,0.1) 100%) !important;
+    border: 1px solid rgba(0,123,255,0.3) !important;
+    border-radius: 10px !important;
+    color: #007BFF !important;
+}
+
+/* Slider styling */
+.stSlider > div > div > div {
+    background: var(--wordthread-gradient) !important;
+}
+
+/* Text input styling */
+.stTextInput > div > div > input {
+    background: var(--wordthread-dark-secondary) !important;
+    border: 1px solid rgba(255,140,0,0.3) !important;
+    border-radius: 8px !important;
+    color: var(--wordthread-text) !important;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: var(--wordthread-primary) !important;
+    box-shadow: var(--wordthread-glow) !important;
+}
+
+/* Number input styling */
+.stNumberInput > div > div > input {
+    background: var(--wordthread-dark-secondary) !important;
+    border: 1px solid rgba(255,140,0,0.3) !important;
+    border-radius: 8px !important;
+    color: var(--wordthread-text) !important;
+}
+
+/* Date input styling */
+.stDateInput > div > div > input {
+    background: var(--wordthread-dark-secondary) !important;
+    border: 1px solid rgba(255,140,0,0.3) !important;
+    border-radius: 8px !important;
+    color: var(--wordthread-text) !important;
+}
+
+/* Multiselect styling */
+.stMultiSelect > div > div {
+    background: var(--wordthread-dark-secondary) !important;
+    border: 1px solid rgba(255,140,0,0.3) !important;
+    border-radius: 8px !important;
+}
+
+/* Chart container styling */
+.js-plotly-plot {
+    border-radius: 15px !important;
+    background: var(--wordthread-dark-secondary) !important;
+    border: 1px solid rgba(255,140,0,0.2) !important;
+    box-shadow: var(--wordthread-glow) !important;
+}
+
+/* Sidebar content styling */
+.css-1lcbmhc {
+    padding: 1rem !important;
+}
+
+/* Main content area */
+.css-1y4p8pa {
+    padding: 2rem 1rem !important;
+}
+
+/* Animation for loading states */
+@keyframes wordthread-pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 140, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 140, 0, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 140, 0, 0.3);
+    }
+}
+
+.wordthread-loading {
+    animation: wordthread-pulse 2s infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .wordthread-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .welcome-content h2 {
+        font-size: 2rem !important;
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--wordthread-dark-secondary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--wordthread-gradient);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+}
+
+/* Focus states for accessibility */
+*:focus {
+    outline: 2px solid var(--wordthread-primary) !important;
+    outline-offset: 2px !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --wordthread-primary: #FFAA00;
+        --wordthread-secondary: #FFFF00;
+        --wordthread-text: #FFFFFF;
+        --wordthread-dark: #000000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .wordthread-header::before {
+        display: none;
+    }
+    
+    .stSidebar {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}

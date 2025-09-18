@@ -1,0 +1,39 @@
+id: ATO_BOUNDARY_NEGOTIATION
+version: '3.3'
+lang: de
+frame:
+  signal:
+  - Explizite Grenzsetzung + Verhandlung
+  concept: Grenzverhandlung
+  pragmatics: "Abgleich von Bed\xFCrfnissen"
+  narrative: boundary_alignment
+pattern:
+- (?i)\b(grenze|grenzen)\b.*\b(respekt|achten)\b
+- (?i)\b(ist das ok|ist das okay|passt das)\b
+activation:
+  rule: ANY
+  params:
+    count: 1
+    window:
+      size: 25
+      unit: messages
+window:
+  messages: 25
+scoring:
+  base: 2.1
+  weight: 0.6
+  decay: 0.01
+  formula: logistic
+examples:
+- Ich will meine Grenze respektiert wissen, ist das ok?
+- "Passt das f\xFCr dich, wenn wir das so machen?"
+- "K\xF6nnen wir uns auf diese Grenze einigen?"
+- "Ist es okay f\xFCr dich, wenn ich meine Grenze so setze?"
+- Respektierst du meine Grenzen? Passt das?
+- "Ich brauche diese Grenze - ist das f\xFCr dich okay?"
+- "K\xF6nnen wir gemeinsam schauen, was f\xFCr uns beide passt?"
+tags:
+- ato
+- boundary
+- negotiation
+- atomic

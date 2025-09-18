@@ -1,0 +1,51 @@
+id: ATO_GOTTMAN_CONTEMPT
+schema_version: LD-3.2
+version: 1.0.0
+last_updated: '2025-08-19'
+lang: de
+category: ATOMIC
+description: "Spott, Hohn, \xDCberlegenheitsgesten (inkl. \U0001F644/\U0001F926);\
+  \ herabsetzende Sprache."
+frame:
+  signal:
+  - "L\xE4cherlich"
+  - Armselig
+  - "Wie dumm \u2026"
+  - So peinlich
+  - Augenrollen/Facepalm
+  concept: "Verachtung / \xDCberlegenheit"
+  pragmatics: "Dem\xFCtigung, Statusabwertung"
+  narrative: derision
+pattern:
+- "(?i)\\bl\xE4cherlich\\b"
+- (?i)\barmselig\b
+- (?i)\bwie\s+dumm\b
+- (?i)\bso\s+peinlich\b
+- (?i)\bna\s+klar,\s*meister\b
+- (?i)\b(facepalm|eyeroll|augenrollen)\b
+- "[\U0001F644\U0001F926]"
+- "(?i)\\bbravo,\\s*gro\xDFartig\\b(?=.*(sarkastisch|ironisch))?"
+- (?i)\btypisch\b(?=.*\bdu\b)
+window:
+  messages: 3
+scoring:
+  base: 1.2
+  weight: 1.1
+examples:
+- Wie dumm kann man sein?
+- "Das ist einfach l\xE4cherlich."
+- Armselig, wirklich.
+- So peinlich, typisch.
+- Na klar, Meister der Ausreden.
+- "\U0001F644"
+- "Bravo, gro\xDFartig \u2013 sarkastisch gemeint."
+- Typisch du, kapierst es nie.
+tags:
+- atomic
+- conflict
+- gottman
+- contempt
+activation:
+  rule: ANY
+  params:
+    count: 1

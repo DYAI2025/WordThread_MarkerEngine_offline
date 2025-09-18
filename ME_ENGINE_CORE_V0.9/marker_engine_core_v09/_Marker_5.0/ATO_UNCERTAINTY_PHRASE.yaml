@@ -1,0 +1,33 @@
+id: ATO_UNCERTAINTY_PHRASE
+frame:
+  signal:
+  - unsicher
+  - vielleicht
+  - "ich wei\xDF nicht"
+  - eventuell
+  concept: Unklarheit, fehlende Entschlossenheit
+  pragmatics: "Schw\xE4chung von Verbindlichkeit"
+  narrative: Indirekte Kommunikation
+pattern:
+- (?i)vielleicht
+- "(?i)ich wei\xDF nicht"
+- (?i)eventuell
+- (?i)mal sehen
+- (?i)bin mir nicht sicher
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- Vielleicht schaffen wir das noch heute.
+- "Ich wei\xDF nicht, ob ich das kann."
+- "Eventuell komme ich sp\xE4ter dazu."
+- "Mal sehen, wie das l\xE4uft."
+- Bin mir nicht sicher, ob das klappt.
+- "Vielleicht k\xF6nnten wir das anders l\xF6sen."
+- "Ich glaube, er kommt sp\xE4ter."
+- Eventuell brauchen wir mehr Zeit.
+- "Ich denke, das k\xF6nnte funktionieren."
+- "Vielleicht ist das nur ein Missverst\xE4ndnis."
+tags:
+- uncertainty

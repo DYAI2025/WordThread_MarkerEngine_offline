@@ -1,0 +1,38 @@
+id: SEM_SILENT_TREATMENT
+frame:
+  signal:
+  - no response
+  - ignoring
+  - walling off
+  - silence
+  concept: silent treatment
+  pragmatics: passive-aggressive punishment
+  narrative: relationship maneuver
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ALL
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive:
+  - (Antwortet bewusst nicht auf eine direkte Frage)
+  - (Ignoriert die Anwesenheit der anderen Person)
+  - (Liest die Nachricht, aber antwortet absichtlich nicht)
+  - "(Blickt durch die Person hindurch, als w\xE4re sie nicht da)"
+  - "(Verl\xE4sst den Raum, wenn die andere Person zu sprechen beginnt)"
+  - (Gibt nur einsilbige, kalte Antworten)
+  - (Reagiert nicht auf Versuche der Kontaktaufnahme)
+  - (Schweigt beharrlich, um die andere Person zu bestrafen)
+  - (Erzeugt eine eisige, unangenehme Stille)
+  - (Behandelt die andere Person wie Luft)
+  negative: []
+tags:
+- silent_treatment
+- passive_aggressive

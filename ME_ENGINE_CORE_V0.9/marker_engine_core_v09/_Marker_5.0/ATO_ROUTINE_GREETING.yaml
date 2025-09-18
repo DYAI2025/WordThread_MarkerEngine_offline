@@ -1,0 +1,29 @@
+id: ATO_ROUTINE_GREETING
+frame:
+  signal:
+  - Good morning NAME
+  - Hey, hast du gut geschlafen
+  - Wie war deine Nacht
+  concept: "Begr\xFC\xDFung"
+  pragmatics: Sozialer Einstieg
+  narrative: Opening
+pattern:
+- (?i)\b(good morning|guten morgen|hast du gut geschlafen|wie war deine nacht)\b
+activation:
+  rule: ANY
+  params:
+    count: 1
+examples:
+- Good morning Lisa.
+- Hey, hast du gut geschlafen?
+- "Ich w\xFCnsche dir einen sch\xF6nen guten Morgen."
+- Wie war deine Nacht?
+- "Hast du sch\xF6ne Tr\xE4ume gehabt?"
+- Guten Abend zusammen.
+- Hi! Na, ausgeschlafen?
+- Morgen! Alles fit bei dir?
+- "Sch\xF6nen Nachmittag!"
+- Na, wie lief dein Tag?
+tags:
+- greeting
+- daily_ritual

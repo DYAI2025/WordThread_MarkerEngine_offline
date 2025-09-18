@@ -1,0 +1,21 @@
+chunk_need_probe:
+  chunk_id: 8
+  need_indicators:
+    reassurance_requests: 1
+    soft_commitments_offered: 0
+  attachment_markers:
+    avoidant_markers: 2        # C_ADAPTIVE_POLARIZATION
+    anxious_markers: 0
+  inner_fear_markers:
+    past_wound: 1
+    meaning_crisis: 0
+  composite_scores:
+    unsaid_need_index: 0.6     # berechnet: Need-Marker ÷ (Need+Repair)
+    attachment_style_vector:
+      anxious: 0.0
+      avoidant: 0.7
+      secure: 0.3
+  interpretation_marker_based: |
+    Vermeidender Stil dominiert; Bedürfnis nach Nähe bleibt implizit.
+  validity_checks:
+    - "Detektor-Thresholds ≥ schema_config"

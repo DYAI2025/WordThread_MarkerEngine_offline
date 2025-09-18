@@ -1,0 +1,39 @@
+activation:
+  params:
+    count: 1
+  rule: ANY
+category: ATOMIC
+description: Marker für stimmliche Unsicherheit und Zögern
+examples:
+  negative: []
+  positive:
+  - Äh, ich weiß nicht so recht.
+  - Um, das ist eine gute Frage.
+  - Uh, ich muss mal kurz nachdenken.
+  - Hm, das ist kompliziert.
+  - Erm, ich bin mir nicht sicher.
+  - Ähm, ich glaube, ich habe mich da geirrt.
+  - Ich meine, es ist so, äh, schwierig.
+  - Das ist, äh, irgendwie, äh, komisch.
+  - Sort of, äh, like, you know.
+  - Kind of, äh, I guess.
+frame:
+  concept: speaker uncertainty
+  narrative: stall
+  pragmatics: reduced commitment / searching for words
+  signal:
+  - filled pauses
+  - vocal hesitation
+id: ATO_HESITATION_VOICE
+pattern:
+- (?i)\b(äh|um|uh|hm|erm|ähm)\b
+- (?i)\b(i mean|like,? )
+- (?i)\b(sort of|kind of)\b
+scoring:
+  weight: 1.0
+tags:
+- atomic
+- hesitation
+- voice
+- uncertainty
+version: '3.4'

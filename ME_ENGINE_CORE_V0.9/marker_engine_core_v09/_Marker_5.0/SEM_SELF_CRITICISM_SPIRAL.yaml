@@ -1,0 +1,43 @@
+activation:
+  params:
+    count: 1
+  rule: ALL
+category: SEMANTIC
+composed_of:
+- ATO_SELF_ATTRIBUTION_NEGATIVE
+- ATO_RESIGNATION_FINAL
+description: Erfasst eine sich selbst verstärkende Schleife aus negativer Selbstzuschreibung
+  und resignativer Finalität, die auf eine verfestigte Denkstruktur hindeutet.
+examples:
+  negative: []
+  positive:
+  - Ich bin einfach zu dumm dafür. Das werde ich nie lernen.
+  - Ich mache immer alles falsch. Es hat keinen Sinn, es überhaupt zu versuchen.
+  - Ich bin so ein Versager. Nichts, was ich anfasse, wird gut.
+  - Ich bin einfach nicht für Beziehungen gemacht. Ich werde immer allein sein.
+  - Ich bin zu schwach. Ich werde es nie schaffen, mich zu ändern.
+  - Ich bin ein schlechter Mensch. Daran wird sich nichts ändern.
+  - Ich bin eine Enttäuschung. Ich kann die Erwartungen nie erfüllen.
+  - Ich bin es nicht wert, geliebt zu werden. So ist es nun mal.
+  - Ich bin ein hoffnungsloser Fall. Da ist nichts zu machen.
+  - Ich bin einfach kaputt. Das kann man nicht reparieren.
+frame:
+  concept: Selbstkritische Abwärtsspirale
+  narrative: trap / loop
+  pragmatics: Signalisiert erlernte Hilflosigkeit, sucht implizit nach Widerspruch
+    oder Bestätigung des negativen Selbstbildes.
+  signal:
+  - Kombination aus negativer Selbstzuschreibung und verallgemeinernder Resignation
+id: SEM_SELF_CRITICISM_SPIRAL
+lang: de
+schema_version: '3.3'
+scoring:
+  base: 1.6
+  formula: logistic
+  weight: 1.2
+tags:
+- semantic
+- self-criticism
+- resignation
+- loop
+- v3.3-compliant

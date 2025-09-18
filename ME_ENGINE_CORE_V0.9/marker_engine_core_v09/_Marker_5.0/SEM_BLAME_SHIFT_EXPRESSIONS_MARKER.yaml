@@ -1,0 +1,28 @@
+id: SEM_BLAME_SHIFT_EXPRESSIONS_MARKER
+frame:
+  signal:
+  - "Schuldzuweisungsausdr\xFCcke"
+  concept: "Verantwortungsabw\xE4lzungsmuster"
+  pragmatics: Systematische Schuldvermeidung
+  narrative: "abw\xE4lzen"
+composed_of:
+- ATO_BLAME_SHIFT_MARKER
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+examples:
+- "Wenn du nicht wieder so empfindlich w\xE4rst, h\xE4tten wir das Problem gar nicht."
+- Ich hab's nur gemacht, weil du dich so verhalten hast.
+- "Du hast es doch provoziert \u2013 was soll ich da machen?"
+- Du bringst mich immer so weit!
+- "Du verstehst einfach nicht, wie schwer das f\xFCr mich ist."
+- "Wenn du p\xFCnktlicher w\xE4rst, h\xE4tten wir diese Diskussion nicht."
+- Du hast mich dazu gebracht, so zu reagieren.
+tags:
+- schuld
+- "abw\xE4lzung"
+- verantwortung

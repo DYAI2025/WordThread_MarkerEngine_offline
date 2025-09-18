@@ -1,0 +1,37 @@
+id: CLU_SOFT_REJECTION_PATTERN
+frame:
+  signal:
+  - Wiederholte Vermeidungsmuster
+  concept: Systematische Distanzierung
+  pragmatics: Konfliktvermeidung
+  narrative: ghosting_muster
+composed_of:
+- SEM_STRESS_EXCUSE
+- SEM_SOFT_REJECTION
+activation:
+  rule: AT_LEAST
+  params:
+    count: 2
+    window:
+      size: 5
+      unit: messages
+scoring:
+  base: 2.0
+  weight: 1.5
+  pattern_bonus: 0.3
+examples:
+- "Conversation 1: 'Muss schauen, bin grad voll im Stress' \u2192 Conversation 2:\
+  \ 'Uff, schwierig diese Woche... Meld mich!'"
+- "Monday: 'Total gestresst, kann noch nichts sagen' \u2192 Wednesday: 'Wird kompliziert.\
+  \ Schreib dir dann'"
+- "Week 1: 'Hab mega Stress, mal sehen' \u2192 Week 2: 'Uff, nicht so einfach. Du\
+  \ h\xF6rst von mir!'"
+- "First attempt: 'Bin im Stress, schau ich sp\xE4ter' \u2192 Second attempt: 'Puh,\
+  \ schwierig grad. Melde mich!'"
+- 'Pattern over time: Always stress/difficulty + vague promises, never concrete plans'
+- Repeated deflection with stress as excuse across multiple interactions
+- Consistent pattern of avoiding commitment while maintaining plausible deniability
+tags:
+- rejection
+- avoidance
+- ghosting

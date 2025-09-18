@@ -1,0 +1,29 @@
+id: SEM_AMBIGUITY_FLAG
+frame:
+  signal:
+  - "Ambiguit\xE4ts-Signalisierung"
+  concept: Manner-Maxime flouten
+  pragmatics: "Nicht-w\xF6rtliche Lesart triggern"
+  narrative: hint_turn
+composed_of:
+- ATO_AMBIGUITY_QUOTES
+- ATO_RIDDLE_PATTERN
+activation:
+  rule: ANY
+  params:
+    count: 2
+    window:
+      size: 3
+      unit: messages
+examples:
+- "Das 'sichere' System\u2014wann ist sicher nicht sicher?"
+- "Die \u201Eschnelle\u201C L\xF6sung\u2014wenn langsam gemeint ist."
+- "\u201AStabil\u2018\u2014aber wann nicht?"
+- "Das sogenannte 'Best-Practice'\u2014Plot-Frage."
+- "\u201ENeu\u201C\u2014wenn Legacy neu lackiert."
+tags:
+- humor
+- ambiguity
+- grice_manner
+- semantics
+- v33

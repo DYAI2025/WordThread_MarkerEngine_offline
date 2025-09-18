@@ -1,0 +1,36 @@
+schema: "LeanDeep"
+version: "3.4"
+namespace: "ld34_voice_social_grammar"
+id: CLU_MISUNDERSTANDING_AUDIO
+lang: de
+category: CLUSTER
+description: "Missverständnis-Prozess (Audio): Bruch → Erregungsspitze → Reparaturversuch → Ausfall."
+frame:
+  signal: ["Prozesssequenz aus Break/Arousal/Repair/Failure"]
+  concept: "Missverständnis-Prozess (Audio)"
+  pragmatics: "Frühzeitig klären, ggf. moderieren"
+  narrative: "Prozess"
+composed_of:
+  - SEM_AROUSAL_SPIKE_AT_BREAK
+  - SEM_REPAIR_ATTEMPT_AUDIO
+  - SEM_REPAIR_FAILURE_AUDIO
+activation_logic: "SEQUENCE [BREAK->AROUSAL] AND [REPAIR_ATTEMPT] AND [FAILURE] within 10s"
+scoring: { base: 0.62, cap: 0.98 }
+examples:
+  - "(Break) — (Spike) — (Frage? + Pause) — (keine Antwort)."
+  - "Störung — Arousal — Reparatur — Gap — Themawechsel."
+  - "Unterbrechung — Spike — 'okay?' — Schweigen."
+  - "Bruch — 'passt?' — keine Reaktion — weiter."
+  - "Cut — Fragekontur — lange Pause — next."
+  - "Break — spike — repair? — no answer."
+  - "Störung — spike — 'so?' — Gap — shift."
+  - "Abriss — Frage — Pause — ignoriert."
+tags: [cluster, audio, misunderstanding]
+metadata:
+  family: "MISUNDERSTANDING"
+  intuition:
+    state: "provisional"
+    confirm_window_messages: 3
+    confirm_rule: "SEM_REPAIR_FAILURE_AUDIO"
+    decay_window_messages: 6
+    multiplier_on_confirm: 1.5

@@ -1,0 +1,84 @@
+<!doctype html><html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESDA Plus – Scorings & Dynamics</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+ body{margin:0;background:#0f1218;color:#e9eef6;font:14px/1.5 system-ui}
+ h1{margin:18px 20px;font-size:18px}
+ .wrap{padding:12px 20px;display:grid;gap:16px}
+ .card{background:#171c24;border:1px solid #2a3340;border-radius:12px;padding:12px}
+ canvas{background:#0c1016;border:1px solid #2a3340;border-radius:10px;padding:8px}
+ .muted{color:#9fb0c3} .row{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+</style></head><body>
+<h1>ESDA Plus – Konflikt→Repair, Episoden & Drift</h1>
+<div class="wrap">
+  <div class="card"><b>Conflict→Repair Index (k)</b>
+    <canvas id="criLine" height="240"></canvas>
+    <div class="muted">CRI: Anteil eskalierender Ereignisse (E), die binnen k Antworten mit Deeskalations-Markern (D) beantwortet werden.</div>
+  </div>
+  <div class="card"><b>Resilienz – Antworten bis Deeskalation</b>
+    <canvas id="resilienceHist" height="240"></canvas>
+    <div class="muted">Histogramm: Wie viele Antworten des Gegenübers bis zur ersten Deeskalation.</div>
+  </div>
+  <div class="card"><b>Episoden – Übergangsmatrix (früh vs. spät)</b>
+    <div class="muted">Heatmaps der Übergänge A→B (nur Senderwechsel). Links: frühe Episoden, Rechts: späte Episoden.</div>
+    <div class="row"><canvas id="heatEarly" height="300"></canvas><canvas id="heatLate" height="300"></canvas></div>
+  </div>
+  <div class="card"><b>Drift – rollierende Z-Scores (Top Marker)</b>
+    <canvas id="driftLines" height="260"></canvas>
+    <div class="muted">Welche Marker treiben die Dynamik – Z-Score (Fenster w).</div>
+  </div>
+</div>
+<script>
+// ===== Beispiel-Struktur (ersetze durch deine Aggregatdaten) =====
+const ESDA_DATA = window.ESDA_DATA || {
+  cri: { k:3, labels:["C1","C2","C3","C4"], values:[0.22,0.31,0.48,0.55] },
+  resilience: { bins:["0","1","2","3","4","5+"], counts:[3,8,12,6,4,2], median:2, p75:3 },
+  states:["Misstrauen","Defensive","Emotion","Transparenz","Themenwechsel","Deeskalation"],
+  T_early:[[0,5,3,2,1,0],[1,0,2,4,1,3],[0,1,0,2,1,2],[2,1,0,0,3,4],[0,1,0,3,0,2],[0,2,0,2,1,0]],
+  T_late :[[0,3,4,4,2,1],[0,0,1,5,2,4],[0,0,0,3,2,4],[1,1,0,0,2,6],[0,0,0,2,0,4],[0,1,0,1,1,0]],
+  drift: { labels:["m1","m2","m3","m4","m5"], series:[
+    { id:"ATO_TRUST_DEFICIT_STATEMENT", name:"Misstrauen/Beweisbedarf", z:[-0.2,0.1,0.6,1.2,0.8] },
+    { id:"ATO_DEESCALATION_OFFER", name:"Deeskalation/Goodwill", z:[0.5,0.6,0.4,0.7,0.9] }
+  ]}
+};
+
+// ===== Charts =====
+new Chart(document.getElementById('criLine'), {
+  type:'line',
+  data:{ labels: ESDA_DATA.cri.labels, datasets:[{ label:`CRI (k=${ESDA_DATA.cri.k})`, data: ESDA_DATA.cri.values, tension:0.25 }]},
+  options:{ plugins:{ legend:{ position:'bottom' }}, scales:{ y:{ suggestedMin:0, suggestedMax:1 } } }
+});
+
+new Chart(document.getElementById('resilienceHist'), {
+  type:'bar',
+  data:{ labels: ESDA_DATA.resilience.bins, datasets:[{ label:'Antworten bis Deeskalation', data: ESDA_DATA.resilience.counts }]},
+  options:{ plugins:{ legend:{ position:'bottom' } } }
+});
+
+function drawMatrixHeatmap(canvasId, M, labels){
+  const c=document.getElementById(canvasId), ctx=c.getContext('2d');
+  const W=c.width, H=c.height, pad=40, n=labels.length, cell=(Math.min(W,H)-pad-10)/n;
+  let max=1; for(let i=0;i<n;i++) for(let j=0;j<n;j++) max=Math.max(max, M[i][j]);
+  ctx.fillStyle="#0c1016"; ctx.fillRect(0,0,W,H);
+  ctx.fillStyle="#cfe3ff"; ctx.font="12px system-ui"; ctx.textAlign="right"; ctx.textBaseline="middle";
+  labels.forEach((lab,i)=>ctx.fillText(lab, pad-6, pad+i*cell+cell/2));
+  ctx.save(); ctx.translate(pad, 14); ctx.rotate(-Math.PI/2); ctx.textAlign="left";
+  labels.forEach((lab,i)=>ctx.fillText(lab, 0, i*cell+cell/2)); ctx.restore();
+  for(let i=0;i<n;i++){ for(let j=0;j<n;j++){
+    const v=M[i][j], t=v/Math.max(1,max), r=Math.round(t*255), g=Math.round((1-t)*120+60), b=120;
+    ctx.fillStyle=`rgb(${r},${g},${b})`;
+    ctx.fillRect(pad + j*cell, pad + i*cell, cell-1, cell-1);
+  }}
+}
+drawMatrixHeatmap('heatEarly', ESDA_DATA.T_early, ESDA_DATA.states);
+drawMatrixHeatmap('heatLate',  ESDA_DATA.T_late,  ESDA_DATA.states);
+
+new Chart(document.getElementById('driftLines'), {
+  type:'line',
+  data:{ labels: ESDA_DATA.drift.labels,
+    datasets: ESDA_DATA.drift.series.map(s=>({ label:s.name, data:s.z, fill:false, tension:0.2 })) },
+  options:{ plugins:{ legend:{ position:'bottom' }}, scales:{ y:{ title:{display:true,text:'Z-Score'} } } }
+});
+</script>
+</body></html>
